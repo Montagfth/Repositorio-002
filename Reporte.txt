@@ -1,1 +1,4 @@
-Documentacion breve del proyecto
+Documentacion breve del proyecto 
+Programado por:
+- Montañez Pumalla Fabrizio Andre
+- Quispe Quispe Angelo Junior
