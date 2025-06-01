@@ -10,4 +10,5 @@
         <maven.compiler.release>23</maven.compiler.release>
         <exec.mainClass>com.mycompany.proyecto_base_de_datos_ii.Proyecto_Base_de_Datos_II</exec.mainClass>
     </properties>
+    <!-- Agregar una clase <Dependecy> y cargar la version del JDBC que se va a usar (Sugerencia: Usar MySQL)-->
 </project>
