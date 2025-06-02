@@ -5,6 +5,8 @@
 package Panels;
 
 import View.*;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -29,9 +31,6 @@ public class panelRegistro extends javax.swing.JPanel {
     private void initComponents() {
 
         ContenedorGeneral = new javax.swing.JPanel();
-        Encabezado = new javax.swing.JPanel();
-        Titulo = new javax.swing.JLabel();
-        Subtitulo = new javax.swing.JLabel();
         MensajeInformativo01 = new javax.swing.JLabel();
         Separador01 = new javax.swing.JSeparator();
         PrimerNombre = new javax.swing.JLabel();
@@ -53,35 +52,6 @@ public class panelRegistro extends javax.swing.JPanel {
         Separador03 = new javax.swing.JSeparator();
         BotonRegistrar = new javax.swing.JButton();
         BotonRetornar = new javax.swing.JButton();
-
-        Encabezado.setBackground(new java.awt.Color(204, 204, 204));
-
-        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Titulo.setText("TESLA");
-
-        Subtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Subtitulo.setText("Log In Section");
-
-        javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
-        Encabezado.setLayout(EncabezadoLayout);
-        EncabezadoLayout.setHorizontalGroup(
-            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        EncabezadoLayout.setVerticalGroup(
-            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         MensajeInformativo01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MensajeInformativo01.setText("Complete all the gaps with your information to create your account:");
@@ -143,72 +113,61 @@ public class panelRegistro extends javax.swing.JPanel {
         ContenedorGeneral.setLayout(ContenedorGeneralLayout);
         ContenedorGeneralLayout.setHorizontalGroup(
             ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Separador01, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-                            .addComponent(Separador02)
-                            .addComponent(Separador03))
-                        .addGap(31, 31, 31))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                        .addComponent(BotonRetornar)
-                        .addContainerGap())))
             .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(MensajeInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(NumeroSecundario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoNumeroSecundario))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(NumeroPrincipal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoNumeroPrincipal))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(Email)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoEmail))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(Apellido)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoApellido))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(PrimerNombre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(IdentificacionDNI)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoIdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(SegundoNombre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoSegundoNombre)))
-                        .addGap(0, 35, Short.MAX_VALUE))
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
                         .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(MensajeInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addGap(177, 177, 177)
-                                .addComponent(BotonRegistrar)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(73, 73, 73))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
+                        .addComponent(BotonRetornar)
+                        .addGap(85, 85, 85))
+                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(MensajeInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(NumeroSecundario)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoNumeroSecundario))
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(NumeroPrincipal)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoNumeroPrincipal))
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(Email)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoEmail))
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(Apellido)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoApellido))
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(PrimerNombre)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(IdentificacionDNI)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoIdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                            .addComponent(SegundoNombre)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(MensajeInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         ContenedorGeneralLayout.setVerticalGroup(
             ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(MensajeInformativo01)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,19 +186,19 @@ public class panelRegistro extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Apellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CampoApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(CampoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CampoEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(CampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(NumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CampoNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(CampoNumeroPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(NumeroSecundario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CampoNumeroSecundario, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(CampoNumeroSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -247,10 +206,10 @@ public class panelRegistro extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonRegistrar)
-                .addGap(18, 18, 18)
-                .addComponent(BotonRetornar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonRegistrar)
+                    .addComponent(BotonRetornar))
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -271,11 +230,21 @@ public class panelRegistro extends javax.swing.JPanel {
 
     private void BotonRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRetornarActionPerformed
         
-        loginPrototipo ventana_login = new loginPrototipo();
-        
-        ventana_login.setVisible(true);
+        mostradorPaneles(new panelLogin());
         
     }//GEN-LAST:event_BotonRetornarActionPerformed
+
+    public void mostradorPaneles(JPanel panel) {
+        
+        panel.setSize(759, 446);
+        panel.setLocation(0, 0);
+
+        ContenedorGeneral.removeAll();
+        ContenedorGeneral.add(panel, BorderLayout.CENTER);
+        ContenedorGeneral.revalidate();
+        ContenedorGeneral.repaint();
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -291,7 +260,6 @@ public class panelRegistro extends javax.swing.JPanel {
     private javax.swing.JTextField CampoSegundoNombre;
     private javax.swing.JPanel ContenedorGeneral;
     private javax.swing.JLabel Email;
-    private javax.swing.JPanel Encabezado;
     private javax.swing.JLabel IdentificacionDNI;
     private javax.swing.JLabel MensajeInformativo01;
     private javax.swing.JLabel MensajeInformativo02;
@@ -302,7 +270,5 @@ public class panelRegistro extends javax.swing.JPanel {
     private javax.swing.JSeparator Separador01;
     private javax.swing.JSeparator Separador02;
     private javax.swing.JSeparator Separador03;
-    private javax.swing.JLabel Subtitulo;
-    private javax.swing.JLabel Titulo;
     // End of variables declaration//GEN-END:variables
 }

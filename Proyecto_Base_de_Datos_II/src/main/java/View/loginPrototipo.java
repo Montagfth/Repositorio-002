@@ -25,23 +25,22 @@ public class loginPrototipo extends javax.swing.JFrame {
         this.setVisible(false);
     }
     
-    
     public void inicializacion(){
         
-        PanelContenedor.setLayout(new BorderLayout());
+        ContenedorPaneles.setLayout(new BorderLayout());
         
         mostrarPaneles(new panelLogin());
+        
     }
 
     public void mostrarPaneles (JPanel panel) {
         
-        panel.setSize(400,300);
+        panel.setSize(759, 446);
         
-        PanelContenedor.removeAll();
-        
-        PanelContenedor.add(panel, BorderLayout.CENTER);
-        
-        PanelContenedor.revalidate();
+        ContenedorPaneles.removeAll();
+        ContenedorPaneles.add(panel, BorderLayout.CENTER);
+        ContenedorPaneles.revalidate();
+        ContenedorPaneles.repaint();
     }
     
     
@@ -54,30 +53,80 @@ public class loginPrototipo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelContenedor = new javax.swing.JPanel();
+        ContenedorGeneral = new javax.swing.JPanel();
+        Encabezado = new javax.swing.JPanel();
+        Titulo = new javax.swing.JLabel();
+        Subtitulo = new javax.swing.JLabel();
+        ContenedorPaneles = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
-        PanelContenedor.setLayout(PanelContenedorLayout);
-        PanelContenedorLayout.setHorizontalGroup(
-            PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        Encabezado.setBackground(new java.awt.Color(204, 204, 204));
+
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText("TESLA");
+
+        Subtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Subtitulo.setText("Electric Cars, Solar & Clean Energy");
+
+        javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
+        Encabezado.setLayout(EncabezadoLayout);
+        EncabezadoLayout.setHorizontalGroup(
+            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EncabezadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        PanelContenedorLayout.setVerticalGroup(
-            PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        EncabezadoLayout.setVerticalGroup(
+            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EncabezadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        ContenedorPaneles.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout ContenedorPanelesLayout = new javax.swing.GroupLayout(ContenedorPaneles);
+        ContenedorPaneles.setLayout(ContenedorPanelesLayout);
+        ContenedorPanelesLayout.setHorizontalGroup(
+            ContenedorPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ContenedorPanelesLayout.setVerticalGroup(
+            ContenedorPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 446, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout ContenedorGeneralLayout = new javax.swing.GroupLayout(ContenedorGeneral);
+        ContenedorGeneral.setLayout(ContenedorGeneralLayout);
+        ContenedorGeneralLayout.setHorizontalGroup(
+            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ContenedorPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ContenedorGeneralLayout.setVerticalGroup(
+            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ContenedorPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -119,6 +168,10 @@ public class loginPrototipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel PanelContenedor;
+    private javax.swing.JPanel ContenedorGeneral;
+    private javax.swing.JPanel ContenedorPaneles;
+    private javax.swing.JPanel Encabezado;
+    private javax.swing.JLabel Subtitulo;
+    private javax.swing.JLabel Titulo;
     // End of variables declaration//GEN-END:variables
 }
