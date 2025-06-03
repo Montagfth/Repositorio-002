@@ -1,4 +1,9 @@
-Documentacion breve del proyecto 
-Programado por:
+Project's Report:
+Tools: 
+- Apache NetBeans IDE (Version 25)
+- JDK (Version 21)
+-
+
+Developed by:
 - Montañez Pumalla Fabrizio Andre
 - Quispe Quispe Angelo Junior
