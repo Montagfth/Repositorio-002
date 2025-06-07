@@ -8,6 +8,7 @@ import View.*;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import View.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,6 +34,7 @@ public class panelLogin extends javax.swing.JPanel {
 
         ContenedorGeneral = new javax.swing.JPanel();
         MensajeInformativo01 = new javax.swing.JLabel();
+        Imagen = new javax.swing.JLabel();
         Separador01 = new javax.swing.JSeparator();
         Usuario = new javax.swing.JLabel();
         CampoUsuario = new javax.swing.JTextField();
@@ -45,6 +47,9 @@ public class panelLogin extends javax.swing.JPanel {
 
         MensajeInformativo01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MensajeInformativo01.setText("Welcome! Write your crendentials to sign in.");
+
+        Imagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Imagen.setText("IMAGEN");
 
         Usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Usuario.setText("ACCOUNT:");
@@ -83,6 +88,24 @@ public class panelLogin extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(Imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Separador02, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
+                                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Contraseña)
+                                    .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CampoUsuario)
+                                    .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Separador01, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
+                                .addComponent(BotonInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(93, 93, 93)))
+                        .addGap(48, 48, 48))
+                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(MensajeInformativo02)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -91,44 +114,33 @@ public class panelLogin extends javax.swing.JPanel {
                     .addGroup(ContenedorGeneralLayout.createSequentialGroup()
                         .addComponent(MensajeInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Separador02, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Contraseña)
-                            .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CampoUsuario)
-                            .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Separador01, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                        .addComponent(BotonInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93)))
-                .addGap(48, 48, 48))
         );
         ContenedorGeneralLayout.setVerticalGroup(
             ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContenedorGeneralLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(MensajeInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
-                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotonInicioSesion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonInicioSesion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE))
+                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)))
                 .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MensajeInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -150,30 +162,36 @@ public class panelLogin extends javax.swing.JPanel {
     private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
 
         mostradorPaneles(new panelRegistro());
-        
+
     }//GEN-LAST:event_BotonRegistroActionPerformed
 
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
+
+        //String mensajeDinamico = ... [Programacion dinamica de respuesta a evaluar]
         
-        //NOTA: Metodo a evaluar.
-        ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
-        
-        Ventana_Principal.setVisible(true);
-        
+        //Parametrizacion de campos:
+        if (CampoUsuario.getText().isEmpty() || CampoContraseña.getText().isEmpty()) {
+            //JOptionPane.showMessageDialog(null, "El campo " + +"esta incompleto", "Tesla Inc.", JOptionPane.WARNING_MESSAGE); [Mensaje dinamico a evaluar]
+            JOptionPane.showMessageDialog(null, "El campo Usuario o Contraseña esta incompleto o los datos son incorrectos", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+
+        } else {
+            ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
+            Ventana_Principal.setVisible(true);
+        }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
-    
-    public void mostradorPaneles (JPanel panel) {
-        
+
+    public void mostradorPaneles(JPanel panel) {
+
         panel.setSize(759, 446);
-        panel.setLocation(0,0);
-        
+        panel.setLocation(0, 0);
+
         ContenedorGeneral.removeAll();
         ContenedorGeneral.add(panel, BorderLayout.CENTER);
         ContenedorGeneral.revalidate();
         ContenedorGeneral.repaint();
     }
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonInicioSesion;
     private javax.swing.JButton BotonRegistro;
@@ -181,6 +199,7 @@ public class panelLogin extends javax.swing.JPanel {
     private javax.swing.JTextField CampoUsuario;
     private javax.swing.JPanel ContenedorGeneral;
     private javax.swing.JLabel Contraseña;
+    private javax.swing.JLabel Imagen;
     private javax.swing.JLabel MensajeInformativo01;
     private javax.swing.JLabel MensajeInformativo02;
     private javax.swing.JSeparator Separador01;

@@ -5,6 +5,13 @@
 package View;
 
 import View.*;
+import Panels.*;
+import java.awt.BorderLayout;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,10 +25,36 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     public ventanaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        informativo();
+        fechaHora();
+    }
+    
+    public void fechaHora() {
+        LocalDate now = LocalDate.now();
+        Locale Regional = new Locale("es", "ES");
+        Fecha_Hora.setText(now.format(DateTimeFormatter.ofPattern("EEEE dd 'de' MMMM 'del' YYYY", Regional)));
+    }
+    
+    
+
+    public void informativo() {
+
+        PanelContenido.setLayout(new BorderLayout());
+
+        mostrarPaneles(new panelInformativo());
+    }
+
+    public void mostrarPaneles(JPanel panel) {
+
+        panel.setSize(1194, 694);
+
+        PanelContenido.removeAll();
+        PanelContenido.add(panel, BorderLayout.CENTER);
+        PanelContenido.revalidate();
+        PanelContenido.repaint();
     }
 
     //NOTA: Contenido general de los servicios que ofrece el programa.
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,8 +67,13 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         PanelContenedor = new javax.swing.JPanel();
         Encabezado = new javax.swing.JPanel();
         Titulo = new javax.swing.JLabel();
+        SubEncabezado01 = new javax.swing.JPanel();
+        NombreServicio = new javax.swing.JLabel();
+        SubEncabezado02 = new javax.swing.JPanel();
+        Fecha_Hora = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         ImagenPrincipal = new javax.swing.JLabel();
+        Separador01 = new javax.swing.JSeparator();
         BotonAutos = new javax.swing.JButton();
         BotonAutopartes = new javax.swing.JButton();
         BotonMantenimiento = new javax.swing.JButton();
@@ -46,8 +84,49 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
         Encabezado.setBackground(new java.awt.Color(204, 204, 204));
 
-        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Titulo.setText("TESLA");
+
+        NombreServicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NombreServicio.setText("[Nombre de Servicio]");
+
+        javax.swing.GroupLayout SubEncabezado01Layout = new javax.swing.GroupLayout(SubEncabezado01);
+        SubEncabezado01.setLayout(SubEncabezado01Layout);
+        SubEncabezado01Layout.setHorizontalGroup(
+            SubEncabezado01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SubEncabezado01Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NombreServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SubEncabezado01Layout.setVerticalGroup(
+            SubEncabezado01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SubEncabezado01Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NombreServicio, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        Fecha_Hora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Fecha_Hora.setText("[Fecha y hora aqui]");
+
+        javax.swing.GroupLayout SubEncabezado02Layout = new javax.swing.GroupLayout(SubEncabezado02);
+        SubEncabezado02.setLayout(SubEncabezado02Layout);
+        SubEncabezado02Layout.setHorizontalGroup(
+            SubEncabezado02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SubEncabezado02Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Fecha_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        SubEncabezado02Layout.setVerticalGroup(
+            SubEncabezado02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SubEncabezado02Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Fecha_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
         Encabezado.setLayout(EncabezadoLayout);
@@ -55,15 +134,26 @@ public class ventanaPrincipal extends javax.swing.JFrame {
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(990, Short.MAX_VALUE))
+                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EncabezadoLayout.createSequentialGroup()
+                        .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SubEncabezado02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SubEncabezado01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         EncabezadoLayout.setVerticalGroup(
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                    .addGroup(EncabezadoLayout.createSequentialGroup()
+                        .addComponent(SubEncabezado02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SubEncabezado01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         Menu.setBackground(new java.awt.Color(153, 153, 153));
@@ -78,6 +168,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         BotonMantenimiento.setText("MANTENIMIENTO");
 
         BotonSalir.setText("SALIR");
+        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
@@ -88,18 +183,24 @@ public class ventanaPrincipal extends javax.swing.JFrame {
             .addComponent(BotonMantenimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
             .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ImagenPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(MenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Separador01)
+                .addContainerGap())
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
                 .addComponent(ImagenPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonAutos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonAutopartes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 456, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -109,11 +210,11 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         PanelContenido.setLayout(PanelContenidoLayout);
         PanelContenidoLayout.setHorizontalGroup(
             PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1194, Short.MAX_VALUE)
         );
         PanelContenidoLayout.setVerticalGroup(
             PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 694, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
@@ -149,6 +250,18 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(null, "¿Esta seguro de salir?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+
+        if (response == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } else {
+            //Not to programm here.
+        }
+
+    }//GEN-LAST:event_BotonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,10 +304,15 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonMantenimiento;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JPanel Encabezado;
+    private javax.swing.JLabel Fecha_Hora;
     private javax.swing.JLabel ImagenPrincipal;
     private javax.swing.JPanel Menu;
+    private javax.swing.JLabel NombreServicio;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelContenido;
+    private javax.swing.JSeparator Separador01;
+    private javax.swing.JPanel SubEncabezado01;
+    private javax.swing.JPanel SubEncabezado02;
     private javax.swing.JLabel Titulo;
     // End of variables declaration//GEN-END:variables
 }

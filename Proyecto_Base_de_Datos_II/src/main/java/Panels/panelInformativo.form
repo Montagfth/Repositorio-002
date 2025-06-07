@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="PanelContenedor" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="PanelContenedor" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="PanelContenedor">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="Titulo" max="32767" attributes="0"/>
+                      <Component id="SubTitulo01" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Separador01" alignment="0" min="-2" pref="785" max="-2" attributes="0"/>
+                              <Component id="SubTitulo02" alignment="0" min="-2" pref="528" max="-2" attributes="0"/>
+                              <Component id="Separador02" alignment="0" min="-2" pref="700" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="TxtInformativo10" alignment="0" pref="559" max="32767" attributes="0"/>
+                                      <Component id="TxtInformativo09" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="TxtInformativo07" alignment="0" min="-2" pref="417" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="Separador04" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="Separador03" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="TxtInformativo05" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="TxtInformativo04" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="TxtInformativo03" alignment="0" pref="417" max="32767" attributes="0"/>
+                                                              <Component id="TxtInformativo02" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="TxtInformativo01" alignment="0" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="TxtInformativo06" max="32767" attributes="0"/>
+                                                              <Component id="TxtInformativo08" pref="417" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="AñoTxtInformativo01" max="32767" attributes="0"/>
+                                                              <Component id="AñoTxtInformativo02" max="32767" attributes="0"/>
+                                                              <Component id="AñoTxtInformativo03" max="32767" attributes="0"/>
+                                                              <Component id="AñoTxtInformativo04" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="BtnTxtInformativo01" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="BtnTxtInformativo02" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="BtnTxtInformativo03" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="BtnTxtInformativo04" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="AñoTxtInformativo05" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="BtnInformativo05" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="AñoTxtInformativo06" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="BtnTxtInformativo06" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Group type="103" groupAlignment="1" attributes="0">
+                                                              <Component id="AñoTxtInformativo08" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="AñoTxtInformativo07" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="BtnTxtInformativo07" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="BtnTxtInformativo08" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Component id="Imagen" min="-2" pref="364" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="138" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="Titulo" min="-2" pref="83" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="Separador01" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="SubTitulo01" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="Separador02" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="SubTitulo02" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="Separador03" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo01" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo02" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo03" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo03" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo03" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo04" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo04" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo04" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo05" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo05" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnInformativo05" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo06" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo06" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo06" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo07" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo07" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo07" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo08" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="AñoTxtInformativo08" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="BtnTxtInformativo08" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Imagen" max="32767" attributes="0"/>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="Separador04" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="TxtInformativo09" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="TxtInformativo10" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="93" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="Titulo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="48" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="TESLA, Inc. - Innovacion Electrica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="Separador01">
+        </Component>
+        <Component class="javax.swing.JLabel" name="SubTitulo01">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&quot;Acelerando la transicion del mundo hacia la energia sostenible&quot;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="Separador02">
+        </Component>
+        <Component class="javax.swing.JLabel" name="SubTitulo02">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EVENTOS CLAVE EN TESLA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="Separador03">
+        </Component>
+        <Component class="javax.swing.JLabel" name="Imagen">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="IMAGEN"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo01">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Fundaci&#xf3;n de Tesla Motors por Martin Eberhard y Marc Tarpenning ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo01">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2003 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo01">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo01ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo02">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Elon Musk invierte en Tesla y se convierte en presidente de la junta ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo02">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2004 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo02">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo02ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo03">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Lanzamiento del Tesla Roadster, primer auto deportivo 100% el&#xe9;ctrico ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo03">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2008 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo03">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo03ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo04">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Lanzamiento del Model S: sed&#xe1;n el&#xe9;ctrico de alto rendimiento ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo04">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2012 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo04">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo04ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo05">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Anuncio de Powerwall: bater&#xed;as para hogares ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo05">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2015 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnInformativo05">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnInformativo05ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo06">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n del Tesla Semi y el Roadster de segunda generaci&#xf3;n ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo06">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2017 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo06">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo06ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo07">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Tesla entra al S&amp;P 500 como una de las empresas m&#xe1;s valiosas del mundo ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo07">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2020 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo07">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo07ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo08">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Avances en conducci&#xf3;n aut&#xf3;noma y expansi&#xf3;n global de Gigaf&#xe1;bricas ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="A&#xf1;oTxtInformativo08">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="| 2023 |"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnTxtInformativo08">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ver mas.."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTxtInformativo08ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="Separador04">
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo09">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="- MODELOS DESTACADOS: Model S &#xb7; Model 3 &#xb7; Model X &#xb7; Model Y &#xb7; CyberTruck &#xb7; Tesla Semi &#xb7; ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="- TECNOLOGIAS DESARROLLADAS: Auto Pilot &#xb7; Full Self-Driving (FSD) &#xb7; Baterias 4680 &#xb7; Paneles Solares"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

@@ -10,7 +10,7 @@ import View.*;
  *
  * @author Fabrizio
  */
-public class Probador {
+public class Tester {
     //NOTA: Testeador secuencial de las ventanas que fueron implementadas en el proyecto
     public static void main(String[] args) {
         
