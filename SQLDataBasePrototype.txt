@@ -1,0 +1,118 @@
+SQL Model File (Prototype):
+
+create table cliente (
+  id bigint primary key generated always as identity,
+  nombre_cliente text,
+  dni_cliente text,
+  correo_cliente text,
+  telefono_cliente text
+);
+
+create table auto (
+  id bigint primary key generated always as identity,
+  marca_auto text,
+  modelo_auto text,
+  "año_auto" int,
+  precio_auto numeric(10, 2)
+);
+
+create table autoparte (
+  id bigint primary key generated always as identity,
+  nombre_autoparte text,
+  categoria_autoparte text,
+  stock_autoparte int,
+  precio_autoparte numeric(10, 2)
+);
+
+create table empleado (
+  id bigint primary key generated always as identity,
+  nombre_empleado text,
+  dni_empleado text,
+  telefono_empleado text,
+  fecha_contratacion date
+);
+
+create table mantenimiento (
+  id bigint primary key generated always as identity,
+  id_auto bigint references auto (id),
+  id_empleado bigint references empleado (id),
+  fecha date,
+  descripcion text,
+  costo numeric(10, 2)
+);
+
+create table pedido (
+  id bigint primary key generated always as identity,
+  id_cliente bigint references cliente (id),
+  fecha_venta date,
+  total_venta numeric(10, 2),
+  tipo_venta text
+);
+
+drop table if exists mantenimiento,
+pedido,
+autoparte,
+auto,
+empleado,
+cliente;
+
+create table cliente (
+  id bigint primary key generated always as identity,
+  nombre text not null,
+  dni text unique not null,
+  correo text unique,
+  telefono text
+);
+
+create table auto (
+  id bigint primary key generated always as identity,
+  marca text not null,
+  modelo text not null,
+  "año" int not null,
+  precio numeric(10, 2) not null,
+  id_cliente bigint references cliente (id) on delete set null
+);
+
+create table autoparte (
+  id bigint primary key generated always as identity,
+  nombre text not null,
+  categoria text not null,
+  stock int not null,
+  precio numeric(10, 2) not null
+);
+
+create table empleado (
+  id bigint primary key generated always as identity,
+  nombre text not null,
+  dni text unique not null,
+  telefono text,
+  fecha_contratacion date not null
+);
+
+create table mantenimiento (
+  id bigint primary key generated always as identity,
+  id_auto bigint references auto (id) on delete cascade,
+  id_empleado bigint references empleado (id) on delete set null,
+  fecha date not null,
+  descripcion text,
+  costo numeric(10, 2) not null
+);
+
+create table pedido (
+  id bigint primary key generated always as identity,
+  id_cliente bigint references cliente (id) on delete set null,
+  fecha_venta date not null,
+  total_venta numeric(10, 2) not null,
+  tipo_venta text not null
+);
+
+create table pedido_autoparte (
+  id_pedido bigint references pedido (id) on delete cascade,
+  id_autoparte bigint references autoparte (id) on delete cascade,
+  cantidad int not null,
+  primary key (id_pedido, id_autoparte)
+);
+
+-- To Analyze:
+alter table auto
+drop marca;
