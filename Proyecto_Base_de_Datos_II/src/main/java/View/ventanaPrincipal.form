@@ -229,16 +229,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="AUTOS"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAutosActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotonAutopartes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="AUTOPARTES"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAutopartesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotonMantenimiento">
               <Properties>
                 <Property name="text" type="java.lang.String" value="MANTENIMIENTO"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMantenimientoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotonSalir">
               <Properties>

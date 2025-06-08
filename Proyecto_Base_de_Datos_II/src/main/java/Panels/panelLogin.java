@@ -168,16 +168,16 @@ public class panelLogin extends javax.swing.JPanel {
     private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
 
         //String mensajeDinamico = ... [Programacion dinamica de respuesta a evaluar]
-        
         //Parametrizacion de campos:
         if (CampoUsuario.getText().isEmpty() || CampoContraseña.getText().isEmpty()) {
             //JOptionPane.showMessageDialog(null, "El campo " + +"esta incompleto", "Tesla Inc.", JOptionPane.WARNING_MESSAGE); [Mensaje dinamico a evaluar]
             JOptionPane.showMessageDialog(null, "El campo Usuario o Contraseña esta incompleto o los datos son incorrectos", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
 
+            //NOTA: Parametrizar para validar si esta ingresando un administrador o un cliente.
         } else {
             ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
             Ventana_Principal.setVisible(true);
-        }
+        } 
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 
     public void mostradorPaneles(JPanel panel) {

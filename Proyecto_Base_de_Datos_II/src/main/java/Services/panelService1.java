@@ -4,6 +4,10 @@
  */
 package Services;
 
+import Panels.panelInformativo;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Fabrizio
@@ -15,6 +19,27 @@ public class panelService1 extends javax.swing.JPanel {
      */
     public panelService1() {
         initComponents();
+        //Ingresar el metodo 'cargaDatosVehiculos()' cuando este completo.
+    }
+
+    public void cargaDatosVehiculos () {
+        try {
+            //Insercion del DAO para los autos con la base de datos poblada.
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    
+    public void mostrarPaneles(JPanel panel) {
+        panel.setSize(1194, 694);
+        panel.setLocation(0, 0);
+
+        PanelContenedor.removeAll();
+        PanelContenedor.add(panel, BorderLayout.CENTER);
+        PanelContenedor.revalidate();
+        PanelContenedor.repaint();
     }
 
     /**
@@ -27,9 +52,74 @@ public class panelService1 extends javax.swing.JPanel {
     private void initComponents() {
 
         PanelContenedor = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        TxtTitulo = new javax.swing.JLabel();
+        TxtSubtitulo = new javax.swing.JLabel();
+        Separador01 = new javax.swing.JSeparator();
+        TxtBusquedaVehiculo = new javax.swing.JTextField();
+        BtnBusquedaVehiculo = new javax.swing.JButton();
+        TxtInformativo01 = new javax.swing.JLabel();
+        TxtInformativo02 = new javax.swing.JLabel();
+        CbxAñoVehiculo = new javax.swing.JComboBox<>();
+        TxtInformativo03 = new javax.swing.JLabel();
+        CbxTipoVehiculo = new javax.swing.JComboBox<>();
+        TxtInformativo04 = new javax.swing.JLabel();
+        CbxPrecioVehiculo = new javax.swing.JComboBox<>();
+        Separador02 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TblVehiculos = new javax.swing.JTable();
+        Separador03 = new javax.swing.JSeparator();
+        BtnRetornar = new javax.swing.JButton();
+        BtnDetalles = new javax.swing.JButton();
 
-        jLabel1.setText("BOTON AUTOS >SERVICIO AUTOS");
+        TxtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        TxtTitulo.setText("VEHICULOS DISPONIBLES");
+
+        TxtSubtitulo.setText("Busque el vehiculo de su preferencia:");
+
+        TxtBusquedaVehiculo.setText("Ingrese el nombre o modelo especifico del vehiculo que busca.");
+
+        BtnBusquedaVehiculo.setText("BUSCAR");
+        BtnBusquedaVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBusquedaVehiculoActionPerformed(evt);
+            }
+        });
+
+        TxtInformativo01.setText("Filtrar por:");
+
+        TxtInformativo02.setText("AÑO:");
+
+        CbxAñoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[AÑO AQUI]" }));
+
+        TxtInformativo03.setText("TIPO:");
+
+        CbxTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[TIPO AQUI]" }));
+
+        TxtInformativo04.setText("PRECIO:");
+
+        CbxPrecioVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[PRECIO AQUI]" }));
+
+        TblVehiculos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TblVehiculos);
+
+        BtnRetornar.setText("RETORNAR");
+        BtnRetornar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRetornarActionPerformed(evt);
+            }
+        });
+
+        BtnDetalles.setText("VER MAS..");
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
@@ -37,15 +127,75 @@ public class panelService1 extends javax.swing.JPanel {
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(1005, Short.MAX_VALUE))
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Separador03)
+                    .addComponent(Separador02)
+                    .addComponent(Separador01)
+                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtSubtitulo)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(TxtBusquedaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnBusquedaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(TxtInformativo01)
+                                .addGap(18, 18, 18)
+                                .addComponent(TxtInformativo02)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CbxAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TxtInformativo03)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CbxTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TxtInformativo04)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CbxPrecioVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 9, Short.MAX_VALUE))
+                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addComponent(BtnRetornar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnDetalles)))
+                .addContainerGap())
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(672, Short.MAX_VALUE))
+                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtSubtitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TxtInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CbxAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnBusquedaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtInformativo03, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CbxTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtInformativo04, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CbxPrecioVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtBusquedaVehiculo))
+                .addGap(18, 18, 18)
+                .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnRetornar)
+                    .addComponent(BtnDetalles))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -60,9 +210,40 @@ public class panelService1 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BtnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRetornarActionPerformed
+        mostrarPaneles(new panelInformativo());
+    }//GEN-LAST:event_BtnRetornarActionPerformed
+
+    private void BtnBusquedaVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBusquedaVehiculoActionPerformed
+        //NOTA: Sistema de busqueda que evalue si el campo de JTxtField esta lleno buscar con esa informacion
+        //      o si los ComboBox estan seleccionados buscar con esos parametros.
+        try {
+            
+        } catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_BtnBusquedaVehiculoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnBusquedaVehiculo;
+    private javax.swing.JButton BtnDetalles;
+    private javax.swing.JButton BtnRetornar;
+    private javax.swing.JComboBox<String> CbxAñoVehiculo;
+    private javax.swing.JComboBox<String> CbxPrecioVehiculo;
+    private javax.swing.JComboBox<String> CbxTipoVehiculo;
     private javax.swing.JPanel PanelContenedor;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator Separador01;
+    private javax.swing.JSeparator Separador02;
+    private javax.swing.JSeparator Separador03;
+    private javax.swing.JTable TblVehiculos;
+    private javax.swing.JTextField TxtBusquedaVehiculo;
+    private javax.swing.JLabel TxtInformativo01;
+    private javax.swing.JLabel TxtInformativo02;
+    private javax.swing.JLabel TxtInformativo03;
+    private javax.swing.JLabel TxtInformativo04;
+    private javax.swing.JLabel TxtSubtitulo;
+    private javax.swing.JLabel TxtTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

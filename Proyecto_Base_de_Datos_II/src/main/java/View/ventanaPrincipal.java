@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import Services.*;
 
 /**
  *
@@ -35,8 +36,6 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         Fecha_Hora.setText(now.format(DateTimeFormatter.ofPattern("EEEE dd 'de' MMMM 'del' YYYY", Regional)));
     }
     
-    
-
     public void informativo() {
 
         PanelContenido.setLayout(new BorderLayout());
@@ -162,10 +161,25 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         ImagenPrincipal.setText("Imagen");
 
         BotonAutos.setText("AUTOS");
+        BotonAutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAutosActionPerformed(evt);
+            }
+        });
 
         BotonAutopartes.setText("AUTOPARTES");
+        BotonAutopartes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAutopartesActionPerformed(evt);
+            }
+        });
 
         BotonMantenimiento.setText("MANTENIMIENTO");
+        BotonMantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMantenimientoActionPerformed(evt);
+            }
+        });
 
         BotonSalir.setText("SALIR");
         BotonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -253,15 +267,30 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
 
-        int response = JOptionPane.showConfirmDialog(null, "¿Esta seguro de salir?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+        int response = JOptionPane.showConfirmDialog(null, "¿Esta seguro de salir de su sesion?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
 
         if (response == JOptionPane.YES_OPTION) {
-            System.exit(0);
+            
+            loginPrototipo Ventana_Login = new loginPrototipo();
+            Ventana_Login.setVisible(true);
+            this.setVisible(false);
+        
         } else {
             //Not to programm here.
         }
-
     }//GEN-LAST:event_BotonSalirActionPerformed
+
+    private void BotonAutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAutosActionPerformed
+        mostrarPaneles(new panelService1());
+    }//GEN-LAST:event_BotonAutosActionPerformed
+
+    private void BotonAutopartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAutopartesActionPerformed
+        mostrarPaneles(new panelService2());
+    }//GEN-LAST:event_BotonAutopartesActionPerformed
+
+    private void BotonMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMantenimientoActionPerformed
+        mostrarPaneles(new panelService3());
+    }//GEN-LAST:event_BotonMantenimientoActionPerformed
 
     /**
      * @param args the command line arguments
