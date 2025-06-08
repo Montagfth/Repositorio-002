@@ -4,6 +4,10 @@
  */
 package Services;
 
+import Panels.panelInformativo;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Fabrizio
@@ -17,6 +21,16 @@ public class panelService3 extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void mostrarPaneles(JPanel panel) {
+        panel.setSize(1194, 694);
+        panel.setLocation(0, 0);
+
+        PanelContenedor.removeAll();
+        PanelContenedor.add(panel, BorderLayout.CENTER);
+        PanelContenedor.revalidate();
+        PanelContenedor.repaint();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,9 +41,51 @@ public class panelService3 extends javax.swing.JPanel {
     private void initComponents() {
 
         PanelContenedor = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        TxtTitulo = new javax.swing.JLabel();
+        TxtSubtitulo = new javax.swing.JLabel();
+        Separador01 = new javax.swing.JSeparator();
+        TxtInformativo01 = new javax.swing.JLabel();
+        CbxServicios = new javax.swing.JComboBox<>();
+        BtnBuscarFechas = new javax.swing.JButton();
+        TxtInformativo02 = new javax.swing.JLabel();
+        Separador02 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TblFechasContenido = new javax.swing.JTable();
+        Separador03 = new javax.swing.JSeparator();
+        BtnRetornar = new javax.swing.JButton();
 
-        jLabel1.setText("BOTON MANTENIMENTO > SERVICIO DE MANTENIMIENTO");
+        TxtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        TxtTitulo.setText("SERVICIO DE MANTENIMIENTO");
+
+        TxtSubtitulo.setText("Servicio de mantemiento dedicado para vehiculos Tesla:");
+
+        TxtInformativo01.setText("Seleccione un servicio:");
+
+        CbxServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CAMBIO DE ACEITE", "REVISION GENERAL", "ALINEACION & BALANCEO" }));
+
+        BtnBuscarFechas.setText("BUSCAR");
+
+        TxtInformativo02.setText("Seleccionado el servicio que desea, hacer clic para verificar las fechas disponibles:");
+
+        TblFechasContenido.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TblFechasContenido);
+
+        BtnRetornar.setText("RETORNAR");
+        BtnRetornar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRetornarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
@@ -37,15 +93,50 @@ public class panelService3 extends javax.swing.JPanel {
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(868, Short.MAX_VALUE))
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(TxtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                        .addComponent(TxtSubtitulo)
+                        .addComponent(Separador01)
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(TxtInformativo01)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CbxServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BtnBuscarFechas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(TxtInformativo02, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Separador02)
+                        .addComponent(Separador03))
+                    .addComponent(BtnRetornar))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(672, Short.MAX_VALUE))
+                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtSubtitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CbxServicios, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnBuscarFechas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
+                .addComponent(BtnRetornar)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -60,9 +151,24 @@ public class panelService3 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BtnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRetornarActionPerformed
+        mostrarPaneles(new panelInformativo());
+    }//GEN-LAST:event_BtnRetornarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnBuscarFechas;
+    private javax.swing.JButton BtnRetornar;
+    private javax.swing.JComboBox<String> CbxServicios;
     private javax.swing.JPanel PanelContenedor;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator Separador01;
+    private javax.swing.JSeparator Separador02;
+    private javax.swing.JSeparator Separador03;
+    private javax.swing.JTable TblFechasContenido;
+    private javax.swing.JLabel TxtInformativo01;
+    private javax.swing.JLabel TxtInformativo02;
+    private javax.swing.JLabel TxtSubtitulo;
+    private javax.swing.JLabel TxtTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
