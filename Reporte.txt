@@ -2,7 +2,9 @@ Project's Report:
 Tools: 
 - Apache NetBeans IDE (Version 25)
 - JDK (Version 21)
--
+- SQL Database (MySQL)
+- NoSQL Database (MongoDB Compass)
+- 
 
 Developed by:
 - Montañez Pumalla Fabrizio Andre
