@@ -34,27 +34,36 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="TxtTitulo" alignment="0" pref="800" max="32767" attributes="0"/>
-                          <Component id="TxtSubtitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Separador01" alignment="0" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="TxtInformativo01" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CbxServicios" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="BtnBuscarFechas" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Component id="Separador02" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Separador03" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="TxtTitulo" alignment="0" pref="800" max="32767" attributes="0"/>
+                                  <Component id="TxtSubtitulo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Separador01" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="TxtInformativo01" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="CbxServicios" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="TxtInformativo03" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="TxtPrecio" min="-2" pref="105" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="TxtInformativo02" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="BtnRetornar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="TxtInformativo02" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="BtnBuscarFechas" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Separador02" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Separador03" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="382" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="BtnRetornar" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="388" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -67,21 +76,35 @@
                   <Component id="TxtSubtitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="Separador01" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="TxtInformativo01" max="32767" attributes="0"/>
-                      <Component id="CbxServicios" alignment="1" max="32767" attributes="0"/>
-                      <Component id="BtnBuscarFechas" alignment="1" pref="40" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="TxtPrecio" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <Component id="TxtInformativo03" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TxtInformativo01" max="32767" attributes="0"/>
+                              <Component id="CbxServicios" pref="37" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="TxtInformativo02" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="TxtInformativo02" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="BtnBuscarFechas" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   <Component id="Separador02" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="211" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Separador03" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Component id="BtnRetornar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -112,25 +135,29 @@
         <Component class="javax.swing.JComboBox" name="CbxServicios">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
+              <StringArray count="4">
                 <StringItem index="0" value="CAMBIO DE ACEITE"/>
-                <StringItem index="1" value="REVISION GENERAL"/>
-                <StringItem index="2" value="ALINEACION &amp; BALANCEO"/>
+                <StringItem index="1" value="REVISI&#xd3;N DE FRENOS"/>
+                <StringItem index="2" value="ALINEACI&#xd3;N Y BALANCEO"/>
+                <StringItem index="3" value="DIAGN&#xd3;STICO GENERAL"/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxServiciosActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="BtnBuscarFechas">
           <Properties>
-            <Property name="text" type="java.lang.String" value="BUSCAR"/>
+            <Property name="text" type="java.lang.String" value="CONTINUAR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="TxtInformativo02">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Seleccionado el servicio que desea, hacer clic para verificar las fechas disponibles:"/>
+            <Property name="text" type="java.lang.String" value="Una vez seleccionado, haga clic en &apos;CONTINUAR&apos; para registrar la operacion."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="Separador02">
@@ -145,12 +172,41 @@
             <Component class="javax.swing.JTable" name="TblFechasContenido">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                  <Table columnCount="6" rowCount="0">
+                    <Column editable="true" title="ID" type="java.lang.Object"/>
+                    <Column editable="true" title="IDAuto" type="java.lang.Object"/>
+                    <Column editable="true" title="IDEmpleado" type="java.lang.Object"/>
+                    <Column editable="true" title="Fecha" type="java.lang.Object"/>
+                    <Column editable="true" title="Descripcion" type="java.lang.Object"/>
+                    <Column editable="true" title="Costo" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
             </Component>
@@ -165,6 +221,17 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRetornarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtInformativo03">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PRECIO POR SERVICIO SELECCIONADO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TxtPrecio">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="[PRECIO AQUI]"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -7,6 +7,7 @@ package Services;
 import Panels.panelInformativo;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +20,51 @@ public class panelService2 extends javax.swing.JPanel {
      */
     public panelService2() {
         initComponents();
+        cargaDatosPrueba();
+        configuracionEventosTabla();
+        
+    }
+
+    public void configuracionEventosTabla() {
+        //Evento de seleccion dinamica para evitar el uso de botones.
+        TblRepuestos.getSelectionModel().addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting()) {
+                int filaSeleccionada = TblRepuestos.getSelectedRow();
+                if (filaSeleccionada != -1) {
+                    // Extraer datos de la fila seleccionada
+                    String nombre = TblRepuestos.getValueAt(filaSeleccionada, 1).toString();
+                    String categoria = TblRepuestos.getValueAt(filaSeleccionada, 2).toString();
+                    String stock = TblRepuestos.getValueAt(filaSeleccionada, 3).toString();
+                    String precio = TblRepuestos.getValueAt(filaSeleccionada, 4).toString();
+
+                    // Actualizar etiquetas
+                    Descripcion01.setText("Nombre: " + nombre);
+                    Descripcion02.setText("Categoría: " + categoria);
+                    Descripcion03.setText("Stock: " + stock);
+                    Descripcion04.setText("Precio: S/. " + precio);
+
+                    /*
+                    // Cambiar imagen
+                    //NOTA: Por evaluar.
+                    String rutaImagen = obtenerRutaImagen(nombre);
+                    ImageIcon icono = new ImageIcon(rutaImagen);
+                    Icon iconoEscalado = new ImageIcon(icono.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH));
+                    lblImagen.setIcon(iconoEscalado);
+                     */
+                }
+            }
+        });
+    }
+
+    public void cargaDatosPrueba() {
+        DefaultTableModel modelo = (DefaultTableModel) TblRepuestos.getModel();
+        modelo.setRowCount(0); // Limpia las filas existentes
+
+        modelo.addRow(new Object[]{"001", "Pastilla Freno", "Frenos", "25", "120.00"});
+        modelo.addRow(new Object[]{"002", "Amortiguador Delantero", "Suspensión", "15", "350.00"});
+        modelo.addRow(new Object[]{"003", "Filtro de Aceite", "Motor", "40", "45.50"});
+        modelo.addRow(new Object[]{"004", "Bujía", "Encendido", "60", "22.90"});
+
     }
 
     public void mostrarPaneles(JPanel panel) {
@@ -45,59 +91,101 @@ public class panelService2 extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TblRepuestos = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jSeparator2 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        Separador02 = new javax.swing.JSeparator();
+        PanelDescripcion = new javax.swing.JPanel();
+        LblProductoImagen = new javax.swing.JLabel();
+        PanelProductoDescripcion = new javax.swing.JPanel();
+        Descripcion01 = new javax.swing.JLabel();
+        Descripcion02 = new javax.swing.JLabel();
+        Descripcion03 = new javax.swing.JLabel();
+        Descripcion04 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
+        Separador03 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("REPUESTOS & AUTOPARTES");
 
         jLabel2.setText("Seleccione alguna categoria en los campos para la busqueda de la pieza:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TblRepuestos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Categoria", "Stock", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TblRepuestos);
 
         jLabel3.setText("CATEGORIAS:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FRENOS", "LUCES", "LLANTAS", "ELECTRONICA", "ACEITES" }));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        PanelDescripcion.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("[IMAGEN REPUESTO] (DINAMICO)");
+        LblProductoImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblProductoImagen.setText("[IMAGEN REPUESTO] (DINAMICO)");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        Descripcion01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Descripcion01.setText("SELECCIONE UN ELEMENTO PARA VER SUS DETALLES");
+
+        Descripcion02.setText(" ");
+
+        Descripcion03.setText(" ");
+
+        Descripcion04.setText(" ");
+
+        javax.swing.GroupLayout PanelProductoDescripcionLayout = new javax.swing.GroupLayout(PanelProductoDescripcion);
+        PanelProductoDescripcion.setLayout(PanelProductoDescripcionLayout);
+        PanelProductoDescripcionLayout.setHorizontalGroup(
+            PanelProductoDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelProductoDescripcionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                .addGroup(PanelProductoDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Descripcion01, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(Descripcion02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        PanelProductoDescripcionLayout.setVerticalGroup(
+            PanelProductoDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelProductoDescripcionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addComponent(Descripcion01)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion02)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion03)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion04)
+                .addContainerGap(202, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout PanelDescripcionLayout = new javax.swing.GroupLayout(PanelDescripcion);
+        PanelDescripcion.setLayout(PanelDescripcionLayout);
+        PanelDescripcionLayout.setHorizontalGroup(
+            PanelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDescripcionLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(PanelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LblProductoImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelProductoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        PanelDescripcionLayout.setVerticalGroup(
+            PanelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDescripcionLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(LblProductoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelProductoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jButton1.setText("RETORNAR");
@@ -107,14 +195,9 @@ public class panelService2 extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("VER MAS..");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jLabel5.setText("PRECIO:");
 
-        jLabel5.setText("AÑO:");
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
@@ -128,19 +211,18 @@ public class panelService2 extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel5))
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2)
                     .addComponent(jSeparator1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
-                    .addComponent(jSeparator2)
+                    .addComponent(Separador02)
                     .addComponent(jScrollPane1)
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addComponent(jSeparator3))
+                    .addComponent(jButton1)
+                    .addComponent(Separador03))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         PanelContenedorLayout.setVerticalGroup(
@@ -156,21 +238,20 @@ public class panelService2 extends javax.swing.JPanel {
                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox2))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(jButton1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap(31, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
@@ -190,26 +271,26 @@ public class panelService2 extends javax.swing.JPanel {
         mostrarPaneles(new panelInformativo());
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //NOTA: Debe mostrar/cambiar los valores en los campos Label de la seccion derecha que
-        //      esta asginado a la descripcion de cada pieza.
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Descripcion01;
+    private javax.swing.JLabel Descripcion02;
+    private javax.swing.JLabel Descripcion03;
+    private javax.swing.JLabel Descripcion04;
+    private javax.swing.JLabel LblProductoImagen;
     private javax.swing.JPanel PanelContenedor;
+    private javax.swing.JPanel PanelDescripcion;
+    private javax.swing.JPanel PanelProductoDescripcion;
+    private javax.swing.JSeparator Separador02;
+    private javax.swing.JSeparator Separador03;
+    private javax.swing.JTable TblRepuestos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

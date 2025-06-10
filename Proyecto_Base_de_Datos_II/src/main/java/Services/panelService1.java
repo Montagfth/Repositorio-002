@@ -7,6 +7,8 @@ package Services;
 import Panels.panelInformativo;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import AutosPanel.*;
 
 /**
  *
@@ -19,19 +21,100 @@ public class panelService1 extends javax.swing.JPanel {
      */
     public panelService1() {
         initComponents();
-        //Ingresar el metodo 'cargaDatosVehiculos()' cuando este completo.
+        configuracionEventosTabla();
+        cargaDatosPrueba();
+    }
+    
+    public void filtradoGeneral() {
+        //NOTA: Codigo implementable, pero la base de datos debe estar en ejecucion:
+        /*
+            String año = cbxAño.getSelectedItem().toString();
+    String tipo = cbxTipo.getSelectedItem().toString();
+    String precio = cbxPrecio.getSelectedItem().toString();
+        
+    String sql = "SELECT * FROM vehiculos WHERE 1=1";
+
+    if (!año.equals("Todos")) {
+        sql += " AND año = '" + año + "'";
     }
 
-    public void cargaDatosVehiculos () {
-        try {
-            //Insercion del DAO para los autos con la base de datos poblada.
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    if (!tipo.equals("Todos")) {
+        sql += " AND tipo = '" + tipo + "'";
+    }
+
+    if (!precio.equals("Todos")) {
+        switch (precio) {
+            case "Menos de 15,000" -> sql += " AND precio < 15000";
+            case "15,000 - 25,000" -> sql += " AND precio BETWEEN 15000 AND 25000";
+            case "Más de 25,000" -> sql += " AND precio > 25000";
         }
     }
-    
-    
+
+    // Ejecutar la consulta
+    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/tu_bd", "usuario", "clave");
+         Statement stmt = con.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+
+        DefaultTableModel modelo = (DefaultTableModel) tablaVehiculos.getModel();
+        modelo.setRowCount(0); // Limpiar tabla
+
+        while (rs.next()) {
+            modelo.addRow(new Object[]{
+                rs.getInt("id"),
+                rs.getString("marca"),
+                rs.getString("modelo"),
+                rs.getInt("año"),
+                rs.getDouble("precio"),
+                rs.getString("tipo")
+            });
+        }
+
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Error al consultar: " + e.getMessage());
+    }
+         */
+    }
+
+    public void filtrosVehiculo() {
+        CbxAñoVehiculo.addActionListener(e -> filtrosVehiculo());
+        CbxTipoVehiculo.addActionListener(e -> filtrosVehiculo());
+        CbxPrecioVehiculo.addActionListener(e -> filtrosVehiculo());
+    }
+
+    public void configuracionEventosTabla() {
+        TblVehiculos.getSelectionModel().addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting()) {
+                int fila = TblVehiculos.getSelectedRow();
+                if (fila != -1) {
+                    String marca = TblVehiculos.getValueAt(fila, 1).toString();
+                    String modelo = TblVehiculos.getValueAt(fila, 2).toString();
+                    String anio = TblVehiculos.getValueAt(fila, 3).toString();
+                    String precio = TblVehiculos.getValueAt(fila, 4).toString();
+
+                    mostrarPaneles(new Auto01());
+
+                    /*
+                    String rutaImagen = obtenerRutaImagen(modelo); // Puedes usar el modelo como identificador
+                    panelDetalle.cargarDatos(marca, modelo, anio, precio, rutaImagen);
+                    layout.show(contenedorPaneles, "panelDetalle");
+                     */
+                }
+            }
+        });
+    }
+
+    public void cargaDatosPrueba() {
+        //Datos de prueba, no utilizar al momento de la implementacio de la base de datos SQL original.
+        DefaultTableModel modelo = (DefaultTableModel) TblVehiculos.getModel();
+        modelo.setRowCount(0); // Limpia las filas existentes
+
+        modelo.addRow(new Object[]{"001", "Tesla", "01", "2025", "12000"});
+        modelo.addRow(new Object[]{"002", "Tesla", "02", "2015", "35000"});
+        modelo.addRow(new Object[]{"003", "Tesla", "03", "2005", "4550"});
+        modelo.addRow(new Object[]{"004", "Tesla", "04", "2013", "22390"});
+
+    }
+
     public void mostrarPaneles(JPanel panel) {
         panel.setSize(1194, 694);
         panel.setLocation(0, 0);
@@ -89,25 +172,27 @@ public class panelService1 extends javax.swing.JPanel {
 
         TxtInformativo02.setText("AÑO:");
 
-        CbxAñoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[AÑO AQUI]" }));
+        CbxAñoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "2025", "2024", "2023" }));
 
         TxtInformativo03.setText("TIPO:");
 
-        CbxTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[TIPO AQUI]" }));
+        CbxTipoVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "SEDAN", "SUV", "CAMIONETA" }));
 
         TxtInformativo04.setText("PRECIO:");
 
-        CbxPrecioVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "[PRECIO AQUI]" }));
+        CbxPrecioVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "MENOS DE 15,000", "15,000 - 25,000", "MAS DE 25,000" }));
+        CbxPrecioVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbxPrecioVehiculoActionPerformed(evt);
+            }
+        });
 
         TblVehiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Marca", "Modelo", "Año", "Precio"
             }
         ));
         jScrollPane1.setViewportView(TblVehiculos);
@@ -157,7 +242,7 @@ public class panelService1 extends javax.swing.JPanel {
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 9, Short.MAX_VALUE))
+                        .addGap(0, 5, Short.MAX_VALUE))
                     .addGroup(PanelContenedorLayout.createSequentialGroup()
                         .addComponent(BtnRetornar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,11 +260,11 @@ public class panelService1 extends javax.swing.JPanel {
                 .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnBusquedaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(TxtInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(CbxAñoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BtnBusquedaVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(TxtInformativo03, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(CbxTipoVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(TxtInformativo04, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,11 +303,15 @@ public class panelService1 extends javax.swing.JPanel {
         //NOTA: Sistema de busqueda que evalue si el campo de JTxtField esta lleno buscar con esa informacion
         //      o si los ComboBox estan seleccionados buscar con esos parametros.
         try {
-            
+
         } catch (Exception e) {
-            
+
         }
     }//GEN-LAST:event_BtnBusquedaVehiculoActionPerformed
+
+    private void CbxPrecioVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxPrecioVehiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CbxPrecioVehiculoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

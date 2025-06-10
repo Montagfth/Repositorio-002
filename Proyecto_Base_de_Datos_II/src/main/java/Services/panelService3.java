@@ -7,6 +7,9 @@ package Services;
 import Panels.panelInformativo;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,6 +34,47 @@ public class panelService3 extends javax.swing.JPanel {
         PanelContenedor.repaint();
     }
 
+    public void fechasProgramadas() {
+
+        //NOTA: Antes de implementar el metodo, buscar la forma en la cual la fecha adquiera diferentes
+        //      valores, no solo uno parametrizado.
+        // Obten el modelo de tu tabla
+        DefaultTableModel model = (DefaultTableModel) TblFechasContenido.getModel();
+
+        // Limpia la tabla por si tenia datos anteriores
+        model.setRowCount(0);
+
+        // --- EJEMPLO DE CÓMO AGREGAR UNA FILA CON UNA FECHA ESPECÍFICA ---
+        // 1. Crea la fecha que necesites (Año, Mes, Día)
+        LocalDate fechaMantenimiento = LocalDate.of(2025, 5, 20);
+
+        // 2. Crea un formateador para mostrar la fecha como "día/mes/año"
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        // 3. Convierte la fecha a un String con el formato deseado
+        String fechaFormateada = fechaMantenimiento.format(formatter);
+
+        // 4. Agrega la fila a la tabla con la fecha ya formateada
+        //NOTA: Por analizar ya que debe estar en relacion con otras tablas.
+        model.addRow(new Object[]{
+            "M001", // ID
+            "AUT-123", // IDAuto
+            "EMP-01", // IDEmpleado
+            fechaFormateada, // Fecha (String)
+            "Cambio de aceite sintético", // Descripción
+            250.00 // Costo
+        });
+
+        /*
+        // --- OTRO EJEMPLO CON LA FECHA ACTUAL ---
+        LocalDate fechaActual = LocalDate.now();
+        String fechaActualFormateada = fechaActual.format(formatter);
+        model.addRow(new Object[]{
+            "M002", "AUT-456", "EMP-02", fechaActualFormateada, "Revisión de neumáticos", 80.00
+        });
+         */
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,6 +97,8 @@ public class panelService3 extends javax.swing.JPanel {
         TblFechasContenido = new javax.swing.JTable();
         Separador03 = new javax.swing.JSeparator();
         BtnRetornar = new javax.swing.JButton();
+        TxtInformativo03 = new javax.swing.JLabel();
+        TxtPrecio = new javax.swing.JLabel();
 
         TxtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         TxtTitulo.setText("SERVICIO DE MANTENIMIENTO");
@@ -61,21 +107,23 @@ public class panelService3 extends javax.swing.JPanel {
 
         TxtInformativo01.setText("Seleccione un servicio:");
 
-        CbxServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CAMBIO DE ACEITE", "REVISION GENERAL", "ALINEACION & BALANCEO" }));
+        CbxServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CAMBIO DE ACEITE", "REVISIÓN DE FRENOS", "ALINEACIÓN Y BALANCEO", "DIAGNÓSTICO GENERAL" }));
+        CbxServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbxServiciosActionPerformed(evt);
+            }
+        });
 
-        BtnBuscarFechas.setText("BUSCAR");
+        BtnBuscarFechas.setText("CONTINUAR");
 
-        TxtInformativo02.setText("Seleccionado el servicio que desea, hacer clic para verificar las fechas disponibles:");
+        TxtInformativo02.setText("Una vez seleccionado, haga clic en 'CONTINUAR' para registrar la operacion.");
 
         TblFechasContenido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "IDAuto", "IDEmpleado", "Fecha", "Descripcion", "Costo"
             }
         ));
         jScrollPane1.setViewportView(TblFechasContenido);
@@ -87,6 +135,11 @@ public class panelService3 extends javax.swing.JPanel {
             }
         });
 
+        TxtInformativo03.setText("PRECIO POR SERVICIO SELECCIONADO:");
+
+        TxtPrecio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TxtPrecio.setText("[PRECIO AQUI]");
+
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
@@ -94,23 +147,30 @@ public class panelService3 extends javax.swing.JPanel {
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TxtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
-                        .addComponent(TxtSubtitulo)
-                        .addComponent(Separador01)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(TxtInformativo01)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CbxServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(BtnBuscarFechas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(TxtInformativo02, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Separador02)
-                        .addComponent(Separador03))
-                    .addComponent(BtnRetornar))
-                .addContainerGap(388, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addComponent(Separador02)
+                    .addComponent(Separador03)
+                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TxtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                                .addComponent(TxtSubtitulo)
+                                .addComponent(Separador01)
+                                .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                    .addComponent(TxtInformativo01)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(CbxServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(TxtInformativo03)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(TxtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(BtnRetornar)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(TxtInformativo02)
+                                .addGap(18, 18, 18)
+                                .addComponent(BtnBuscarFechas)))
+                        .addGap(0, 382, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,20 +181,29 @@ public class panelService3 extends javax.swing.JPanel {
                 .addComponent(TxtSubtitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TxtInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CbxServicios, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnBuscarFechas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TxtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(TxtInformativo03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CbxServicios, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnBuscarFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
                 .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
+                .addGap(74, 74, 74)
                 .addComponent(BtnRetornar)
                 .addContainerGap())
         );
@@ -155,6 +224,42 @@ public class panelService3 extends javax.swing.JPanel {
         mostrarPaneles(new panelInformativo());
     }//GEN-LAST:event_BtnRetornarActionPerformed
 
+    private void CbxServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxServiciosActionPerformed
+
+        TxtPrecio.setText("S/0.00");
+
+        String servicioSeleccionado = (String) CbxServicios.getSelectedItem();
+
+        double precio = 0.0;
+
+        switch (servicioSeleccionado) {
+            case "CAMBIO DE ACEITE":
+                precio = 150.00;
+                TxtPrecio.setText("S/150.00");
+                break;
+
+            case "REVISIÓN DE FRENOS":
+                precio = 120.50;
+                TxtPrecio.setText("S/120.50");
+                break;
+
+            case "ALINEACIÓN Y BALANCEO":
+                precio = 200.00;
+                TxtPrecio.setText("S/200.00");
+                break;
+
+            case "DIAGNÓSTICO GENERAL":
+                precio = 200.00;
+                TxtPrecio.setText("S/200.00");
+                break;
+
+            default:
+                precio = 0.0;
+                TxtPrecio.setText("S/0.00");// Precio por defecto si no se reconoce
+                break;
+        }
+
+    }//GEN-LAST:event_CbxServiciosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarFechas;
@@ -167,6 +272,8 @@ public class panelService3 extends javax.swing.JPanel {
     private javax.swing.JTable TblFechasContenido;
     private javax.swing.JLabel TxtInformativo01;
     private javax.swing.JLabel TxtInformativo02;
+    private javax.swing.JLabel TxtInformativo03;
+    private javax.swing.JLabel TxtPrecio;
     private javax.swing.JLabel TxtSubtitulo;
     private javax.swing.JLabel TxtTitulo;
     private javax.swing.JScrollPane jScrollPane1;

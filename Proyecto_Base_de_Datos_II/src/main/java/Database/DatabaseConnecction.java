@@ -18,13 +18,14 @@ public class DatabaseConnecction {
 
     protected Connection Conexion;
     //NOTA: Buscar el JDBC correspondiente para su implementacion en el campo:
-    private final String ConexionJDBCDriver = "(CAMBIAR AQUI)";
-    private final String ConexionURL = "(CAMBIAR AQUI)";
+    private final String ConexionJDBCDriver = "(CAMBIAR AQUI)"; //com.mysql.jdbc.Driver
+    private final String ConexionURL = "(CAMBIAR AQUI)"; // jdbc:mysql://localhost:3306/basededatosiiproyecto
 
     private final String Usuario = "root";
     private final String Contraseña = "123456";
 
     public void Conectar() throws ClassNotFoundException {
+        
         try {
 
             Conexion = DriverManager.getConnection(ConexionURL, Usuario, Contraseña);
