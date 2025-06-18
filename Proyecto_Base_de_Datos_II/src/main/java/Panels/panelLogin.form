@@ -137,7 +137,6 @@
         <Component class="javax.swing.JTextField" name="CampoUsuario">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Introduce your account"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Contrase&#xf1;a">
@@ -149,7 +148,6 @@
         <Component class="javax.swing.JTextField" name="CampoContrase&#xf1;a">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Introduce your password"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="Separador02">

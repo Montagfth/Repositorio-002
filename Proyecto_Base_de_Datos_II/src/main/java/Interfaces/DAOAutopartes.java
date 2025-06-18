@@ -4,17 +4,16 @@
  */
 package Interfaces;
 
-import DatabaseModels.*;
+import DatabaseModels.Autopartes;
 import java.util.List;
-
 
 /**
  *
  * @author Fabrizio
  */
-public interface DAOCliente {
+public interface DAOAutopartes {
     
-    public void registrar(Cliente cliente) throws Exception;
+    //Listado de productos - autopartes:
+    public List<Autopartes> Listar (String categoria) throws Exception;
     
-    //public List<Autos> listar (String categoria_auto) throws Exception;
 }

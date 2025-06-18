@@ -105,6 +105,11 @@ public class panelRegistro extends javax.swing.JPanel {
         MensajeInformativo02.setText("NOTE: Secondary phone number could be omitted ");
 
         BotonRegistrar.setText("Log In");
+        BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarActionPerformed(evt);
+            }
+        });
 
         BotonRetornar.setText("Return");
         BotonRetornar.addActionListener(new java.awt.event.ActionListener() {
@@ -249,6 +254,10 @@ public class panelRegistro extends javax.swing.JPanel {
         mostradorPaneles(new panelLogin());
         
     }//GEN-LAST:event_BotonRetornarActionPerformed
+
+    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
+        
+    }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     public void mostradorPaneles(JPanel panel) {
         

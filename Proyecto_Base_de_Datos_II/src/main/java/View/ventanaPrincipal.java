@@ -282,14 +282,20 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
     private void BotonAutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAutosActionPerformed
         mostrarPaneles(new panelService1());
+        
+        NombreServicio.setText("SERVICIO DE VENTA DE AUTOS");
     }//GEN-LAST:event_BotonAutosActionPerformed
 
     private void BotonAutopartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAutopartesActionPerformed
         mostrarPaneles(new panelService2());
+        
+        NombreServicio.setText("SERVICIO DE VENTA DE AUTOPARTES");
     }//GEN-LAST:event_BotonAutopartesActionPerformed
 
     private void BotonMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMantenimientoActionPerformed
         mostrarPaneles(new panelService3());
+        
+        NombreServicio.setText("SERVICIO DE MANTENIMIENTO DE AUTO");
     }//GEN-LAST:event_BotonMantenimientoActionPerformed
 
     /**

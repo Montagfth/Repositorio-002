@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import View.*;
 import javax.swing.JOptionPane;
+import Administrative.panelAdministrator;
 
 /**
  *
@@ -55,13 +56,11 @@ public class panelLogin extends javax.swing.JPanel {
         Usuario.setText("ACCOUNT:");
 
         CampoUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoUsuario.setText("Introduce your account");
 
         Contraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Contraseña.setText("PASSWORD:");
 
         CampoContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoContraseña.setText("Introduce your password");
 
         BotonInicioSesion.setText("Log In");
         BotonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -174,10 +173,15 @@ public class panelLogin extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "El campo Usuario o Contraseña esta incompleto o los datos son incorrectos", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
 
             //NOTA: Parametrizar para validar si esta ingresando un administrador o un cliente.
+        } else if (CampoUsuario.getText().equals("admin") && CampoContraseña.getText().equals("admin")) {
+
+            ventanaAdministrador Ventana_Administrador = new ventanaAdministrador();
+            Ventana_Administrador.setVisible(true);
+
         } else {
             ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
             Ventana_Principal.setVisible(true);
-        } 
+        }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 
     public void mostradorPaneles(JPanel panel) {

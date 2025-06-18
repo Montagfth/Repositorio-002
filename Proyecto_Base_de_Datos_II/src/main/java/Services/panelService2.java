@@ -8,6 +8,11 @@ import Panels.panelInformativo;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import Database.*;
+import DatabaseModels.*;
+import Interfaces.*;
+import Model.*;
+import java.util.List;
 
 /**
  *
@@ -20,9 +25,33 @@ public class panelService2 extends javax.swing.JPanel {
      */
     public panelService2() {
         initComponents();
-        cargaDatosPrueba();
+        //cargaDatosPrueba();
         configuracionEventosTabla();
-        
+        cargaAutopartes();
+    }
+
+    public void cargaAutopartes() {
+        try {
+            DAOAutopartes daoAu = new DAOAutopartesIMPLEMENT();
+            DefaultTableModel model = (DefaultTableModel) TblRepuestos.getModel();
+            model.setRowCount(0);
+
+            daoAu.Listar("").forEach((u) -> model.addRow(new Object[]{u.getID_Autoparte(), u.getNombre_Autoparte(), u.getCategoria_Autoparte(), u.getStock_Autoparte(), u.getPrecio_Autoparte()}));
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void actualizarTabla(List<Autopartes> listaAutopartes) {
+        DefaultTableModel model = (DefaultTableModel) TblRepuestos.getModel();
+        model.setRowCount(0);
+
+        for (Autopartes a : listaAutopartes) {
+            Object[] fila = {a.getID_Autoparte(), a.getNombre_Autoparte(), a.getCategoria_Autoparte(), a.getStock_Autoparte(), a.getPrecio_Autoparte()};
+
+            model.addRow(fila);
+        }
     }
 
     public void configuracionEventosTabla() {
@@ -56,7 +85,8 @@ public class panelService2 extends javax.swing.JPanel {
         });
     }
 
-    public void cargaDatosPrueba() {
+    /*
+        public void cargaDatosPrueba() {
         DefaultTableModel modelo = (DefaultTableModel) TblRepuestos.getModel();
         modelo.setRowCount(0); // Limpia las filas existentes
 
@@ -66,7 +96,7 @@ public class panelService2 extends javax.swing.JPanel {
         modelo.addRow(new Object[]{"004", "Bujía", "Encendido", "60", "22.90"});
 
     }
-
+     */
     public void mostrarPaneles(JPanel panel) {
         panel.setSize(1194, 694);
         panel.setLocation(0, 0);
@@ -104,8 +134,6 @@ public class panelService2 extends javax.swing.JPanel {
         Descripcion04 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         Separador03 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("REPUESTOS & AUTOPARTES");
@@ -124,7 +152,12 @@ public class panelService2 extends javax.swing.JPanel {
 
         jLabel3.setText("CATEGORIAS:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FRENOS", "LUCES", "LLANTAS", "ELECTRONICA", "ACEITES" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FRENOS", "LUCES", "LLANTAS", "ELECTRONICA" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         PanelDescripcion.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -195,10 +228,6 @@ public class panelService2 extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setText("PRECIO:");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
@@ -209,11 +238,7 @@ public class panelService2 extends javax.swing.JPanel {
                     .addGroup(PanelContenedorLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2)
                     .addComponent(jSeparator1)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
@@ -237,9 +262,7 @@ public class panelService2 extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -271,6 +294,22 @@ public class panelService2 extends javax.swing.JPanel {
         mostrarPaneles(new panelInformativo());
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        //Filtro por el cbox
+        String categoriaSeleccionada = jComboBox1.getSelectedItem().toString();
+
+        String categoriaFiltro = categoriaSeleccionada.equalsIgnoreCase("TODOS") ? "" : categoriaSeleccionada;
+
+        try {
+            DAOAutopartes daoAu = new DAOAutopartesIMPLEMENT();
+            List<Autopartes> lista = daoAu.Listar(categoriaFiltro);
+            actualizarTabla(lista);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Descripcion01;
     private javax.swing.JLabel Descripcion02;
@@ -285,11 +324,9 @@ public class panelService2 extends javax.swing.JPanel {
     private javax.swing.JTable TblRepuestos;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
