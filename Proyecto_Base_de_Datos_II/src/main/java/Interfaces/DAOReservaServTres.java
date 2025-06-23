@@ -5,6 +5,7 @@
 package Interfaces;
 
 import DatabaseModels.ReservaServTres;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -18,4 +19,13 @@ public interface DAOReservaServTres {
     
     //Listado de reporte de registro de citas:
     List<ReservaServTres> listarReservaServTres() throws Exception;
+
+    //Asignacion de emepleado
+    public void asignarEmpleado(int idReserva, String dniEmpleado) throws Exception;
+    
+    //Modificacion de datos:
+    public void modificarFecha(int idReserva, Date nuevaFecha) throws Exception;
+    
+    //Eliminacion del registro:
+    public void eliminar(int idReserva) throws Exception;
 }

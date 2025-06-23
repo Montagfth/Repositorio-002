@@ -23,4 +23,9 @@ public interface DAOCliente {
     //Parametrizacion de credenciales:
     public Cliente autenticarPorDNI(String dni) throws Exception;
     
+    //Modificacion de datos
+    public void modificar(Cliente c) throws Exception;
+    
+    //Eliminacion de cliente
+    public void eliminar (int idCliente) throws Exception;
 }

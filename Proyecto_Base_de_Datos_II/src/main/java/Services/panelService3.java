@@ -12,8 +12,8 @@ import Panels.panelInformativo;
 import java.awt.BorderLayout;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import javax.swing.JPanel;
 import java.time.LocalDate;
+import javax.swing.JPanel;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
@@ -33,6 +33,9 @@ public class panelService3 extends javax.swing.JPanel {
         //TblFechasContenido.setEnabled(false);
         //TxtPrecio.setText("00.0");
         actualizarEstadoCampos();
+        //contenedorPRecio.setEnabled(false);
+        contenedorPRecio.setText("0.00");
+        contenedorPRecio.setEditable(false);
     }
 
     public void mostrarPaneles(JPanel panel) {
@@ -111,7 +114,6 @@ public class panelService3 extends javax.swing.JPanel {
         Separador03 = new javax.swing.JSeparator();
         BtnRetornar = new javax.swing.JButton();
         TxtInformativo03 = new javax.swing.JLabel();
-        TxtPrecio = new javax.swing.JLabel();
         lblTesla02 = new javax.swing.JLabel();
         campoTesla02 = new javax.swing.JTextField();
         lblTesla03 = new javax.swing.JLabel();
@@ -147,6 +149,7 @@ public class panelService3 extends javax.swing.JPanel {
         campoTesla06 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         campoOtro08 = new javax.swing.JTextField();
+        contenedorPRecio = new javax.swing.JTextField();
 
         TxtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         TxtTitulo.setText("SERVICIO DE MANTENIMIENTO");
@@ -180,9 +183,6 @@ public class panelService3 extends javax.swing.JPanel {
         });
 
         TxtInformativo03.setText("PRECIO POR SERVICIO SELECCIONADO:");
-
-        TxtPrecio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TxtPrecio.setText("[PRECIO AQUI]");
 
         lblTesla02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTesla02.setText("Numero de Motor:");
@@ -343,7 +343,7 @@ public class panelService3 extends javax.swing.JPanel {
                                 .addGap(432, 432, 432)
                                 .addComponent(TxtInformativo03)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TxtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(contenedorPRecio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
                                 .addGap(327, 327, 327)
                                 .addComponent(TxtInformativo02)
@@ -356,8 +356,8 @@ public class panelService3 extends javax.swing.JPanel {
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(TxtSubtitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -441,11 +441,9 @@ public class panelService3 extends javax.swing.JPanel {
                         .addGap(42, 42, 42)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TxtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(TxtInformativo03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtInformativo03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(contenedorPRecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -474,16 +472,16 @@ public class panelService3 extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnRetornarActionPerformed
 
     private void campoTesla01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTesla01ActionPerformed
-        actualizarPrecio();
+        campoTesla01.addActionListener(e -> actualizarPrecio());
     }//GEN-LAST:event_campoTesla01ActionPerformed
 
     private void actualizarEstadoCampos() {
-        
+
         String tipo = String.valueOf(CbxTipoAuto.getSelectedItem());
-        
+
         boolean esTesla = tipo.equals("TESLA");
         boolean esOtro = tipo.equals("OTRO VEHICULO");
-        
+
         campoTesla01.setEnabled(esTesla);
         campoTesla02.setEnabled(esTesla);
         campoTesla03.setEnabled(esTesla);
@@ -499,12 +497,12 @@ public class panelService3 extends javax.swing.JPanel {
         campoOtro06.setEnabled(esOtro);
         campoOtro07.setEnabled(esOtro);
         campoOtro08.setEnabled(esOtro);
-        
+
         if (!esTesla && !esOtro) {
-            TxtPrecio.setText("0.00");
+            contenedorPRecio.setText("0.0");
         }
     }
-    
+
     private void actualizarPrecio() {
         String tipo = String.valueOf(CbxTipoAuto.getSelectedItem());
         String srv = tipo.equals("TESLA")
@@ -516,7 +514,7 @@ public class panelService3 extends javax.swing.JPanel {
         if (tipo.equals("TESLA")) {
             switch (srv) {
                 case "SISTEMA DE REFRIGERACION":
-                    precio = 510.00;
+                    precio = 510.0;
                     break;
                 case "REVISION DE FRENOS":
                     precio = 420.50;
@@ -557,12 +555,62 @@ public class panelService3 extends javax.swing.JPanel {
             }
         }
 
-        TxtPrecio.setText(String.format("%.2f", precio));
+        contenedorPRecio.setText(String.format("%.2f", precio));
     }
 
 
     private void BtnRegistrarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarCitaActionPerformed
+
         try {
+            ReservaServTres r = new ReservaServTres();
+            r.setDniCliente(Sesion.clienteLogueado.getDNI_Cliente());
+            r.setTipoVehiculo(CbxTipoAuto.getSelectedItem().toString());
+
+            r.setServicioSolicitado(r.getTipoVehiculo().equals("TESLA") ? campoTesla01.getSelectedItem().toString() : campoOtro01.getSelectedItem().toString());
+
+            String precioTxt = contenedorPRecio.getText().trim();
+            if (precioTxt.isEmpty()) {
+                System.out.println("Error el precio esta vacio");
+                return;
+            }
+
+            try {
+                r.setPrecio(new BigDecimal(precioTxt));
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error, formato invalido." + ex.getMessage());
+            }
+
+            r.setFechaCita(LocalDate.parse(r.getTipoVehiculo().equals("TESLA") ? campoTesla06.getText() : campoOtro07.getText()));
+
+            if (r.getTipoVehiculo().equals("TESLA")) {
+                r.setNumeroMotor(campoTesla02.getText());
+                r.setNumeroSerie(campoTesla03.getText());
+                r.setKilometraje(!campoTesla04.getText().isBlank() ? Integer.parseInt(campoTesla04.getText()) : null);
+                r.setObservacion(campoTesla05.getText());
+
+            } else {
+                r.setMarcaVehiculo(campoOtro02.getText());
+                r.setModeloVehiculo(campoOtro03.getText());
+                r.setAnioVehiculo(!campoOtro04.getText().isBlank() ? Integer.parseInt(campoOtro04.getText()) : null);
+
+                r.setTipoMotor(campoOtro05.getText());
+                r.setKilometraje(!campoOtro06.getText().isBlank() ? Integer.parseInt(campoOtro06.getText()) : null);
+                r.setObservacion(campoOtro08.getText());
+            }
+
+            r.setDniEmpleado("2234589");
+
+            new DAOReservaServTresIMPLEMENT().registrar(r);
+
+            System.out.println("Se ha registrado la cita.");
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        /*
+             try {
             ReservaServTres r = new ReservaServTres();
             r.setDNI_Cliente(Sesion.clienteLogueado.getDNI_Cliente());
             r.setTipoVehiculo(CbxTipoAuto.getSelectedItem().toString());
@@ -575,6 +623,8 @@ public class panelService3 extends javax.swing.JPanel {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+         */
+
     }//GEN-LAST:event_BtnRegistrarCitaActionPerformed
 
     private void CbxTipoAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxTipoAutoActionPerformed
@@ -583,7 +633,7 @@ public class panelService3 extends javax.swing.JPanel {
     }//GEN-LAST:event_CbxTipoAutoActionPerformed
 
     private void campoOtro01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoOtro01ActionPerformed
-        actualizarPrecio();
+        campoOtro01.addActionListener(e -> actualizarPrecio());
     }//GEN-LAST:event_campoOtro01ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -595,7 +645,6 @@ public class panelService3 extends javax.swing.JPanel {
     private javax.swing.JSeparator Separador03;
     private javax.swing.JLabel TxtInformativo02;
     private javax.swing.JLabel TxtInformativo03;
-    private javax.swing.JLabel TxtPrecio;
     private javax.swing.JLabel TxtSubtitulo;
     private javax.swing.JLabel TxtTitulo;
     private javax.swing.JComboBox<String> campoOtro01;
@@ -612,6 +661,7 @@ public class panelService3 extends javax.swing.JPanel {
     private javax.swing.JTextField campoTesla04;
     private javax.swing.JTextField campoTesla05;
     private javax.swing.JTextField campoTesla06;
+    private javax.swing.JTextField contenedorPRecio;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel4;

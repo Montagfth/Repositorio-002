@@ -5,6 +5,7 @@
 package Interfaces;
 
 import DatabaseModels.ReservaServDos;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -18,4 +19,10 @@ public interface DAOReservaServDos {
     
     //Listado de operaciones para el administrador:
     List<ReservaServDos> listarReservasServDos() throws Exception;
+    
+    //Modificacion de columanas:
+    public void modificarEstadoYFecha(int idReserva, String nuevoEstado, Date nuevaFecha) throws Exception;
+    
+    //Eliminacion:
+    public void eliminar(int idReserva) throws Exception;    
 }

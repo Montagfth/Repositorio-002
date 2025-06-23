@@ -13,9 +13,15 @@ import Model.DAOClienteIMPLEMENT;
 import Model.DAOReservaServDosIMPLEMENT;
 import Model.DAOReservaServTresIMPLEMENT;
 import Model.DAOReservaServUnoIMPLEMENT;
+import Modificaciones.DialogEditarCliente;
+import Modificaciones.DialogEditarEmpleado;
+import Modificaciones.DialogEditarReservaAuto;
+import Modificaciones.DialogEditarReservaAutoparte;
+import Modificaciones.DialogEditarReservaServMantenimiento;
 import java.util.List;
+import javax.crypto.AEADBadTagException;
 import javax.swing.JOptionPane;
-        
+
 /**
  *
  * @author Fabrizio
@@ -36,63 +42,56 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarReservaServicioTres() {
-            try {
-        DAOReservaServTres dao = new DAOReservaServTresIMPLEMENT();
-        DefaultTableModel m = (DefaultTableModel) TblServicioTres.getModel();
-        m.setRowCount(0);                     // limpia
 
-        for (ReservaServTres r : dao.listarReservaServTres()) {
-            String marcaModelo = "-";
-            String anioPlaca  = "-";
-
-            if ("OTRO".equals(r.getTipoVehiculo())) {
-                marcaModelo = r.getMarca_Otro() + " " + r.getModelo_Otro();
-                anioPlaca   = r.getAnio_Otro() + " / " + (r.getPlaca_Otro() != null ? r.getPlaca_Otro() : "-");
-            }
-
-            m.addRow(new Object[]{
-                r.getID_ReservaServTres(),
-                r.getTipoVehiculo(),
-                r.getServicioSolicitado(),
-                r.getPrecio(),
-                r.getFecha_ReservaServTres().toLocalDateTime().toLocalDate(),
-                r.getDNI_Cliente(),
-                marcaModelo,
-                anioPlaca
-            });
-        }
-
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this,
-            "Error al cargar reservas: " + e.getMessage(),
-            "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
-    }
-    }
-    
-    public void cargarSolicitudesAutoparte() {
         try {
-            DAOReservaServDos daoRsD = new DAOReservaServDosIMPLEMENT();
-            List<ReservaServDos> listarReservServDos = daoRsD.listarReservasServDos();
-            
-            DefaultTableModel model = (DefaultTableModel) TblServicioDos.getModel();
-            model.setRowCount(0);
-            
-            for (ReservaServDos r : listarReservServDos) {
+            DAOReservaServTres daoRsT = new DAOReservaServTresIMPLEMENT();
+            List<ReservaServTres> listarReservaServTres = daoRsT.listarReservaServTres();
+
+            DefaultTableModel model = new DefaultTableModel();
+            model.setColumnIdentifiers(new Object[]{"ID", "Tipo Vehiculo", "Servicio", "DNI Cliente", "Fecha de Cita", "Precio", "DNI Empleado"});
+
+            for (ReservaServTres r : listarReservaServTres) {
                 model.addRow(new Object[]{
-                r.getID_ReservaServDos(),
-                r.getID_Autoparte(),
-                r.getDNI_Cliente(),
-                r.getEstado_ReservaServDos(),
-                r.getFecha_ReservaServDos()
+                    r.getIdReserva(),
+                    r.getTipoVehiculo(),
+                    r.getServicioSolicitado(),
+                    r.getDniCliente(),
+                    r.getFechaCita(),
+                    r.getPrecio(),
+                    r.getDniEmpleado() == null ? "No asignado" : r.getDniEmpleado()
                 });
             }
-            
+
+            TblServicioTres.setModel(model);
+
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
-    
-    
+
+    public void cargarSolicitudesAutoparte() {
+        try {
+            DAOReservaServDos daoRsD = new DAOReservaServDosIMPLEMENT();
+            List<ReservaServDos> listarReservServDos = daoRsD.listarReservasServDos();
+
+            DefaultTableModel model = (DefaultTableModel) TblServicioDos.getModel();
+            model.setRowCount(0);
+
+            for (ReservaServDos r : listarReservServDos) {
+                model.addRow(new Object[]{
+                    r.getID_ReservaServDos(),
+                    r.getID_Autoparte(),
+                    r.getDNI_Cliente(),
+                    r.getEstado_ReservaServDos(),
+                    r.getFecha_ReservaServDos()
+                });
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
     //Por evaluar
     public void cargarOperacionesAuto() {
         try {
@@ -100,14 +99,12 @@ public class panelAdministrator extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) TblServicioUno.getModel();
             model.setRowCount(0);
             daoRsun.listarReservaServUno().forEach((u) -> model.addRow(new Object[]{u.getID_ReservaServUno(), u.getID_Auto(), u.getEstado_ReservaServUno(), u.getFecha_ReservaServUno()}));
-                    
-                    
+
         } catch (Exception e) {
             System.out.println("Error en la carga de operaciones del servicio 1");
         }
     }
-    
-    
+
     public void cargarEmpleados() {
         try {
             DAOEmpleado daoA = new DAOEmpleadosIMPLEMENT();
@@ -120,7 +117,7 @@ public class panelAdministrator extends javax.swing.JPanel {
             System.out.println("Error en la carga de empleados: " + e.getMessage());
         }
         //Bloque de tabla por analizar:
-        TblClientes.setEnabled(false);
+        //TblClientes.setEnabled(false);
     }
 
     public void cargarClientes() {
@@ -135,7 +132,7 @@ public class panelAdministrator extends javax.swing.JPanel {
             System.out.println("Error en la carga de clientes: " + e.getMessage());
         }
         //Bloque de tabla por analizar:
-        TblClientes.setEnabled(false);
+        //TblClientes.setEnabled(false);
     }
 
     /**
@@ -162,7 +159,7 @@ public class panelAdministrator extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         TblEmpleados = new javax.swing.JTable();
         jSeparator4 = new javax.swing.JSeparator();
@@ -177,8 +174,19 @@ public class panelAdministrator extends javax.swing.JPanel {
         jSeparator8 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
+        btModficar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        btnEliminar2 = new javax.swing.JButton();
+        btnModificar2 = new javax.swing.JButton();
+        btnEliminar3 = new javax.swing.JButton();
+        btnModificar3 = new javax.swing.JButton();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        btnEliminar4 = new javax.swing.JButton();
+        btnModificar4 = new javax.swing.JButton();
+        btnEliminar5 = new javax.swing.JButton();
+        btnModificar5 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("GESTION DE SERVICIOS");
@@ -213,7 +221,7 @@ public class panelAdministrator extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID_ReservaTres", "ID_Auto", "DNI_Empleado", "DNI_Cliente", "Fecha_ReservaTres", "Descripcion_ReservaTres"
+
             }
         ));
         jScrollPane3.setViewportView(TblServicioTres);
@@ -224,7 +232,12 @@ public class panelAdministrator extends javax.swing.JPanel {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("MANTENIMIENTO");
 
-        jButton1.setText("ELIMINAR");
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         TblEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -252,13 +265,77 @@ public class panelAdministrator extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("CLIENTES:");
 
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("MANIPULACION DE DATOS:");
 
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Para la eliminacion de algun registro:");
 
-        jButton2.setText("MODIFICAR");
+        btModficar.setText("MODIFICAR");
+        btModficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btModficarActionPerformed(evt);
+            }
+        });
 
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Seleccione una fila para modificarla:");
+
+        btnEliminar2.setText("ELIMINAR");
+        btnEliminar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar2ActionPerformed(evt);
+            }
+        });
+
+        btnModificar2.setText("MODIFICAR");
+        btnModificar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificar2ActionPerformed(evt);
+            }
+        });
+
+        btnEliminar3.setText("ELIMINAR");
+        btnEliminar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar3ActionPerformed(evt);
+            }
+        });
+
+        btnModificar3.setText("MODIFICAR");
+        btnModificar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificar3ActionPerformed(evt);
+            }
+        });
+
+        btnEliminar4.setText("ELIMINAR");
+        btnEliminar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar4ActionPerformed(evt);
+            }
+        });
+
+        btnModificar4.setText("MODIFICAR");
+        btnModificar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificar4ActionPerformed(evt);
+            }
+        });
+
+        btnEliminar5.setText("ELIMINAR");
+        btnEliminar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar5ActionPerformed(evt);
+            }
+        });
+
+        btnModificar5.setText("MODIFICAR");
+        btnModificar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificar5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
@@ -270,22 +347,42 @@ public class panelAdministrator extends javax.swing.JPanel {
                     .addComponent(jSeparator3)
                     .addComponent(jSeparator1)
                     .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))
-                        .addGap(26, 26, 26)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator4)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+                            .addComponent(jSeparator2)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(btnEliminar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btModficar))
+                            .addComponent(jSeparator10))
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                                    .addComponent(jSeparator4)))
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
+                                        .addComponent(btnEliminar2)
+                                        .addGap(236, 236, 236)
+                                        .addComponent(btnModificar2))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jSeparator11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator5)))
+                            .addComponent(jSeparator5)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(btnEliminar3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnModificar3))
+                            .addComponent(jSeparator12)))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelContenedorLayout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -300,13 +397,16 @@ public class panelAdministrator extends javax.swing.JPanel {
                             .addComponent(jSeparator8)
                             .addComponent(jSeparator9)
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton2)
-                                    .addComponent(jLabel10))
-                                .addGap(0, 241, Short.MAX_VALUE)))
+                                .addComponent(btnEliminar4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEliminar5))
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(btnModificar4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnModificar5))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,17 +431,40 @@ public class panelAdministrator extends javax.swing.JPanel {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
                                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnEliminar)
+                                    .addComponent(btModficar)
+                                    .addComponent(btnEliminar3)
+                                    .addComponent(btnModificar3)))
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26))
+                                    .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnEliminar2)
+                                    .addComponent(btnModificar2))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -357,13 +480,17 @@ public class panelAdministrator extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnEliminar4)
+                                    .addComponent(btnEliminar5))
+                                .addGap(12, 12, 12)
                                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnModificar4)
+                                    .addComponent(btnModificar5)))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PanelContenedorLayout.createSequentialGroup()
                         .addComponent(jLabel7)
@@ -386,6 +513,224 @@ public class panelAdministrator extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btModficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModficarActionPerformed
+        int fila = TblServicioUno.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una fila primero", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int idReserva = (int) TblServicioUno.getValueAt(fila, 0);
+        String estadoActual = TblServicioUno.getValueAt(fila, 2).toString();
+        String fechaActual = TblServicioUno.getValueAt(fila, 3).toString();
+
+        //Accionador del jdialog
+        DialogEditarReservaAuto dialog = new DialogEditarReservaAuto(null, idReserva, estadoActual, fechaActual);
+        dialog.setVisible(true);
+
+        cargarOperacionesAuto();
+    }//GEN-LAST:event_btModficarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int fila = TblServicioUno.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el registro?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+
+        if (confirmar == JOptionPane.YES_OPTION) {
+            try {
+                int idReserva = (int) TblServicioUno.getValueAt(fila, 0);
+                DAOReservaServUno daorsu = new DAOReservaServUnoIMPLEMENT();
+                daorsu.eliminar(idReserva);
+
+                JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente", "Tesla Inc.", JOptionPane.INFORMATION_MESSAGE);
+                cargarOperacionesAuto();
+
+            } catch (Exception e) {
+                System.out.println("Error al eliminar fila." + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar2ActionPerformed
+        int fila = TblServicioDos.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el registro?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+
+        if (confirmar == JOptionPane.YES_OPTION) {
+            try {
+                int idReserva = (int) TblServicioUno.getValueAt(fila, 0);
+                DAOReservaServUno daorsu = new DAOReservaServUnoIMPLEMENT();
+                daorsu.eliminar(idReserva);
+
+                JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente", "Tesla Inc.", JOptionPane.INFORMATION_MESSAGE);
+                cargarSolicitudesAutoparte();
+
+            } catch (Exception e) {
+                System.out.println("Error al eliminar fila." + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btnEliminar2ActionPerformed
+
+    private void btnModificar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar2ActionPerformed
+        int fila = TblServicioDos.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una fila primero", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int idReserva = (int) TblServicioDos.getValueAt(fila, 0);
+        String estadoActual = TblServicioDos.getValueAt(fila, 3).toString();
+        String fechaActual = TblServicioDos.getValueAt(fila, 4).toString();
+
+        //Accionador del jdialog
+        DialogEditarReservaAutoparte dialog = new DialogEditarReservaAutoparte(null, idReserva, estadoActual, fechaActual);
+        dialog.setVisible(true);
+
+        cargarSolicitudesAutoparte();
+    }//GEN-LAST:event_btnModificar2ActionPerformed
+
+    private void btnModificar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar3ActionPerformed
+        int fila = TblServicioTres.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int id = (int) TblServicioTres.getValueAt(fila, 0);
+        String fechaActual = TblServicioTres.getValueAt(fila, 4).toString();
+
+        DialogEditarReservaServMantenimiento dialog = new DialogEditarReservaServMantenimiento(null, id, fechaActual);
+        dialog.setVisible(true);
+
+        cargarReservaServicioTres();
+    }//GEN-LAST:event_btnModificar3ActionPerformed
+
+    private void btnEliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar3ActionPerformed
+
+        int fila = TblServicioTres.getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila primero", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el registro?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            try {
+                int idReserva = (int) TblServicioTres.getValueAt(fila, 0);
+                DAOReservaServTres daorst = new DAOReservaServTresIMPLEMENT();
+                daorst.eliminar(idReserva);
+
+                JOptionPane.showMessageDialog(null, "Registro eliminado exitosamente", "Tesla Inc", JOptionPane.INFORMATION_MESSAGE);
+                cargarReservaServicioTres();
+
+            } catch (Exception e) {
+                System.out.println("Error al eliminar" + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btnEliminar3ActionPerformed
+
+    private void btnModificar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar4ActionPerformed
+        int fila = TblEmpleados.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila primero.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int idEmpleado = (int) TblEmpleados.getValueAt(fila, 0);
+        String nombre = TblEmpleados.getValueAt(fila, 1).toString();
+        String dni = TblEmpleados.getValueAt(fila, 2).toString();
+        String telefono = TblEmpleados.getValueAt(fila, 3).toString();
+
+        DialogEditarEmpleado dialog = new DialogEditarEmpleado(null, idEmpleado, nombre, dni, telefono);
+        dialog.setVisible(true);
+        cargarEmpleados(); // Método que recarga la tabla después de modificar
+    }//GEN-LAST:event_btnModificar4ActionPerformed
+
+    private void btnEliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar4ActionPerformed
+        int fila = TblEmpleados.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila primero.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        int confirmar = JOptionPane.showConfirmDialog(
+                null, "¿Está seguro de eliminar este empleado?", "Tesla Inc.",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirmar == JOptionPane.YES_OPTION) {
+            try {
+                int idEmpleado = (int) TblEmpleados.getValueAt(fila, 0);
+                DAOEmpleado dao = new DAOEmpleadosIMPLEMENT();
+                dao.eliminarEmpleado(idEmpleado);
+
+                JOptionPane.showMessageDialog(null, "Empleado eliminado correctamente.", "Tesla Inc.", JOptionPane.INFORMATION_MESSAGE);
+                cargarEmpleados(); // Método que recarga la tabla
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al eliminar: " + e.getMessage(), "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnEliminar4ActionPerformed
+
+    private void btnModificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar5ActionPerformed
+
+        int fila = TblClientes.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Cliente c = new Cliente();
+        c.setID_Cliente((int) TblClientes.getValueAt(fila, 0));
+        c.setNombre_Cliente(TblClientes.getValueAt(fila, 1).toString());
+        c.setSegundoNombre_Cliente(TblClientes.getValueAt(fila, 2).toString());
+        c.setApellido_Cliente(TblClientes.getValueAt(fila, 3).toString());
+        c.setDNI_Cliente(TblClientes.getValueAt(fila, 4).toString());
+        c.setCorreo_Cliente(TblClientes.getValueAt(fila, 5).toString());
+        c.setTelefono_Cliente(TblClientes.getValueAt(fila, 6).toString()); //Analizar
+        c.setSegundoTelefono_Cliente(TblClientes.getValueAt(fila, 7).toString()); //Analizar
+
+        DialogEditarCliente dialog = new DialogEditarCliente(null, c);
+        dialog.setVisible(true);
+        cargarClientes();
+    }//GEN-LAST:event_btnModificar5ActionPerformed
+
+    private void btnEliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar5ActionPerformed
+        int fila = TblClientes.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione un cliente primero.");
+            return;
+        }
+
+        int confirmar = JOptionPane.showConfirmDialog(null, "¿Desea eliminar este cliente?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+        if (confirmar == JOptionPane.YES_OPTION) {
+            try {
+                int idCliente = (int) TblClientes.getValueAt(fila, 0);
+                DAOCliente dao = new DAOClienteIMPLEMENT();
+                dao.eliminar(idCliente);
+                JOptionPane.showMessageDialog(null, "Cliente eliminado correctamente.");
+                cargarClientes();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al eliminar: " + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btnEliminar5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelContenedor;
@@ -394,8 +739,16 @@ public class panelAdministrator extends javax.swing.JPanel {
     private javax.swing.JTable TblServicioDos;
     private javax.swing.JTable TblServicioTres;
     private javax.swing.JTable TblServicioUno;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btModficar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminar2;
+    private javax.swing.JButton btnEliminar3;
+    private javax.swing.JButton btnEliminar4;
+    private javax.swing.JButton btnEliminar5;
+    private javax.swing.JButton btnModificar2;
+    private javax.swing.JButton btnModificar3;
+    private javax.swing.JButton btnModificar4;
+    private javax.swing.JButton btnModificar5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -412,6 +765,9 @@ public class panelAdministrator extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;

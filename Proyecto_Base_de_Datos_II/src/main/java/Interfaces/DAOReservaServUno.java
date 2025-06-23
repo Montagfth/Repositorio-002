@@ -5,6 +5,7 @@
 package Interfaces;
 
 import DatabaseModels.ReservaServUno;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -19,4 +20,9 @@ public interface DAOReservaServUno {
     //Listado de las operaciones en el panel:
     List<ReservaServUno> listarReservaServUno() throws Exception;
     
+    //Modicacion de 2 ultimas columnas mediante un jdialog
+    public void modificarEstadoYFecha(int idReserva, String nuevoEstado, Date nuevaFecha) throws Exception;
+
+    //Eliminacion de registro:
+    public void eliminar(int idReserva) throws Exception;
 }

@@ -150,7 +150,7 @@
                                   <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
                                   <Component id="TxtInformativo03" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="TxtPrecio" min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="contenedorPRecio" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
@@ -170,8 +170,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="TxtTitulo" min="-2" pref="141" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="TxtTitulo" min="-2" pref="129" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="TxtSubtitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="Separador01" min="-2" pref="10" max="-2" attributes="0"/>
@@ -275,12 +275,9 @@
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="1" max="-2" attributes="0"/>
-                                  <Component id="TxtPrecio" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="TxtInformativo03" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TxtInformativo03" alignment="3" max="32767" attributes="0"/>
+                              <Component id="contenedorPRecio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -366,12 +363,6 @@
         <Component class="javax.swing.JLabel" name="TxtInformativo03">
           <Properties>
             <Property name="text" type="java.lang.String" value="PRECIO POR SERVICIO SELECCIONADO:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="TxtPrecio">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="[PRECIO AQUI]"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTesla02">
@@ -541,6 +532,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="campoOtro08">
+        </Component>
+        <Component class="javax.swing.JTextField" name="contenedorPRecio">
         </Component>
       </SubComponents>
     </Container>

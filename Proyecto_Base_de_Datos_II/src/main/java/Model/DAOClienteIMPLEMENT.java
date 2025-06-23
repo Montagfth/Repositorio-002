@@ -7,6 +7,7 @@ package Model;
 import DatabaseModels.*;
 import Interfaces.*;
 import Database.*;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -135,6 +136,67 @@ public class DAOClienteIMPLEMENT extends Database implements DAOCliente {
         }
 
         return cliente;
+    }
+
+    @Override
+    public void modificar(Cliente c) throws Exception {
+        PreparedStatement ps = null;
+        Connection cn = null;
+
+        try {
+            this.Conectar();
+            cn = this.Conexion;
+
+            String slq = "update cliente set Nombre_Cliente = ?,SegundoNombre_Cliente = ?,Apellido_Cliente = ?, DNI_Cliente = ?,Correo_Cliente = ?,Telefono_Cliente = ?,SegundoTelefono_Cliente = ? where ID_Cliente = ?";
+
+            ps = cn.prepareStatement(slq);
+            ps.setString(1, c.getNombre_Cliente());
+            ps.setString(2, c.getSegundoNombre_Cliente());
+            ps.setString(3, c.getApellido_Cliente());
+            ps.setString(4, c.getDNI_Cliente());
+            ps.setString(5, c.getCorreo_Cliente());
+            ps.setString(6, c.getTelefono_Cliente()); //Analizar
+            ps.setString(7, c.getSegundoTelefono_Cliente()); //Analizar
+            ps.setInt(8, c.getID_Cliente());
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            if (ps != null) {
+                ps.close();
+            }
+            if (cn != null) {
+                cn.close();
+            }
+        }
+    }
+
+    @Override
+    public void eliminar(int idCliente) throws Exception {
+        PreparedStatement ps = null;
+        Connection cn = null;
+
+        try {
+            this.Conectar();
+            cn = this.Conexion;
+            String sql = "DELETE FROM Cliente WHERE ID_Cliente = ?";
+            ps = cn.prepareStatement(sql);
+            ps.setInt(1, idCliente);
+            ps.executeUpdate();
+            
+            
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            if (ps != null) {
+                ps.close();
+            }
+            if (cn != null) {
+                cn.close();
+            }
+        }
+
     }
 
 }

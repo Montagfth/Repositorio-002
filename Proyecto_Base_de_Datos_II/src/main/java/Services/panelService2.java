@@ -73,7 +73,12 @@ public class panelService2 extends javax.swing.JPanel {
                     Descripcion02.setText("Categoría: " + categoria);
                     Descripcion03.setText("Stock: " + stock);
                     Descripcion04.setText("Precio: S/. " + precio);
-
+                    Descripcion05.setText("Batería de alto rendimiento de iones de litio, diseño compacto y refrigeración líquida.");
+                    Descripcion06.setText("Compatible con todos los modelos Tesla S, 3, X y Y. Admite carga rápida y regenerativa.");
+                    Descripcion07.setText("Código de pieza: TESLA-BAT-85KW-LONGRANGE");
+                    Descripcion08.setText("Estado: Nuevo | Garantía de fábrica: 8 años o 240,000 km");
+                    Descripcion09.setText("Disponibilidad: En almacén principal - Tiempo de entrega: 24 a 48 horas");
+                    Descripcion10.setText("Autonomía estimada: hasta 600 km por carga completa en condiciones óptimas.");
                     /*
                     // Cambiar imagen
                     //NOTA: Por evaluar.
@@ -134,6 +139,12 @@ public class panelService2 extends javax.swing.JPanel {
         Descripcion02 = new javax.swing.JLabel();
         Descripcion03 = new javax.swing.JLabel();
         Descripcion04 = new javax.swing.JLabel();
+        Descripcion05 = new javax.swing.JLabel();
+        Descripcion06 = new javax.swing.JLabel();
+        Descripcion07 = new javax.swing.JLabel();
+        Descripcion08 = new javax.swing.JLabel();
+        Descripcion09 = new javax.swing.JLabel();
+        Descripcion10 = new javax.swing.JLabel();
         BtnSolictar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Separador03 = new javax.swing.JSeparator();
@@ -176,6 +187,18 @@ public class panelService2 extends javax.swing.JPanel {
 
         Descripcion04.setText(" ");
 
+        Descripcion05.setText("jLabel4");
+
+        Descripcion06.setText("jLabel5");
+
+        Descripcion07.setText("jLabel6");
+
+        Descripcion08.setText("jLabel7");
+
+        Descripcion09.setText("jLabel8");
+
+        Descripcion10.setText("jLabel9");
+
         BtnSolictar.setText("SOLICITAR PIEZA");
         BtnSolictar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +217,13 @@ public class panelService2 extends javax.swing.JPanel {
                     .addComponent(Descripcion02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnSolictar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BtnSolictar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion05, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion06, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion07, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion08, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion09, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelProductoDescripcionLayout.setVerticalGroup(
@@ -208,7 +237,19 @@ public class panelService2 extends javax.swing.JPanel {
                 .addComponent(Descripcion03)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Descripcion04)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion05)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion06)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion07)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion08)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion09)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Descripcion10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(BtnSolictar))
         );
 
@@ -375,6 +416,12 @@ public class panelService2 extends javax.swing.JPanel {
     private javax.swing.JLabel Descripcion02;
     private javax.swing.JLabel Descripcion03;
     private javax.swing.JLabel Descripcion04;
+    private javax.swing.JLabel Descripcion05;
+    private javax.swing.JLabel Descripcion06;
+    private javax.swing.JLabel Descripcion07;
+    private javax.swing.JLabel Descripcion08;
+    private javax.swing.JLabel Descripcion09;
+    private javax.swing.JLabel Descripcion10;
     private javax.swing.JLabel LblProductoImagen;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelDescripcion;

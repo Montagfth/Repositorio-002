@@ -8,6 +8,7 @@ import Database.Database;
 import DatabaseModels.Auto;
 import DatabaseModels.Empleado;
 import Interfaces.DAOEmpleado;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -50,4 +51,78 @@ public class DAOEmpleadosIMPLEMENT extends Database implements DAOEmpleado {
         }
         return listarEmpleados;
     }
+
+    @Override
+    public void modificarEmpleado(int idEmpleado, String nuevoNombre, String nuevoDni, int nuevoTelefono) throws Exception {
+
+        PreparedStatement ps = null;
+        Connection cn = null;
+
+        try {
+            this.Conectar();
+            cn = this.Conexion;
+            String sql = "UPDATE Empleado SET Nombre_Empleado = ?, DNI_Empleado = ?, Telefono_Empleado = ? WHERE ID_Empleado = ?";
+            ps = cn.prepareStatement(sql);
+            ps.setString(1, nuevoNombre);
+            ps.setString(2, nuevoDni);
+            ps.setInt(3, nuevoTelefono);
+            ps.setInt(4, idEmpleado);
+
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (Exception e) {
+                System.out.println("Error cerrando PreparedStatement: " + e.getMessage());
+            }
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception e) {
+                System.out.println("Error cerrando conexión: " + e.getMessage());
+            }
+        }
+
+    }
+
+    @Override
+    public void eliminarEmpleado(int idEmpleado) throws Exception {
+
+        PreparedStatement ps = null;
+        Connection cn = null;
+
+        try {
+            this.Conectar();
+            cn = this.Conexion;
+            String sql = "DELETE FROM Empleado WHERE ID_Empleado = ?";
+            ps = cn.prepareStatement(sql);
+            ps.setInt(1, idEmpleado);
+            ps.executeUpdate();
+            
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al cerrar PreparedStatement: " + ex.getMessage());
+            }
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al cerrar conexión: " + ex.getMessage());
+            }
+        }
+    }
+
 }

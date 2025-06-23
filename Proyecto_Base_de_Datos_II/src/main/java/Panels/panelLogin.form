@@ -37,24 +37,19 @@
                       <Group type="102" attributes="0">
                           <Component id="Imagen" min="-2" pref="350" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Separador02" alignment="1" min="-2" pref="323" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Separador02" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="Contraseña" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Usuario" min="-2" pref="65" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="Usuario" min="-2" pref="65" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="CampoUsuario" max="32767" attributes="0"/>
-                                      <Component id="CampoContraseña" min="-2" pref="252" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="CampoUsuario" min="-2" pref="252" max="-2" attributes="0"/>
                               </Group>
                               <Component id="Separador01" alignment="1" min="-2" pref="322" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="BotonInicioSesion" min="-2" pref="120" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="Contraseña" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
@@ -88,10 +83,7 @@
                               <Component id="CampoUsuario" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Contraseña" max="32767" attributes="0"/>
-                              <Component id="CampoContraseña" min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="Contraseña" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="Separador02" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -142,12 +134,7 @@
         <Component class="javax.swing.JLabel" name="Contrase&#xf1;a">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="PASSWORD:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="CampoContrase&#xf1;a">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Loguearse con su DNI"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="Separador02">

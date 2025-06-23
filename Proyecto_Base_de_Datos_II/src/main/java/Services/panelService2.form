@@ -200,6 +200,12 @@
                               <Component id="Descripcion03" alignment="0" max="32767" attributes="0"/>
                               <Component id="Descripcion04" alignment="0" max="32767" attributes="0"/>
                               <Component id="BtnSolictar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Descripcion05" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Descripcion06" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Descripcion07" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Descripcion08" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Descripcion09" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Descripcion10" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -216,7 +222,19 @@
                           <Component id="Descripcion03" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Descripcion04" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="175" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion05" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion06" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion07" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion08" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion09" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="43" max="32767" attributes="0"/>
                           <Component id="BtnSolictar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -242,6 +260,36 @@
                 <Component class="javax.swing.JLabel" name="Descripcion04">
                   <Properties>
                     <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion05">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel4"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion06">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel5"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion07">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel6"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion08">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel7"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion09">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel8"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel9"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="BtnSolictar">

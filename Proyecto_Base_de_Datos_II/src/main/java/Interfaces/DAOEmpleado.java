@@ -16,4 +16,10 @@ public interface DAOEmpleado {
     //Listado de empleados predeterminados:
     public List<Empleado> listarEmpleado (String nombreEmpleado) throws Exception;
     
+    //Modificacion de datos:
+    public void modificarEmpleado (int idEmpleado, String nuevoNombre, String nuevoDni, int nuevoTelefono) throws Exception;
+    
+    //Eliminacion del empleado:
+    public void eliminarEmpleado(int idEmpleado) throws Exception;
+    
 }

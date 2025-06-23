@@ -7,6 +7,8 @@ package Model;
 import Database.Database;
 import DatabaseModels.ReservaServDos;
 import Interfaces.DAOReservaServDos;
+import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -68,5 +70,72 @@ public class DAOReservaServDosIMPLEMENT extends Database implements DAOReservaSe
             this.CerrarConexion();
         }
         return listaReservaServDos;
+    }
+
+    @Override
+    public void eliminar(int idReserva) throws Exception {
+        PreparedStatement st = null;
+
+        try {
+            this.Conectar();
+            String sql = "delete from ReservaServDos where ID_ReservaServDos = ?";
+            st = this.Conexion.prepareStatement(sql);
+            st.setInt(1, idReserva);
+            st.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if (st != null) {
+                    st.close();
+                }
+                if (this.Conexion != null) {
+                    this.Conexion.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al cerrar recursos: " + ex.getMessage());
+            }
+        }
+    }
+
+    @Override
+    public void modificarEstadoYFecha(int idReserva, String nuevoEstado, Date nuevaFecha) throws Exception {
+
+        PreparedStatement ps = null;
+        Connection cn = null;
+
+        try {
+            this.Conectar();
+            cn = this.Conexion;
+            String sql = "update ReservaServDos set Estado_ReservaServDos = ?, Fecha_ReservaServDos = ? where ID_ReservaServDos = ?";
+            ps = cn.prepareStatement(sql);
+
+            ps.setString(1, nuevoEstado);
+            ps.setDate(2, nuevaFecha);
+            ps.setInt(3, idReserva);
+
+            ps.executeUpdate();
+            System.out.println("Actualizacion exitosa.");
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al cerrar PreparedStatement: " + ex.getMessage());
+            }
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al cerrar conexión: " + ex.getMessage());
+            }
+        }
+
     }
 }

@@ -6,6 +6,7 @@ package DatabaseModels;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,144 +14,135 @@ import java.sql.Timestamp;
  */
 public class ReservaServTres {
 
-    private int ID_ReservaServTres;
-    private String DNI_Cliente;
-    private String TipoVehiculo;          // TESLA / OTRO
-    private String ServicioSolicitado;
-    private String Observacion_Adicional;
-    private Timestamp Fecha_ReservaServTres;
-    private BigDecimal Precio;
+    private int idReserva;
+    private String tipoVehiculo, servicioSolicitado;
+    private String numeroMotor, numeroSerie;
+    private Integer kilometraje;
+    private String marcaVehiculo, modeloVehiculo, tipoMotor;
+    private Integer anioVehiculo;
+    private String observacion;
+    private LocalDate fechaCita;
+    private BigDecimal precio;
+    private String dniCliente, dniEmpleado;
 
-    /* TESLA */
-    private String NumeroMotor_Tesla;
-    private String NumeroSerie_Tesla;
-    private Integer Kilometraje_Tesla;
-
-    /* OTRO */
-    private String Marca_Otro;
-    private String Modelo_Otro;
-    private Integer Anio_Otro;
-    private String Placa_Otro;
-    private Integer Kilometraje_Otro;
-
-    public int getID_ReservaServTres() {
-        return ID_ReservaServTres;
+    public int getIdReserva() {
+        return idReserva;
     }
 
-    public void setID_ReservaServTres(int ID_ReservaServTres) {
-        this.ID_ReservaServTres = ID_ReservaServTres;
-    }
-
-    public String getDNI_Cliente() {
-        return DNI_Cliente;
-    }
-
-    public void setDNI_Cliente(String DNI_Cliente) {
-        this.DNI_Cliente = DNI_Cliente;
+    public void setIdReserva(int idReserva) {
+        this.idReserva = idReserva;
     }
 
     public String getTipoVehiculo() {
-        return TipoVehiculo;
+        return tipoVehiculo;
     }
 
-    public void setTipoVehiculo(String TipoVehiculo) {
-        this.TipoVehiculo = TipoVehiculo;
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
     }
 
     public String getServicioSolicitado() {
-        return ServicioSolicitado;
+        return servicioSolicitado;
     }
 
-    public void setServicioSolicitado(String ServicioSolicitado) {
-        this.ServicioSolicitado = ServicioSolicitado;
+    public void setServicioSolicitado(String servicioSolicitado) {
+        this.servicioSolicitado = servicioSolicitado;
     }
 
-    public String getObservacion_Adicional() {
-        return Observacion_Adicional;
+    public String getNumeroMotor() {
+        return numeroMotor;
     }
 
-    public void setObservacion_Adicional(String Observacion_Adicional) {
-        this.Observacion_Adicional = Observacion_Adicional;
+    public void setNumeroMotor(String numeroMotor) {
+        this.numeroMotor = numeroMotor;
     }
 
-    public Timestamp getFecha_ReservaServTres() {
-        return Fecha_ReservaServTres;
+    public String getNumeroSerie() {
+        return numeroSerie;
     }
 
-    public void setFecha_ReservaServTres(Timestamp Fecha_ReservaServTres) {
-        this.Fecha_ReservaServTres = Fecha_ReservaServTres;
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
+    }
+
+    public Integer getKilometraje() {
+        return kilometraje;
+    }
+
+    public void setKilometraje(Integer kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    public String getMarcaVehiculo() {
+        return marcaVehiculo;
+    }
+
+    public void setMarcaVehiculo(String marcaVehiculo) {
+        this.marcaVehiculo = marcaVehiculo;
+    }
+
+    public String getModeloVehiculo() {
+        return modeloVehiculo;
+    }
+
+    public void setModeloVehiculo(String modeloVehiculo) {
+        this.modeloVehiculo = modeloVehiculo;
+    }
+
+    public String getTipoMotor() {
+        return tipoMotor;
+    }
+
+    public void setTipoMotor(String tipoMotor) {
+        this.tipoMotor = tipoMotor;
+    }
+
+    public Integer getAnioVehiculo() {
+        return anioVehiculo;
+    }
+
+    public void setAnioVehiculo(Integer anioVehiculo) {
+        this.anioVehiculo = anioVehiculo;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
+    public LocalDate getFechaCita() {
+        return fechaCita;
+    }
+
+    public void setFechaCita(LocalDate fechaCita) {
+        this.fechaCita = fechaCita;
     }
 
     public BigDecimal getPrecio() {
-        return Precio;
+        return precio;
     }
 
-    public void setPrecio(BigDecimal Precio) {
-        this.Precio = Precio;
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
     }
 
-    public String getNumeroMotor_Tesla() {
-        return NumeroMotor_Tesla;
+    public String getDniCliente() {
+        return dniCliente;
     }
 
-    public void setNumeroMotor_Tesla(String NumeroMotor_Tesla) {
-        this.NumeroMotor_Tesla = NumeroMotor_Tesla;
+    public void setDniCliente(String dniCliente) {
+        this.dniCliente = dniCliente;
     }
 
-    public String getNumeroSerie_Tesla() {
-        return NumeroSerie_Tesla;
+    public String getDniEmpleado() {
+        return dniEmpleado;
     }
 
-    public void setNumeroSerie_Tesla(String NumeroSerie_Tesla) {
-        this.NumeroSerie_Tesla = NumeroSerie_Tesla;
-    }
-
-    public Integer getKilometraje_Tesla() {
-        return Kilometraje_Tesla;
-    }
-
-    public void setKilometraje_Tesla(Integer Kilometraje_Tesla) {
-        this.Kilometraje_Tesla = Kilometraje_Tesla;
-    }
-
-    public String getMarca_Otro() {
-        return Marca_Otro;
-    }
-
-    public void setMarca_Otro(String Marca_Otro) {
-        this.Marca_Otro = Marca_Otro;
-    }
-
-    public String getModelo_Otro() {
-        return Modelo_Otro;
-    }
-
-    public void setModelo_Otro(String Modelo_Otro) {
-        this.Modelo_Otro = Modelo_Otro;
-    }
-
-    public Integer getAnio_Otro() {
-        return Anio_Otro;
-    }
-
-    public void setAnio_Otro(Integer Anio_Otro) {
-        this.Anio_Otro = Anio_Otro;
-    }
-
-    public String getPlaca_Otro() {
-        return Placa_Otro;
-    }
-
-    public void setPlaca_Otro(String Placa_Otro) {
-        this.Placa_Otro = Placa_Otro;
-    }
-
-    public Integer getKilometraje_Otro() {
-        return Kilometraje_Otro;
-    }
-
-    public void setKilometraje_Otro(Integer Kilometraje_Otro) {
-        this.Kilometraje_Otro = Kilometraje_Otro;
+    public void setDniEmpleado(String dniEmpleado) {
+        this.dniEmpleado = dniEmpleado;
     }
 
 }
