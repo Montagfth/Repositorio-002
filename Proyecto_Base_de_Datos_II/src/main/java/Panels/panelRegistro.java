@@ -4,8 +4,12 @@
  */
 package Panels;
 
+import DatabaseModels.Cliente;
+import Interfaces.DAOCliente;
+import Model.DAOClienteIMPLEMENT;
 import View.*;
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -250,17 +254,58 @@ public class panelRegistro extends javax.swing.JPanel {
     }//GEN-LAST:event_CampoNumeroPrincipalActionPerformed
 
     private void BotonRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRetornarActionPerformed
-        
+
         mostradorPaneles(new panelLogin());
-        
+
     }//GEN-LAST:event_BotonRetornarActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-        
+
+        //Registro de usuario-cliente:
+        String identificacionDNI = CampoIdentificacionDNI.getText();
+        String primerNombre = CampoPrimerNombre.getText();
+        String segundoNombre = CampoSegundoNombre.getText();
+        String apellido = CampoApellido.getText();
+        String email = CampoEmail.getText();
+        String primerTelefono = CampoNumeroPrincipal.getText();
+        String segundoTelefono = CampoNumeroSecundario.getText();
+
+        //Parametrizacion de campos:
+        if (CampoIdentificacionDNI.equals("Ingrese su DNI.") || CampoPrimerNombre.equals("Ingrese su primer nombre.") || CampoSegundoNombre.equals("Ingrese su segundo nombre.")
+                || CampoApellido.equals("Ingrese su apellido.") || CampoEmail.equals("Ingrese la direccion de correo electronico") || CampoNumeroPrincipal.equals("Ingrese su primer numero.")
+                || CampoNumeroSecundario.equals("Ingrese su segunod numero telefonico")) {
+            JOptionPane.showMessageDialog(null, "Por favor, asegurese de que todos los campos estan completos, Gracias.", "Tesla", JOptionPane.WARNING_MESSAGE);
+            //Redireccion el cursor al cuadro de texto "txtFldNombre_RegistroUsuarioPanel"
+            CampoIdentificacionDNI.requestFocus();
+            return;
+        }
+
+        try {
+            Cliente cliente = new Cliente();
+            cliente.setDNI_Cliente(identificacionDNI);
+            cliente.setNombre_Cliente(primerNombre);
+            cliente.setSegundoNombre_Cliente(segundoNombre);
+            cliente.setApellido_Cliente(apellido);
+            cliente.setCorreo_Cliente(email);
+            cliente.setTelefono_Cliente(primerTelefono);
+            cliente.setSegundoTelefono_Cliente(segundoTelefono);
+
+            DAOCliente daoCl = new DAOClienteIMPLEMENT();
+            daoCl.registrar(cliente);
+
+            System.out.println("Se ha registrado correctamente.");
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
+        Ventana_Principal.setVisible(true);
+
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     public void mostradorPaneles(JPanel panel) {
-        
+
         panel.setSize(759, 446);
         panel.setLocation(0, 0);
 
@@ -268,7 +313,7 @@ public class panelRegistro extends javax.swing.JPanel {
         ContenedorGeneral.add(panel, BorderLayout.CENTER);
         ContenedorGeneral.revalidate();
         ContenedorGeneral.repaint();
-        
+
     }
 
 

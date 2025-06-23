@@ -199,6 +199,7 @@
                               <Component id="Descripcion02" max="32767" attributes="0"/>
                               <Component id="Descripcion03" alignment="0" max="32767" attributes="0"/>
                               <Component id="Descripcion04" alignment="0" max="32767" attributes="0"/>
+                              <Component id="BtnSolictar" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -215,7 +216,8 @@
                           <Component id="Descripcion03" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Descripcion04" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="202" max="32767" attributes="0"/>
+                          <EmptySpace pref="175" max="32767" attributes="0"/>
+                          <Component id="BtnSolictar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -241,6 +243,14 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value=" "/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="BtnSolictar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="SOLICITAR PIEZA"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSolictarActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

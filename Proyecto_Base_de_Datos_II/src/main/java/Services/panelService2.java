@@ -12,7 +12,9 @@ import Database.*;
 import DatabaseModels.*;
 import Interfaces.*;
 import Model.*;
+import View.loginPrototipo;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -132,6 +134,7 @@ public class panelService2 extends javax.swing.JPanel {
         Descripcion02 = new javax.swing.JLabel();
         Descripcion03 = new javax.swing.JLabel();
         Descripcion04 = new javax.swing.JLabel();
+        BtnSolictar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Separador03 = new javax.swing.JSeparator();
 
@@ -173,6 +176,13 @@ public class panelService2 extends javax.swing.JPanel {
 
         Descripcion04.setText(" ");
 
+        BtnSolictar.setText("SOLICITAR PIEZA");
+        BtnSolictar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSolictarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelProductoDescripcionLayout = new javax.swing.GroupLayout(PanelProductoDescripcion);
         PanelProductoDescripcion.setLayout(PanelProductoDescripcionLayout);
         PanelProductoDescripcionLayout.setHorizontalGroup(
@@ -183,7 +193,8 @@ public class panelService2 extends javax.swing.JPanel {
                     .addComponent(Descripcion01, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                     .addComponent(Descripcion02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnSolictar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelProductoDescripcionLayout.setVerticalGroup(
@@ -197,7 +208,8 @@ public class panelService2 extends javax.swing.JPanel {
                 .addComponent(Descripcion03)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Descripcion04)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addComponent(BtnSolictar))
         );
 
         javax.swing.GroupLayout PanelDescripcionLayout = new javax.swing.GroupLayout(PanelDescripcion);
@@ -304,13 +316,61 @@ public class panelService2 extends javax.swing.JPanel {
             DAOAutopartes daoAu = new DAOAutopartesIMPLEMENT();
             List<Autopartes> lista = daoAu.Listar(categoriaFiltro);
             actualizarTabla(lista);
-            
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+
+    private void BtnSolictarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSolictarActionPerformed
+
+        int fila = TblRepuestos.getSelectedRow();
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una autoparte para ver sus detalles", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+        }
+
+        int response = JOptionPane.showConfirmDialog(null, "¿Esta seguro de solictar la pieza?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
+
+        if (response == JOptionPane.YES_OPTION) {
+
+            try {
+                int idAutoparte = (int) TblRepuestos.getValueAt(fila, 0); // Asegúrate que la primera columna sea el ID
+                String dniCliente = Sesion.clienteLogueado.getDNI_Cliente(); // Método que devuelve el DNI del cliente autenticado
+
+                ReservaServDos reserva = new ReservaServDos();
+                reserva.setID_Autoparte(idAutoparte);
+                reserva.setDNI_Cliente(dniCliente);
+
+                DAOReservaServDos daoRsD = new DAOReservaServDosIMPLEMENT();
+                daoRsD.registrar(reserva);
+
+                JOptionPane.showMessageDialog(null, "Se ha solicitado correctamente.", "Tesla Inc.", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+
+            /*
+                  try {
+                //Pensar en las columnas que vera el administrador.
+                int idAutoparte = Integer.parseInt(TblRepuestos.getValueAt(fila, 0).toString());
+                int idCliente = 
+                
+                
+            } catch (Exception e) {
+                System.out.println("Error : " + e.getMessage());
+            }
+             */
+        } else {
+            //Not to programm here.
+        }
+
+
+    }//GEN-LAST:event_BtnSolictarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnSolictar;
     private javax.swing.JLabel Descripcion01;
     private javax.swing.JLabel Descripcion02;
     private javax.swing.JLabel Descripcion03;

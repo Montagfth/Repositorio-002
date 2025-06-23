@@ -10,6 +10,10 @@ import javax.swing.JPanel;
 import View.*;
 import javax.swing.JOptionPane;
 import Administrative.panelAdministrator;
+import DatabaseModels.Cliente;
+import DatabaseModels.Sesion;
+import Interfaces.DAOCliente;
+import Model.DAOClienteIMPLEMENT;
 
 /**
  *
@@ -22,6 +26,7 @@ public class panelLogin extends javax.swing.JPanel {
      */
     public panelLogin() {
         initComponents();
+        CampoContraseña.setEnabled(false);
     }
 
     /**
@@ -158,6 +163,7 @@ public class panelLogin extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
 
         mostradorPaneles(new panelRegistro());
@@ -168,19 +174,79 @@ public class panelLogin extends javax.swing.JPanel {
 
         //String mensajeDinamico = ... [Programacion dinamica de respuesta a evaluar]
         //Parametrizacion de campos:
+        /*
+              try {
+            DAOCliente daoCl = new DAOClienteIMPLEMENT();
+            Cliente cliente = daoCl.verificacionCredendiales(CampoUsuario.getText(), CampoContraseña.getText());
+            if (cliente != null) {
+                Sesion.setIDClienteActual(cliente.getID_Cliente());
+                ventanaPrincipal VentanaPrincipal = new ventanaPrincipal();
+                VentanaPrincipal.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Credenciales incorrectas", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            }
+        
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al iniciar sesion", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+        }
+        
         if (CampoUsuario.getText().isEmpty() || CampoContraseña.getText().isEmpty()) {
             //JOptionPane.showMessageDialog(null, "El campo " + +"esta incompleto", "Tesla Inc.", JOptionPane.WARNING_MESSAGE); [Mensaje dinamico a evaluar]
             JOptionPane.showMessageDialog(null, "El campo Usuario o Contraseña esta incompleto o los datos son incorrectos", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
 
             //NOTA: Parametrizar para validar si esta ingresando un administrador o un cliente.
         } else if (CampoUsuario.getText().equals("admin") && CampoContraseña.getText().equals("admin")) {
-
+            
             ventanaAdministrador Ventana_Administrador = new ventanaAdministrador();
             Ventana_Administrador.setVisible(true);
 
         } else {
             ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
             Ventana_Principal.setVisible(true);
+        }
+         */
+
+ /*
+           if (CampoUsuario.getText().isEmpty() || CampoContraseña.getText().isEmpty()) {
+            //JOptionPane.showMessageDialog(null, "El campo " + +"esta incompleto", "Tesla Inc.", JOptionPane.WARNING_MESSAGE); [Mensaje dinamico a evaluar]
+            JOptionPane.showMessageDialog(null, "El campo Usuario o Contraseña esta incompleto o los datos son incorrectos", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            //NOTA: Parametrizar para validar si esta ingresando un administrador o un cliente.
+        } else if (CampoUsuario.getText().equals("admin") && CampoContraseña.getText().equals("admin")) {
+            
+            ventanaAdministrador Ventana_Administrador = new ventanaAdministrador();
+            Ventana_Administrador.setVisible(true);
+        } else {
+            ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
+            Ventana_Principal.setVisible(true);
+        }
+         */
+        String dni = CampoUsuario.getText();
+
+        if (dni.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar su DNI para acceder", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        //Autenticacion de ADMINISTRADOR por mejorar y parametrizar
+        if (dni.equalsIgnoreCase("admin")) {
+            ventanaAdministrador VentanaAdministracion = new ventanaAdministrador();
+            VentanaAdministracion.setVisible(true);
+        }
+        
+        try {
+            DAOCliente dao = new DAOClienteIMPLEMENT();
+            Cliente cliente = dao.autenticarPorDNI(dni);
+
+            if (cliente != null) {
+                Sesion.clienteLogueado = cliente;
+                ventanaPrincipal ventana = new ventanaPrincipal();
+                ventana.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "DNI no encontrado. Verifique sus datos.", "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al iniciar sesión: " + e.getMessage(), "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 

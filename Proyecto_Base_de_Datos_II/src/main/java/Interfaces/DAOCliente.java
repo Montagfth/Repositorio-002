@@ -14,7 +14,13 @@ import java.util.List;
  */
 public interface DAOCliente {
     
+    //Registro de clientes: 
     public void registrar(Cliente cliente) throws Exception;
     
-    //public List<Autos> listar (String categoria_auto) throws Exception;
+    //Listado de clientes registrados:
+    public List<Cliente> listarCliente (String nombre) throws Exception;
+    
+    //Parametrizacion de credenciales:
+    public Cliente autenticarPorDNI(String dni) throws Exception;
+    
 }

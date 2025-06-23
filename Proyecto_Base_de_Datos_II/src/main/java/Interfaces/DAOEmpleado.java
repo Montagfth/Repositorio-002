@@ -1,0 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Interfaces;
+
+import DatabaseModels.Empleado;
+import java.util.List;
+
+/**
+ *
+ * @author Fabrizio
+ */
+public interface DAOEmpleado {
+    
+    //Listado de empleados predeterminados:
+    public List<Empleado> listarEmpleado (String nombreEmpleado) throws Exception;
+    
+}
