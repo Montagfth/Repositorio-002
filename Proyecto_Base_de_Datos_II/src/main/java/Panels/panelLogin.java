@@ -10,9 +10,12 @@ import javax.swing.JPanel;
 import View.*;
 import javax.swing.JOptionPane;
 import Administrative.panelAdministrator;
+import DatabaseModels.Administrador;
 import DatabaseModels.Cliente;
 import DatabaseModels.Sesion;
+import Interfaces.DAOAdministrador;
 import Interfaces.DAOCliente;
+import Model.DAOAdministradorIMPLEMENT;
 import Model.DAOClienteIMPLEMENT;
 
 /**
@@ -220,7 +223,8 @@ public class panelLogin extends javax.swing.JPanel {
             return;
         }
 
-        //Autenticacion de ADMINISTRADOR por mejorar y parametrizar
+        /* lunes 23/06/25
+                //Autenticacion de ADMINISTRADOR por mejorar y parametrizar
         if (dni.equalsIgnoreCase("admin")) {
             ventanaAdministrador VentanaAdministracion = new ventanaAdministrador();
             VentanaAdministracion.setVisible(true);
@@ -239,6 +243,35 @@ public class panelLogin extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al iniciar sesión: " + e.getMessage(), "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
+        }
+        */
+        try {
+            DAOAdministrador daoAdmin = new DAOAdministradorIMPLEMENT();
+            Administrador admin = daoAdmin.buscarAdministradorPorDNI(dni);
+            
+            if (admin != null) {
+                Sesion.adminLogueado = admin;
+                
+                ventanaAdministrador ventanaAdmin = new ventanaAdministrador();
+                ventanaAdmin.setVisible(true);
+                return;
+            }
+            
+            DAOCliente daoCliente = new DAOClienteIMPLEMENT();
+            Cliente cliente = daoCliente.autenticarPorDNI(dni);
+            
+            if (cliente != null) {
+                Sesion.clienteLogueado = cliente;
+                
+                ventanaPrincipal ventanaPrincipal = new ventanaPrincipal();
+                ventanaPrincipal.setVisible(true);
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "DNI no encontrado. Verifique sus datos.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }//GEN-LAST:event_BotonInicioSesionActionPerformed
 
