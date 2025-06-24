@@ -20,7 +20,7 @@ public class DatabaseNOSQL {
         String uri = "mongodb://localhost:27017";
 
         MongoClient mongoClient = MongoClients.create(uri);
-        MongoDatabase mongoDatabase = mongoClient.getDatabase("tareadb2");
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("dbproyectobasededatosii");
 
         System.out.println("Conexion exitosa");
 

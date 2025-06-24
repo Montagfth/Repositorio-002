@@ -4,6 +4,7 @@
  */
 package Services;
 
+import Comentarios.DialogComentarios;
 import Panels.panelInformativo;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -16,6 +17,8 @@ import java.util.List;
 import Database.*;
 import DatabaseModels.*;
 import Interfaces.*;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -307,7 +310,7 @@ public class panelService1 extends javax.swing.JPanel {
         Descripcion10 = new javax.swing.JLabel();
         BtnContinuar = new javax.swing.JButton();
         ChkBxConfirmacion = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        btnComentar = new javax.swing.JButton();
 
         TxtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         TxtTitulo.setText("VEHICULOS DISPONIBLES");
@@ -400,7 +403,12 @@ public class panelService1 extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("COMENTAR");
+        btnComentar.setText("COMENTAR");
+        btnComentar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComentarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -426,7 +434,7 @@ public class panelService1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnComentar)
                 .addGap(46, 46, 46))
         );
         jPanel1Layout.setVerticalGroup(
@@ -457,7 +465,7 @@ public class panelService1 extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnComentar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(ChkBxConfirmacion)
                 .addContainerGap())
@@ -608,6 +616,25 @@ public class panelService1 extends javax.swing.JPanel {
         filtrarAutos();
     }//GEN-LAST:event_CbxModeloVehiculoActionPerformed
 
+    private void btnComentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComentarActionPerformed
+        
+        int filaSeleccionada = TblVehiculos.getSelectedRow();
+        
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(null, "Seleccione un vehiculo para comentar", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        int idVehiculo = Integer.parseInt(TblVehiculos.getValueAt(filaSeleccionada, 0).toString());
+        
+        DialogComentarios dialog = new DialogComentarios(
+                (JFrame) SwingUtilities.getWindowAncestor(this)
+                ,idVehiculo
+        );
+        dialog.setVisible(true);
+        
+    }//GEN-LAST:event_btnComentarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnContinuar;
@@ -637,7 +664,7 @@ public class panelService1 extends javax.swing.JPanel {
     private javax.swing.JLabel TxtInformativo04;
     private javax.swing.JLabel TxtSubtitulo;
     private javax.swing.JLabel TxtTitulo;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnComentar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblImagen;
