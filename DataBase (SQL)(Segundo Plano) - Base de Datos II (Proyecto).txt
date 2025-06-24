@@ -1,0 +1,324 @@
+
+use BaseDeDatosIIProyecto;
+
+-- Por analizar y corregir detalles antes de ejecutar:
+-- Tabla cliente relacionada con el panel login del programa
+-- Por analizar CLiente
+CREATE TABLE cliente (
+  ID_Cliente int auto_increment PRIMARY KEY,
+  Nombre_Cliente varchar(150) NOT NULL,
+  SegundoNombre_Cliente varchar(150),
+  Apellido_Cliente varchar(150) NOT NULL,
+  DNI_Cliente char(20) not null unique,
+  Correo_Cliente varchar(150) not null,
+  Telefono_Cliente char(20) NOT NULL,
+  SegundoTelefono_Cliente char(20)
+  );
+  
+  -- altercion de tabla y agregacion de 2 columnas mas: Usuario | Contraseña
+-- ALTER TABLE cliente
+-- ADD Usuario_Cliente VARCHAR(150) NOT NULL DEFAULT 'temporal',
+-- ADD Contrasena_Cliente VARCHAR(150) NOT NULL DEFAULT 'temporal';
+ 
+-- Dropeo de columnas 
+-- ALTER TABLE cliente
+-- DROP COLUMN Usuario_Cliente,
+-- DROP COLUMN Contrasena_Cliente;
+-- NO utilizados
+
+-- tabla clientes lista para ejecutar (Testeo exitoso)
+
+-- Testeo de la tabla Clientes:
+select * from basededatosiiproyecto.cliente;
+
+-- Testing Cliente:
+describe basededatosiiproyecto.cliente;
+
+-- insercion de datos de prueba:
+insert into basededatosiiproyecto.cliente
+(Nombre_Cliente,SegundoNombre_Cliente,Apellido_Cliente,DNI_Cliente,Correo_Cliente,Telefono_Cliente,SegundoTelefono_Cliente) 
+values ('prueba1','prueba1.1','prueba1.2',123456789,'prueba1@hotmail.com',12345678,87654321);
+
+-- insercion de datos genericos:
+
+
+
+
+-- tabla de manejo de administradores:
+CREATE TABLE Administrador (
+    ID_Admin INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Admin VARCHAR(150) NOT NULL,
+    Correo_Admin VARCHAR(150),
+    DNI_Admin CHAR(20) NOT NULL UNIQUE
+);
+-- creacion: Correcto
+-- testing: Correcto
+select * from basededatosiiproyecto.administrador;
+
+-- insercion de Administradores:
+INSERT INTO Administrador (Nombre_Admin, Correo_Admin, DNI_Admin)
+VALUES 
+('Fabrizio', 'fabrizio@tesla.com', '111'),
+('Angelo', 'angelo@tesla.com', '222'),
+('Walter', 'walter@tesla.com', '333');
+
+
+
+
+
+-- Tabla auto [Funcional]
+CREATE TABLE Auto (
+  ID_Auto INT AUTO_INCREMENT PRIMARY KEY,
+  Marca_Auto VARCHAR(150)  NOT NULL,
+  Modelo_Auto VARCHAR(150) NOT NULL,
+  Anio_Auto CHAR(4) NOT NULL,
+  Precio_Auto DECIMAL(12,2) NOT NULL CHECK (Precio_Auto > 0)
+);
+
+-- evaluar agregacion de columnas a las tabla Cliente (arriba)
+
+-- tabla autos lista para ejecutar
+
+select * from basededatosiiproyecto.auto;
+
+-- insercion de datos de prueba:
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (1,'tesla01','tesla01','XXXX',131.435);
+-- delete from basededatosiiproyecto.auto where ID_Auto = 2;
+
+
+-- Insercion de datos genericos (100 registros a insercion):
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (1,'Tesla','SEDAN','2010',10.000);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (2,'Tesla','SUV','2015',15.000);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (3,'Tesla','CAMIONETA','2018',20.000);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (4,'Tesla','SEDAN','2012',13.000);
+
+-- Valores errados, error punto-decimal
+-- eliminacion:
+delete from basededatosiiproyecto.auto where ID_Auto = 4;
+
+-- nuevos valores corregidos:
+-- FILTRADO 01: filtro 1: 2025, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: menos de 15,000
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (1,'Tesla','SEDAN','2025',10000.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (2,'Tesla','SUV','2025',12000.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (3,'Tesla','CAMIONETA','2025',13000.00);
+
+-- FILTRADO 02: filtro 1: 2024, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: menos de 15,000
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (4,'Tesla','SEDAN','2024',11000.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (5,'Tesla','SUV','2024',11300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (6,'Tesla','CAMIONETA','2024',12400.00);
+
+-- FILTRADO 03: filtro 1: 2023, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: menos de 15,000
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (7,'Tesla','SEDAN','2023',10300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (8,'Tesla','SUV','2023',11600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (9,'Tesla','CAMIONETA','2023',13230.00);
+
+-- FILTRADO 04: filtro 1: 2025, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: <15,000 - 25,000>
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (10,'Tesla','SEDAN','2025',15300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (11,'Tesla','SUV','2025',16600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (12,'Tesla','CAMIONETA','2025',17230.00);
+
+-- FILTRADO 05: filtro 1: 2024, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: <15,000 - 25,000>
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (13,'Tesla','SEDAN','2024',21300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (14,'Tesla','SUV','2024',18600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (15,'Tesla','CAMIONETA','2024',19230.00);
+
+-- FILTRADO 06: filtro 1: 2023, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: <15,000 - 25,000>
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (16,'Tesla','SEDAN','2023',22100.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (17,'Tesla','SUV','2023',17600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (18,'Tesla','CAMIONETA','2023',20230.00);
+
+-- FILTRADO 07: filtro 1: 2025, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: mas de 25,000 
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (19,'Tesla','SEDAN','2025',27300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (20,'Tesla','SUV','2025',3600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (21,'Tesla','CAMIONETA','2025',28230.00);
+
+-- FILTRADO 08: filtro 1: 2024, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: mas de 25,000 
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (22,'Tesla','SEDAN','2024',27300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (23,'Tesla','SUV','2024',38600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (24,'Tesla','CAMIONETA','2024',27230.00);
+
+-- FILTRADO 09: filtro 1: 2023, filtro 2: sedan(listo), suv (listo), camioneta (listo) , filtro 3: mas de 25,000 
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (25,'Tesla','SEDAN','2023',28300.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (26,'Tesla','SUV','2023',29600.00);
+insert into basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) value (27,'Tesla','CAMIONETA','2023',30230.00);
+
+-- Tabla mantenimiento
+-- En evaluacion: 21/06/2025
+CREATE TABLE Mantenimiento (
+  ID_Mantenimiento int auto_increment PRIMARY KEY,
+  ID_Auto int not null,
+  ID_Empleado int not null,
+  Fecha_Mantenimiento DATE NOT NULL,
+  Descripcion_Mantenimiento varchar(150),
+  Costo_Mantenimiento decimal(10, 2) NOT NULL CHECK (Costo_Mantenimiento >= 0),
+  foreign key (ID_Auto) references basededatosiiproyecto.auto(ID_Auto),
+  foreign key (ID_Empleado) references basededatosiiproyecto.empleado(ID_Empleado)
+);
+-- Creacion [Correcto]
+
+-- Testeo de funcionalidad: 
+select * from basededatosiiproyecto.mantenimiento;
+
+-- Nueva adherencia de tabla: Relacion con Servicio | Auto
+create table ReservaServUno(
+	ID_ReservaServUno int auto_increment primary key,
+	ID_Auto int not null,
+	Estado_ReservaServUno varchar(50) not null default 'EN ESPERA',
+	Fecha_ReservaServUno datetime not null default current_timestamp,
+	foreign key (ID_Auto) references basededatosiiproyecto.auto(ID_Auto)
+);
+-- crecion : Correcto
+-- NOTA 01: Cabe la posibilidad de hacer relacion con la tabla Cliente.
+-- NOTA 02: Posible modificacion y agregacion de columna de precio del vehiculo.
+-- prueba de funcionalidad: [Correcto]
+select * from basededatosiiproyecto.reservaservuno;
+
+-- Creacion de nueva tabla para el servicio 2:
+-- Relacion: tablas Autopartes - Clientes
+create table ReservaServDos(
+	ID_ReservaServDos int auto_increment primary key,
+	ID_Autoparte int not null,
+	-- ID_Cliente int not null,
+    -- Cambio ID_Cliente -> DNI_Cliente
+    DNI_Cliente char(20) not null,
+    Estado_ReservaServDos varchar(50) not null default 'SOLICITADO',
+	Fecha_ReservaServDos datetime not null default current_timestamp,
+	foreign key (ID_Autoparte) references basededatosiiproyecto.autopartes(ID_Autoparte)
+);
+-- Creacion: Correcto
+-- Testeo de funcionalidad: []
+select * from basededatosiiproyecto.reservaservdos;
+
+-- Creacion de ultima tabla de servicio 3:
+-- En proceso de analisis
+-- Creacion por chatGPT, analizando
+CREATE TABLE ReservaServTres (
+    ID_ReservaServTres INT AUTO_INCREMENT PRIMARY KEY,
+    TipoVehiculo        VARCHAR(20)  NOT NULL,      -- TESLA | OTRO
+    ServicioSolicitado  VARCHAR(100) NOT NULL,
+    NumeroMotor         VARCHAR(100),               -- solo TESLA
+    NumeroSerie         VARCHAR(100),               -- solo TESLA
+    Kilometraje         INT,
+    MarcaVehiculo       VARCHAR(100),               -- solo OTRO
+    ModeloVehiculo      VARCHAR(100),               -- solo OTRO
+    AnioVehiculo        INT,                        -- solo OTRO
+    TipoMotor           VARCHAR(100),               -- solo OTRO
+    Observacion         TEXT,
+    FechaCita           DATE        NOT NULL,       -- fecha sugerida
+    Precio              DECIMAL(10,2) NOT NULL,
+    DNI_Cliente         CHAR(20)    NOT NULL,
+    DNI_Empleado        CHAR(20)             NULL   -- se asigna luego
+);
+-- Creacion: (Correcto)
+-- Tesing de funcionalidad: (Correcto)
+select * from basededatosiiproyecto.reservaservtres;
+
+-- NOTA: Se ve mal dejar que se vean los campos null, asi que se recomienda crear una vista:
+-- CREATE VIEW vistaReservasLimpia AS
+-- SELECT 
+--   ID_ReservaServTres,
+--   TipoVehiculo,
+--   ServicioSolicitado,
+--   NumeroMotor,
+--   NumeroSerie,
+--   Kilometraje,
+--   MarcaVehiculo,
+--   ModeloVehiculo,
+--   AnioVehiculo,
+--   TipoMotor,
+--   Observacion,
+--   FechaCita,
+--   Precio,
+--   DNI_Cliente,
+--   DNI_Empleado
+-- FROM ReservaServTres;
+-- (Evaluar vista antes de ejecutar)
+
+-- Tarea: Analisis del tercer servicio. (Corregido)
+-- insercion de valores genericos aqui.
+
+
+
+
+
+
+
+-- Por analizar su empleabilidad:
+CREATE TABLE reservasAuto (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    id_auto INT NOT NULL,
+    marca VARCHAR(100) NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    anio CHAR(4) NOT NULL,
+    fecha_reserva DATE NOT NULL,
+    descripcion VARCHAR(100) DEFAULT 'En espera'
+);
+
+-- Tabla autoparte
+-- Siendo evaluada
+CREATE TABLE Autopartes (
+  ID_Autoparte int auto_increment PRIMARY KEY,
+  Nombre_Autoparte varchar(150) NOT NULL,
+  Categoria_Autoparte varchar(150) NOT NULL,
+  Stock_Autoparte INT NOT NULL CHECK (Stock_Autoparte >= 0),
+  Precio_Autoparte decimal(10, 2) NOT NULL CHECK (Precio_Autoparte > 0)
+);
+
+-- Testeo de la tabla:
+select * from basededatosiiproyecto.autopartes;
+
+-- insercion de datos de pruba:
+insert into basededatosiiproyecto.autopartes(ID_Autoparte,Nombre_Autoparte,Categoria_Autoparte,Stock_Autoparte,Precio_Autoparte) value (1,'p1','c1',10,10.2);
+
+-- insercion de valor testeador:
+insert into basededatosiiproyecto.autopartes(ID_Autoparte,Nombre_Autoparte,Categoria_Autoparte,Stock_Autoparte,Precio_Autoparte) value (5,'pieza 4','ELECTRONICA',10,10.4);
+-- delete from basededatosiiproyecto.autopartes where Nombre_Autoparte = 'p1';
+
+-- insercion de valores genericos:
+-- +100 registros genericos
+
+
+
+-- Tabla empleado
+-- En proceso de analisis [Testeo correcto]
+CREATE TABLE Empleado (
+  ID_Empleado int auto_increment PRIMARY KEY,
+  Nombre_Empleado varchar(150) NOT NULL,
+  DNI_Empleado varchar(150) UNIQUE NOT NULL,
+  Telefono_Empleado int NOT NULL,
+  FechaContratacion_Empleado DATE NOT NULL
+);
+
+-- Consulta de prueba:
+select * from basededatosiiproyecto.empleado;
+
+-- Insercion de dato de prueba:
+insert into basededatosiiproyecto.empleado(ID_Empleado, Nombre_Empleado, DNI_Empleado, Telefono_Empleado, FechaContratacion_Empleado)
+value (1,'nombre1','123456789',12345678,'1990-12-12');
+
+-- Insercion de valores genericos:
+insert into basededatosiiproyecto.empleado(ID_Empleado, Nombre_Empleado, DNI_Empleado, Telefono_Empleado, FechaContratacion_Empleado)
+value (2,'nombre2','2234589',12345678,'1990-12-13');
+insert into basededatosiiproyecto.empleado(ID_Empleado, Nombre_Empleado, DNI_Empleado, Telefono_Empleado, FechaContratacion_Empleado)
+value (3,'nombre1','323456789',12345678,'1990-12-14');
+
+
+
+
+
+-- Tabla pedido
+CREATE TABLE pedido (
+  id SERIAL PRIMARY KEY,
+  id_cliente BIGINT REFERENCES cliente (id) ON DELETE SET NULL,
+  fecha_venta DATE NOT NULL,
+  total_venta NUMERIC(10, 2) NOT NULL CHECK (total_venta >= 0),
+  tipo_venta TEXT NOT NULL
+);
+
+-- Tabla de relación pedido - autoparte
+CREATE TABLE pedido_autoparte (
+  id_pedido BIGINT REFERENCES pedido (id) ON DELETE CASCADE,
+  id_autoparte BIGINT REFERENCES autoparte (id) ON DELETE CASCADE,
+  cantidad INT NOT NULL CHECK (cantidad > 0),
+  PRIMARY KEY (id_pedido, id_autoparte)
+);

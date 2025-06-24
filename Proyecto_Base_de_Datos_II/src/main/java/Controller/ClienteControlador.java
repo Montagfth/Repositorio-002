@@ -4,10 +4,6 @@
  */
 package Controller;
 
-//Importes prototipo, se puede quitar alguno de ser necesario.
-import Panels.*;
-import View.*;
-
 /**
  *
  * @author Fabrizio
