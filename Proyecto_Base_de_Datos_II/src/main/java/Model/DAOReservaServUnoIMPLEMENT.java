@@ -6,6 +6,7 @@ package Model;
 
 import Database.Database;
 import DatabaseModels.ReservaServUno;
+import DatabaseModels.Sesion;
 import Interfaces.DAOReservaServUno;
 import java.sql.Connection;
 import java.sql.Date;
@@ -24,9 +25,11 @@ public class DAOReservaServUnoIMPLEMENT extends Database implements DAOReservaSe
     public void registrar(ReservaServUno rsu) throws Exception {
         try {
             this.Conectar();
-            String sql = "insert into ReservaServUno(ID_Auto) values (?)";
+            String sql = "insert into ReservaServUno(ID_Auto,DNI_Cliente) values (?,?)";
             PreparedStatement st = this.Conexion.prepareStatement(sql);
             st.setInt(1, rsu.getID_Auto());
+            st.setString(2, Sesion.clienteLogueado.getDNI_Cliente());
+            
             st.executeUpdate();
             st.close();
 
@@ -53,6 +56,7 @@ public class DAOReservaServUnoIMPLEMENT extends Database implements DAOReservaSe
                 ReservaServUno rsu = new ReservaServUno();
                 rsu.setID_ReservaServUno(rs.getInt("ID_ReservaServUno"));
                 rsu.setID_Auto(rs.getInt("ID_Auto"));
+                rsu.setDNI_Cliente(Sesion.clienteLogueado.getDNI_Cliente());
                 rsu.setEstado_ReservaServUno(rs.getString("Estado_ReservaServUno"));
                 rsu.setFecha_ReservaServUno(rs.getTimestamp("Fecha_ReservaServUno"));
 

@@ -98,7 +98,7 @@ public class panelAdministrator extends javax.swing.JPanel {
             DAOReservaServUno daoRsun = new DAOReservaServUnoIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblServicioUno.getModel();
             model.setRowCount(0);
-            daoRsun.listarReservaServUno().forEach((u) -> model.addRow(new Object[]{u.getID_ReservaServUno(), u.getID_Auto(), u.getEstado_ReservaServUno(), u.getFecha_ReservaServUno()}));
+            daoRsun.listarReservaServUno().forEach((u) -> model.addRow(new Object[]{u.getID_ReservaServUno(), u.getID_Auto(), u.getDNI_Cliente(),u.getEstado_ReservaServUno(), u.getFecha_ReservaServUno()}));
 
         } catch (Exception e) {
             System.out.println("Error en la carga de operaciones del servicio 1");
@@ -201,7 +201,7 @@ public class panelAdministrator extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID_ReservaServUno", "ID_Auto", "Estado_ReservaServUno", "Fecha_ReservaServUno"
+                "ID_ReservaServUno", "ID_Auto", "DNI_Cliente", "Estado_ReservaServUno", "Fecha_ReservaServUno"
             }
         ));
         jScrollPane1.setViewportView(TblServicioUno);

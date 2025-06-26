@@ -16,7 +16,8 @@ public class ReservaServUno {
     private int ID_Auto;
     private String Estado_ReservaServUno;
     private Timestamp Fecha_ReservaServUno;
-
+    private String DNI_Cliente;
+    
     public int getID_ReservaServUno() {
         return ID_ReservaServUno;
     }
@@ -47,6 +48,14 @@ public class ReservaServUno {
 
     public void setFecha_ReservaServUno(Timestamp Fecha_ReservaServUno) {
         this.Fecha_ReservaServUno = Fecha_ReservaServUno;
+    }
+
+    public String getDNI_Cliente() {
+        return DNI_Cliente;
+    }
+
+    public void setDNI_Cliente(String DNI_Cliente) {
+        this.DNI_Cliente = DNI_Cliente;
     }
     
 }
