@@ -16,153 +16,151 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelContenedor" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelContenedor" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="PanelContenedor">
+    <Container class="javax.swing.JPanel" name="PnlContenedorGeneral">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="JSeparador06" alignment="0" max="32767" attributes="0"/>
+                      <Component id="LblTitulo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="JSeparador01" alignment="0" max="32767" attributes="0"/>
+                      <Component id="JSeparador05" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Separador03" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtTitulo" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Separador01" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="TxtSubtitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="BtnRetornar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="0" pref="473" max="32767" attributes="0"/>
-                                      <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="lblTesla04" max="32767" attributes="0"/>
-                                                      <Component id="lblTesla03" min="-2" pref="178" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="campoTesla03" max="32767" attributes="0"/>
-                                                      <Component id="campoTesla04" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="lblTesla02" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="lblTesla05" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="lblTesla01" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                                                      <Component id="lblTesla06" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="campoTesla01" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="campoTesla02" max="32767" attributes="0"/>
-                                                      <Component id="campoTesla05" max="32767" attributes="0"/>
-                                                      <Component id="campoTesla06" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jSeparator4" max="32767" attributes="0"/>
-                                              <Component id="jLabel7" pref="540" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace pref="268" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblOtro01" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoOtro01" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblCampo03" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoOtro03" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblCampo02" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoOtro02" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblOtro08" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoOtro08" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblOtro04" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoOtro04" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="lblOtro05" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="campoOtro05" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="lblOtro06" max="32767" attributes="0"/>
-                                                      <Component id="lblOtro07" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="campoOtro06" max="32767" attributes="0"/>
-                                                      <Component id="campoOtro07" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CbxTipoAuto" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="BtnRetornar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="58" pref="1088" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="LblSeleccionarModelo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="CbxSeleccionarTipoAuto" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="LblNotaInformativa" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="LblSubtitulo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="JSeparador02" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
-                                  <Component id="TxtInformativo03" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="contenedorPRecio" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="LblCategoriaTesla" min="-2" pref="400" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
-                                  <Component id="TxtInformativo02" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="BtnRegistrarCita" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <Component id="JSeparador03" min="-2" pref="478" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="LblCategoriaOtro" pref="450" max="32767" attributes="0"/>
+                              <Component id="JSeparador04" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="LblServicioTesla04" max="32767" attributes="0"/>
+                                      <Component id="LblServicioTesla03" min="-2" pref="206" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="JTFServicioTesla03" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioTesla04" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="LblServicioTesla02" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="LblServicioTesla05" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="LblServicioTesla06" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="LblServicioTesla01" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="CbxServicioTesla01" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioTesla02" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioTesla05" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioTesla06" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LblServicioOtro01" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="CbxServicioOtro01" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="LblServicioOtro03" max="32767" attributes="0"/>
+                                      <Component id="LblServicioOtro02" max="32767" attributes="0"/>
+                                      <Component id="LblServicioOtro04" min="-2" pref="119" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="JTFServicioOtro04" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="LblServicioOtro05" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="JTFServicioOtro05" min="-2" pref="91" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="JTFServicioOtro02" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioOtro03" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="LblServicioOtro06" max="32767" attributes="0"/>
+                                      <Component id="LblServicioOtro07" max="32767" attributes="0"/>
+                                      <Component id="LblServicioOtro08" min="-2" pref="206" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="JTFServicioOtro08" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioOtro06" max="32767" attributes="0"/>
+                                      <Component id="JTFServicioOtro07" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="LblPrecioServicio" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="JTFContenedorPrecio" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="LblInformativo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="BtnRegistrarCita" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -170,133 +168,134 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="TxtTitulo" min="-2" pref="129" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="TxtSubtitulo" min="-2" max="-2" attributes="0"/>
+                  <Component id="LblTitulo" min="-2" pref="120" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="LblSubtitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Separador01" min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="JSeparador01" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel4" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CbxTipoAuto" alignment="3" pref="30" max="32767" attributes="0"/>
-                          <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblSeleccionarModelo" max="32767" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="CbxSeleccionarTipoAuto" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="LblNotaInformativa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="JSeparador02" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblCategoriaTesla" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblCategoriaOtro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jSeparator3" pref="10" max="32767" attributes="0"/>
-                      <Component id="jSeparator4" max="32767" attributes="0"/>
+                      <Component id="JSeparador03" pref="10" max="32767" attributes="0"/>
+                      <Component id="JSeparador04" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblOtro01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoOtro01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="CbxServicioOtro01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblCampo02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoOtro02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JTFServicioOtro02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblCampo03" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro03" min="-2" pref="29" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="campoOtro03" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="JTFServicioOtro03" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblOtro04" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoOtro04" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="lblOtro05" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoOtro05" alignment="3" max="32767" attributes="0"/>
+                              <Component id="LblServicioOtro04" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JTFServicioOtro04" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro05" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JTFServicioOtro05" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblOtro06" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="campoOtro06" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro06" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="JTFServicioOtro06" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblOtro07" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoOtro07" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro07" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JTFServicioOtro07" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblOtro08" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="campoOtro08" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LblServicioOtro08" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="JTFServicioOtro08" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblTesla01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoTesla01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioTesla01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="CbxServicioTesla01" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblTesla02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="campoTesla02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioTesla02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JTFServicioTesla02" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblTesla03" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="campoTesla03" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="LblServicioTesla03" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="JTFServicioTesla03" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblTesla04" max="32767" attributes="0"/>
-                              <Component id="campoTesla04" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioTesla04" max="32767" attributes="0"/>
+                              <Component id="JTFServicioTesla04" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblTesla05" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblServicioTesla05" min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="campoTesla05" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="JTFServicioTesla05" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblTesla06" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="campoTesla06" min="-2" max="-2" attributes="0"/>
+                              <Component id="LblServicioTesla06" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="JTFServicioTesla06" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="TxtInformativo03" alignment="3" max="32767" attributes="0"/>
-                              <Component id="contenedorPRecio" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="TxtInformativo02" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="BtnRegistrarCita" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Separador03" min="-2" pref="10" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BtnRetornar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="JSeparador05" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LblPrecioServicio" alignment="3" max="32767" attributes="0"/>
+                      <Component id="JTFContenedorPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LblInformativo" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="BtnRegistrarCita" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="JSeparador06" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="BtnRetornar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="TxtTitulo">
+        <Component class="javax.swing.JLabel" name="LblTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="48" style="0"/>
@@ -304,20 +303,57 @@
             <Property name="text" type="java.lang.String" value="SERVICIO DE MANTENIMIENTO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TxtSubtitulo">
+        <Component class="javax.swing.JLabel" name="LblSubtitulo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Servicio de mantemiento dedicado para vehiculos Tesla:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="Separador01">
+        <Component class="javax.swing.JSeparator" name="JSeparador01">
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTesla01">
+        <Component class="javax.swing.JLabel" name="LblSeleccionarModelo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Seleccione el modelo del auto:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CbxSeleccionarTipoAuto">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="SELECCIONAR"/>
+                <StringItem index="1" value="TESLA"/>
+                <StringItem index="2" value="OTRO VEHICULO"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxSeleccionarTipoAutoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblNotaInformativa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NOTA: La fecha puede ser modificada por el administrador de ser el caso."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="JSeparador02">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblCategoriaTesla">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="VEHICULOS TESLA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="JSeparador03">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblServicioTesla01">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Seleccione un servicio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="campoTesla01">
+        <Component class="javax.swing.JComboBox" name="CbxServicioTesla01">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
@@ -331,115 +367,66 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoTesla01ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxServicioTesla01ActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="BtnRegistrarCita">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="REGISTRAR CITA"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegistrarCitaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="TxtInformativo02">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Una vez completados los campos, haga clic para registrar la operacion."/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSeparator" name="Separador03">
-        </Component>
-        <Component class="javax.swing.JButton" name="BtnRetornar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="RETORNAR"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRetornarActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="TxtInformativo03">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="PRECIO POR SERVICIO SELECCIONADO:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblTesla02">
+        <Component class="javax.swing.JLabel" name="LblServicioTesla02">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Numero de Motor:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoTesla02">
+        <Component class="javax.swing.JTextField" name="JTFServicioTesla02">
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTesla03">
+        <Component class="javax.swing.JLabel" name="LblServicioTesla03">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Numero de serie del vehiculo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoTesla03">
+        <Component class="javax.swing.JTextField" name="JTFServicioTesla03">
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTesla05">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Observacion Adicional(Opcional):"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Seleccione el modelo del auto:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="CbxTipoAuto">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="SELECCIONAR"/>
-                <StringItem index="1" value="TESLA"/>
-                <StringItem index="2" value="OTRO VEHICULO"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxTipoAutoActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator1">
-        </Component>
-        <Component class="javax.swing.JTextField" name="campoTesla05">
-        </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator2">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblTesla04">
+        <Component class="javax.swing.JLabel" name="LblServicioTesla04">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Kilometraje Actual:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JTextField" name="JTFServicioTesla04">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblServicioTesla05">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="VEHICULOS TESLA"/>
+            <Property name="text" type="java.lang.String" value="Observacion Adicional(Opcional):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator3">
+        <Component class="javax.swing.JTextField" name="JTFServicioTesla05">
         </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator4">
+        <Component class="javax.swing.JLabel" name="LblServicioTesla06">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha sugerida de Cita(YYYY-MM-DD):"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JTextField" name="JTFServicioTesla06">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblCategoriaOtro">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="OTROS VEHICULOS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoTesla04">
+        <Component class="javax.swing.JSeparator" name="JSeparador04">
         </Component>
-        <Component class="javax.swing.JComboBox" name="campoOtro01">
+        <Component class="javax.swing.JLabel" name="LblServicioOtro01">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Seleccione un servicio:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CbxServicioOtro01">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
@@ -453,87 +440,102 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoOtro01ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxServicioOtro01ActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblOtro01">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Seleccione un servicio:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblCampo02">
+        <Component class="javax.swing.JLabel" name="LblServicioOtro02">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Marca del Vehiculo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro02">
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro02">
         </Component>
-        <Component class="javax.swing.JLabel" name="lblCampo03">
+        <Component class="javax.swing.JLabel" name="LblServicioOtro03">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Modelo del Vehiculo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblOtro04">
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro03">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblServicioOtro04">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="A&#xf1;o del Vehiculo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro04">
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro04">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFServicioOtro04ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblOtro05">
+        <Component class="javax.swing.JLabel" name="LblServicioOtro05">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Tipo de Motor:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblOtro07">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Fecha sugerida de Cita(YYYY-MM-DD):"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro05">
         </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro06">
-        </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro03">
-        </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro05">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblOtro08">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Observacion Adicional (Opcional):"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro07">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblOtro06">
+        <Component class="javax.swing.JLabel" name="LblServicioOtro06">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Kilometraje del Vehiculo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTesla06">
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro06">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblServicioOtro07">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Fecha sugerida de Cita(YYYY-MM-DD):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoTesla06">
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro07">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel16">
+        <Component class="javax.swing.JLabel" name="LblServicioOtro08">
           <Properties>
-            <Property name="text" type="java.lang.String" value="NOTA: La fecha puede ser modificada por el administrador de ser el caso."/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Observacion Adicional (Opcional):"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoOtro08">
+        <Component class="javax.swing.JTextField" name="JTFServicioOtro08">
         </Component>
-        <Component class="javax.swing.JTextField" name="contenedorPRecio">
+        <Component class="javax.swing.JSeparator" name="JSeparador05">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblPrecioServicio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="PRECIO POR SERVICIO SELECCIONADO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="JTFContenedorPrecio">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LblInformativo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Una vez completados los campos, haga clic para registrar la operacion."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnRegistrarCita">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="REGISTRAR CITA"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegistrarCitaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="JSeparador06">
+        </Component>
+        <Component class="javax.swing.JButton" name="BtnRetornar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RETORNAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRetornarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

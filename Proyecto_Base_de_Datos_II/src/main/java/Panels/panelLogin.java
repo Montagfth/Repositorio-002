@@ -41,108 +41,108 @@ public class panelLogin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ContenedorGeneral = new javax.swing.JPanel();
-        MensajeInformativo01 = new javax.swing.JLabel();
-        Imagen = new javax.swing.JLabel();
-        Separador01 = new javax.swing.JSeparator();
-        Usuario = new javax.swing.JLabel();
-        CampoUsuario = new javax.swing.JTextField();
-        Contraseña = new javax.swing.JLabel();
-        Separador02 = new javax.swing.JSeparator();
-        BotonInicioSesion = new javax.swing.JButton();
-        MensajeInformativo02 = new javax.swing.JLabel();
-        BotonRegistro = new javax.swing.JButton();
+        PnlContenedorGeneral = new javax.swing.JPanel();
+        LblBienvenida = new javax.swing.JLabel();
+        LblLogo = new javax.swing.JLabel();
+        JSeparador01 = new javax.swing.JSeparator();
+        LblCredencial = new javax.swing.JLabel();
+        JTFCredencial = new javax.swing.JTextField();
+        LblInformativo01 = new javax.swing.JLabel();
+        JSeparador02 = new javax.swing.JSeparator();
+        BtnInicioSesion = new javax.swing.JButton();
+        LblInformativo02 = new javax.swing.JLabel();
+        BtnRegistrarse = new javax.swing.JButton();
 
-        MensajeInformativo01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MensajeInformativo01.setText("Welcome! Write your crendentials to sign in.");
+        LblBienvenida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblBienvenida.setText("Welcome! Write your crendentials to sign in.");
 
-        Imagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Imagen.setText("IMAGEN");
+        LblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblLogo.setText("IMAGEN");
 
-        Usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Usuario.setText("ACCOUNT:");
+        LblCredencial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblCredencial.setText("DNI:");
 
-        CampoUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFCredencial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        Contraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Contraseña.setText("Loguearse con su DNI");
+        LblInformativo01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblInformativo01.setText("Loguearse con su DNI");
 
-        BotonInicioSesion.setText("Log In");
-        BotonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
+        BtnInicioSesion.setText("Log In");
+        BtnInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInicioSesionActionPerformed(evt);
+                BtnInicioSesionActionPerformed(evt);
             }
         });
 
-        MensajeInformativo02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MensajeInformativo02.setText("If you do not have an account, click here to log in.");
+        LblInformativo02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblInformativo02.setText("If you do not have an account, click here to log in.");
 
-        BotonRegistro.setText("Sign In");
-        BotonRegistro.addActionListener(new java.awt.event.ActionListener() {
+        BtnRegistrarse.setText("Sign In");
+        BtnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonRegistroActionPerformed(evt);
+                BtnRegistrarseActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout ContenedorGeneralLayout = new javax.swing.GroupLayout(ContenedorGeneral);
-        ContenedorGeneral.setLayout(ContenedorGeneralLayout);
-        ContenedorGeneralLayout.setHorizontalGroup(
-            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+        javax.swing.GroupLayout PnlContenedorGeneralLayout = new javax.swing.GroupLayout(PnlContenedorGeneral);
+        PnlContenedorGeneral.setLayout(PnlContenedorGeneralLayout);
+        PnlContenedorGeneralLayout.setHorizontalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addComponent(Imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(LblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Separador02)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JSeparador02)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addComponent(LblCredencial, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Separador01, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(BotonInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JTFCredencial, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JSeparador01, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addComponent(BtnInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(93, 93, 93))
-                            .addComponent(Contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(LblInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(48, 48, 48))
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                         .addGap(202, 202, 202)
-                        .addComponent(MensajeInformativo02)
+                        .addComponent(LblInformativo02)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonRegistro)
+                        .addComponent(BtnRegistrarse)
                         .addContainerGap(205, Short.MAX_VALUE))
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addComponent(MensajeInformativo01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(LblBienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
-        ContenedorGeneralLayout.setVerticalGroup(
-            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+        PnlContenedorGeneralLayout.setVerticalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MensajeInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                .addComponent(LblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblCredencial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFCredencial, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(BotonInicioSesion)
+                        .addComponent(BtnInicioSesion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE))
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)))
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MensajeInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -150,22 +150,22 @@ public class panelLogin extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void BotonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistroActionPerformed
+    private void BtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarseActionPerformed
 
         mostradorPaneles(new panelRegistro());
 
-    }//GEN-LAST:event_BotonRegistroActionPerformed
+    }//GEN-LAST:event_BtnRegistrarseActionPerformed
 
-    private void BotonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioSesionActionPerformed
+    private void BtnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInicioSesionActionPerformed
 
         //String mensajeDinamico = ... [Programacion dinamica de respuesta a evaluar]
         //Parametrizacion de campos:
@@ -216,10 +216,10 @@ public class panelLogin extends javax.swing.JPanel {
             Ventana_Principal.setVisible(true);
         }
          */
-        String dni = CampoUsuario.getText();
+        String dni = JTFCredencial.getText();
 
         if (dni.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Debe ingresar su DNI para acceder", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ingresar un DNI valido para acceder", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -244,60 +244,60 @@ public class panelLogin extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al iniciar sesión: " + e.getMessage(), "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
         }
-        */
+         */
         try {
             DAOAdministrador daoAdmin = new DAOAdministradorIMPLEMENT();
             Administrador admin = daoAdmin.buscarAdministradorPorDNI(dni);
-            
+
             if (admin != null) {
                 Sesion.adminLogueado = admin;
-                
+
                 ventanaAdministrador ventanaAdmin = new ventanaAdministrador();
                 ventanaAdmin.setVisible(true);
                 return;
             }
-            
+
             DAOCliente daoCliente = new DAOClienteIMPLEMENT();
             Cliente cliente = daoCliente.autenticarPorDNI(dni);
-            
+
             if (cliente != null) {
                 Sesion.clienteLogueado = cliente;
-                
+
                 ventanaPrincipal ventanaPrincipal = new ventanaPrincipal();
                 ventanaPrincipal.setVisible(true);
-                
+                //this.setEnabled(false);
+
             } else {
                 JOptionPane.showMessageDialog(null, "DNI no encontrado. Verifique sus datos.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
             }
-            
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-    }//GEN-LAST:event_BotonInicioSesionActionPerformed
+    }//GEN-LAST:event_BtnInicioSesionActionPerformed
 
     public void mostradorPaneles(JPanel panel) {
 
         panel.setSize(759, 446);
         panel.setLocation(0, 0);
 
-        ContenedorGeneral.removeAll();
-        ContenedorGeneral.add(panel, BorderLayout.CENTER);
-        ContenedorGeneral.revalidate();
-        ContenedorGeneral.repaint();
+        PnlContenedorGeneral.removeAll();
+        PnlContenedorGeneral.add(panel, BorderLayout.CENTER);
+        PnlContenedorGeneral.revalidate();
+        PnlContenedorGeneral.repaint();
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonInicioSesion;
-    private javax.swing.JButton BotonRegistro;
-    private javax.swing.JTextField CampoUsuario;
-    private javax.swing.JPanel ContenedorGeneral;
-    private javax.swing.JLabel Contraseña;
-    private javax.swing.JLabel Imagen;
-    private javax.swing.JLabel MensajeInformativo01;
-    private javax.swing.JLabel MensajeInformativo02;
-    private javax.swing.JSeparator Separador01;
-    private javax.swing.JSeparator Separador02;
-    private javax.swing.JLabel Usuario;
+    private javax.swing.JButton BtnInicioSesion;
+    private javax.swing.JButton BtnRegistrarse;
+    private javax.swing.JSeparator JSeparador01;
+    private javax.swing.JSeparator JSeparador02;
+    private javax.swing.JTextField JTFCredencial;
+    private javax.swing.JLabel LblBienvenida;
+    private javax.swing.JLabel LblCredencial;
+    private javax.swing.JLabel LblInformativo01;
+    private javax.swing.JLabel LblInformativo02;
+    private javax.swing.JLabel LblLogo;
+    private javax.swing.JPanel PnlContenedorGeneral;
     // End of variables declaration//GEN-END:variables
 }

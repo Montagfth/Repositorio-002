@@ -16,17 +16,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelContenedor" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelContenedor" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="PanelContenedor">
+    <Container class="javax.swing.JPanel" name="PnlContenedorGeneral">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -39,43 +39,44 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="BtnRetornar" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="Separador03" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TxtTitulo" alignment="0" pref="660" max="32767" attributes="0"/>
-                                      <Component id="TxtSubtitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Separador01" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="JSeparador03" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="LblTitulo" alignment="0" pref="660" max="32767" attributes="0"/>
+                                      <Component id="JSeparador01" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="LblSubtitulo" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="651" max="-2" attributes="0"/>
+                              <Component id="JSPRegistroAuto" min="-2" pref="651" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="JSeparador02" min="-2" pref="660" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="TxtInformativo01" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="LblFiltroAuto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TxtInformativo02" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LblAnioAuto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CbxAnioVehiculo" min="-2" pref="131" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TxtInformativo03" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="CbxAnioAuto" min="-2" pref="131" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="LblModeloAuto" min="-2" pref="51" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CbxModeloVehiculo" min="-2" pref="130" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TxtInformativo04" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CbxModeloAuto" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="LblPrecioAuto" min="-2" pref="49" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CbxPrecioVehiculo" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <Component id="CbxPrecioAuto" min="-2" pref="120" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Separador02" alignment="0" min="-2" pref="660" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <Component id="PnlDescripcionAuto" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -83,43 +84,43 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="TxtTitulo" min="-2" pref="110" max="-2" attributes="0"/>
+                  <Component id="LblTitulo" min="-2" pref="110" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="TxtSubtitulo" min="-2" max="-2" attributes="0"/>
+                  <Component id="LblSubtitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Separador01" min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="JSeparador01" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="CbxPrecioVehiculo" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="CbxPrecioAuto" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="TxtInformativo01" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="TxtInformativo02" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="CbxAnioVehiculo" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="TxtInformativo03" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="CbxModeloVehiculo" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          <Component id="TxtInformativo04" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="LblFiltroAuto" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="LblAnioAuto" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="CbxAnioAuto" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="LblModeloAuto" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="CbxModeloAuto" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="LblPrecioAuto" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Separador02" min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="JSeparador02" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="Separador03" min="-2" pref="10" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <Component id="JSPRegistroAuto" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="JSeparador03" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="BtnRetornar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="28" max="32767" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="PnlDescripcionAuto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="TxtTitulo">
+        <Component class="javax.swing.JLabel" name="LblTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="48" style="0"/>
@@ -127,24 +128,24 @@
             <Property name="text" type="java.lang.String" value="VEHICULOS DISPONIBLES"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TxtSubtitulo">
+        <Component class="javax.swing.JLabel" name="LblSubtitulo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Busque el vehiculo de su preferencia:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="Separador01">
+        <Component class="javax.swing.JSeparator" name="JSeparador01">
         </Component>
-        <Component class="javax.swing.JLabel" name="TxtInformativo01">
+        <Component class="javax.swing.JLabel" name="LblFiltroAuto">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Filtrar por:"/>
+            <Property name="text" type="java.lang.String" value="FILTRAR:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="TxtInformativo02">
+        <Component class="javax.swing.JLabel" name="LblAnioAuto">
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xd1;O:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="CbxAnioVehiculo">
+        <Component class="javax.swing.JComboBox" name="CbxAnioAuto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -156,18 +157,18 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxAnioVehiculoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxAnioAutoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="TxtInformativo03">
+        <Component class="javax.swing.JLabel" name="LblModeloAuto">
           <Properties>
             <Property name="text" type="java.lang.String" value="MODELO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="CbxModeloVehiculo">
+        <Component class="javax.swing.JComboBox" name="CbxModeloAuto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -179,18 +180,18 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxModeloVehiculoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxModeloAutoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="TxtInformativo04">
+        <Component class="javax.swing.JLabel" name="LblPrecioAuto">
           <Properties>
             <Property name="text" type="java.lang.String" value="PRECIO:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="CbxPrecioVehiculo">
+        <Component class="javax.swing.JComboBox" name="CbxPrecioAuto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -202,30 +203,30 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxPrecioVehiculoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CbxPrecioAutoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JSeparator" name="Separador02">
+        <Component class="javax.swing.JSeparator" name="JSeparador02">
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+        <Container class="javax.swing.JScrollPane" name="JSPRegistroAuto">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="TblVehiculos">
+            <Component class="javax.swing.JTable" name="TblAuto">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="5" rowCount="0">
-                    <Column editable="true" title="ID" type="java.lang.Object"/>
-                    <Column editable="true" title="MARCA" type="java.lang.Object"/>
-                    <Column editable="true" title="MODELO" type="java.lang.Object"/>
-                    <Column editable="true" title="ANIO" type="java.lang.Object"/>
-                    <Column editable="true" title="precio" type="java.lang.Object"/>
+                    <Column editable="true" title="ID:" type="java.lang.Object"/>
+                    <Column editable="true" title="MARCA:" type="java.lang.Object"/>
+                    <Column editable="true" title="MODELO:" type="java.lang.Object"/>
+                    <Column editable="true" title="ANIO:" type="java.lang.Object"/>
+                    <Column editable="true" title="PRECIO:" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -265,7 +266,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JSeparator" name="Separador03">
+        <Component class="javax.swing.JSeparator" name="JSeparador03">
         </Component>
         <Component class="javax.swing.JButton" name="BtnRetornar">
           <Properties>
@@ -275,7 +276,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRetornarActionPerformed"/>
           </Events>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="PnlDescripcionAuto">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -285,151 +286,187 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblImagen" max="32767" attributes="0"/>
-                          <Component id="Descripcion01" max="32767" attributes="0"/>
-                          <Component id="Descripcion02" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion03" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion04" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion05" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion06" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion07" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion08" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion09" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Descripcion10" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ChkBxConfirmacion" alignment="0" pref="448" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblImagenDinamica" max="32767" attributes="0"/>
+                          <Component id="PnlConedorDescripcion" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="BtnContinuar" min="-2" pref="207" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnComentar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <Component id="lblImagenDinamica" min="-2" pref="301" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblImagen" min="-2" pref="300" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Descripcion01" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion02" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion03" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion04" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion05" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion06" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion07" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion08" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion09" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Descripcion10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BtnContinuar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="btnComentar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
-                      <Component id="ChkBxConfirmacion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="PnlConedorDescripcion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblImagen">
+            <Component class="javax.swing.JLabel" name="lblImagenDinamica">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="[IMAGEN AQUI]"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion01">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel2"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion02">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel3"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion03">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel4"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion04">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel5"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion05">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel6"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion06">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel7"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion07">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel8"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion08">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel9"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion09">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Descripcion10">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel2"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="BtnContinuar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="HACER UNA RESERVA"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnContinuarActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="ChkBxConfirmacion">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Marque la casilla para aceptar terminos y condiciones para la operacion."/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChkBxConfirmacionActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnComentar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="COMENTAR"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnComentarActionPerformed"/>
-              </Events>
-            </Component>
+            <Container class="javax.swing.JPanel" name="PnlConedorDescripcion">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="ChkBxConfirmacionReservaAuto" max="32767" attributes="0"/>
+                                      <Component id="Descripcion05" max="32767" attributes="0"/>
+                                      <Component id="Descripcion01" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Descripcion02" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Descripcion03" max="32767" attributes="0"/>
+                                      <Component id="Descripcion04" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Descripcion06" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Descripcion07" max="32767" attributes="0"/>
+                                      <Component id="Descripcion08" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="BtnReservarAuto" min="-2" pref="207" max="-2" attributes="0"/>
+                                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                                  <Component id="BtnComentarAuto" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Descripcion10" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="Descripcion09" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion01" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion02" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion03" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion04" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion05" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion06" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion07" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Descripcion08" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="Descripcion09" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <Component id="Descripcion10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="BtnReservarAuto" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="BtnComentarAuto" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ChkBxConfirmacionReservaAuto" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="Descripcion01">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="text" type="java.lang.String" value="SELECCIONE ALGUN MODELO PARA VER SU IMAGEN &amp; DESCRIPCION"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion02">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion03">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion04">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion05">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion06">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion07">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion08">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion09">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Descripcion10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value=" "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="BtnReservarAuto">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="HACER UNA RESERVA"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnReservarAutoActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="BtnComentarAuto">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="COMENTAR"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnComentarAutoActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="ChkBxConfirmacionReservaAuto">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Marque la casilla para aceptar terminos y condiciones para la operacion."/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChkBxConfirmacionReservaAutoActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>

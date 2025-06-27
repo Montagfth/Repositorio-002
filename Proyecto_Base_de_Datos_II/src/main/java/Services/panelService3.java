@@ -34,18 +34,18 @@ public class panelService3 extends javax.swing.JPanel {
         //TxtPrecio.setText("00.0");
         actualizarEstadoCampos();
         //contenedorPRecio.setEnabled(false);
-        contenedorPRecio.setText("0.00");
-        contenedorPRecio.setEditable(false);
+        JTFContenedorPrecio.setText("0.00");
+        JTFContenedorPrecio.setEditable(false);
     }
 
     public void mostrarPaneles(JPanel panel) {
         panel.setSize(1194, 694);
         panel.setLocation(0, 0);
 
-        PanelContenedor.removeAll();
-        PanelContenedor.add(panel, BorderLayout.CENTER);
-        PanelContenedor.revalidate();
-        PanelContenedor.repaint();
+        PnlContenedorGeneral.removeAll();
+        PnlContenedorGeneral.add(panel, BorderLayout.CENTER);
+        PnlContenedorGeneral.revalidate();
+        PnlContenedorGeneral.repaint();
     }
 
     /*
@@ -103,68 +103,140 @@ public class panelService3 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelContenedor = new javax.swing.JPanel();
-        TxtTitulo = new javax.swing.JLabel();
-        TxtSubtitulo = new javax.swing.JLabel();
-        Separador01 = new javax.swing.JSeparator();
-        lblTesla01 = new javax.swing.JLabel();
-        campoTesla01 = new javax.swing.JComboBox<>();
+        PnlContenedorGeneral = new javax.swing.JPanel();
+        LblTitulo = new javax.swing.JLabel();
+        LblSubtitulo = new javax.swing.JLabel();
+        JSeparador01 = new javax.swing.JSeparator();
+        LblSeleccionarModelo = new javax.swing.JLabel();
+        CbxSeleccionarTipoAuto = new javax.swing.JComboBox<>();
+        LblNotaInformativa = new javax.swing.JLabel();
+        JSeparador02 = new javax.swing.JSeparator();
+        LblCategoriaTesla = new javax.swing.JLabel();
+        JSeparador03 = new javax.swing.JSeparator();
+        LblServicioTesla01 = new javax.swing.JLabel();
+        CbxServicioTesla01 = new javax.swing.JComboBox<>();
+        LblServicioTesla02 = new javax.swing.JLabel();
+        JTFServicioTesla02 = new javax.swing.JTextField();
+        LblServicioTesla03 = new javax.swing.JLabel();
+        JTFServicioTesla03 = new javax.swing.JTextField();
+        LblServicioTesla04 = new javax.swing.JLabel();
+        JTFServicioTesla04 = new javax.swing.JTextField();
+        LblServicioTesla05 = new javax.swing.JLabel();
+        JTFServicioTesla05 = new javax.swing.JTextField();
+        LblServicioTesla06 = new javax.swing.JLabel();
+        JTFServicioTesla06 = new javax.swing.JTextField();
+        LblCategoriaOtro = new javax.swing.JLabel();
+        JSeparador04 = new javax.swing.JSeparator();
+        LblServicioOtro01 = new javax.swing.JLabel();
+        CbxServicioOtro01 = new javax.swing.JComboBox<>();
+        LblServicioOtro02 = new javax.swing.JLabel();
+        JTFServicioOtro02 = new javax.swing.JTextField();
+        LblServicioOtro03 = new javax.swing.JLabel();
+        JTFServicioOtro03 = new javax.swing.JTextField();
+        LblServicioOtro04 = new javax.swing.JLabel();
+        JTFServicioOtro04 = new javax.swing.JTextField();
+        LblServicioOtro05 = new javax.swing.JLabel();
+        JTFServicioOtro05 = new javax.swing.JTextField();
+        LblServicioOtro06 = new javax.swing.JLabel();
+        JTFServicioOtro06 = new javax.swing.JTextField();
+        LblServicioOtro07 = new javax.swing.JLabel();
+        JTFServicioOtro07 = new javax.swing.JTextField();
+        LblServicioOtro08 = new javax.swing.JLabel();
+        JTFServicioOtro08 = new javax.swing.JTextField();
+        JSeparador05 = new javax.swing.JSeparator();
+        LblPrecioServicio = new javax.swing.JLabel();
+        JTFContenedorPrecio = new javax.swing.JTextField();
+        LblInformativo = new javax.swing.JLabel();
         BtnRegistrarCita = new javax.swing.JButton();
-        TxtInformativo02 = new javax.swing.JLabel();
-        Separador03 = new javax.swing.JSeparator();
+        JSeparador06 = new javax.swing.JSeparator();
         BtnRetornar = new javax.swing.JButton();
-        TxtInformativo03 = new javax.swing.JLabel();
-        lblTesla02 = new javax.swing.JLabel();
-        campoTesla02 = new javax.swing.JTextField();
-        lblTesla03 = new javax.swing.JLabel();
-        campoTesla03 = new javax.swing.JTextField();
-        lblTesla05 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        CbxTipoAuto = new javax.swing.JComboBox<>();
-        jSeparator1 = new javax.swing.JSeparator();
-        campoTesla05 = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        lblTesla04 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        campoTesla04 = new javax.swing.JTextField();
-        campoOtro01 = new javax.swing.JComboBox<>();
-        lblOtro01 = new javax.swing.JLabel();
-        lblCampo02 = new javax.swing.JLabel();
-        campoOtro02 = new javax.swing.JTextField();
-        lblCampo03 = new javax.swing.JLabel();
-        lblOtro04 = new javax.swing.JLabel();
-        campoOtro04 = new javax.swing.JTextField();
-        lblOtro05 = new javax.swing.JLabel();
-        lblOtro07 = new javax.swing.JLabel();
-        campoOtro06 = new javax.swing.JTextField();
-        campoOtro03 = new javax.swing.JTextField();
-        campoOtro05 = new javax.swing.JTextField();
-        lblOtro08 = new javax.swing.JLabel();
-        campoOtro07 = new javax.swing.JTextField();
-        lblOtro06 = new javax.swing.JLabel();
-        lblTesla06 = new javax.swing.JLabel();
-        campoTesla06 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        campoOtro08 = new javax.swing.JTextField();
-        contenedorPRecio = new javax.swing.JTextField();
 
-        TxtTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        TxtTitulo.setText("SERVICIO DE MANTENIMIENTO");
+        LblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        LblTitulo.setText("SERVICIO DE MANTENIMIENTO");
 
-        TxtSubtitulo.setText("Servicio de mantemiento dedicado para vehiculos Tesla:");
+        LblSubtitulo.setText("Servicio de mantemiento dedicado para vehiculos Tesla:");
 
-        lblTesla01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTesla01.setText("Seleccione un servicio:");
+        LblSeleccionarModelo.setText("Seleccione el modelo del auto:");
 
-        campoTesla01.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "SISTEMA DE REFRIGERACION", "SISTEMA ELECTRICO", "REVISION DE FRENOS", "REVISION DE BATERIA", "ITV" }));
-        campoTesla01.addActionListener(new java.awt.event.ActionListener() {
+        CbxSeleccionarTipoAuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "TESLA", "OTRO VEHICULO" }));
+        CbxSeleccionarTipoAuto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoTesla01ActionPerformed(evt);
+                CbxSeleccionarTipoAutoActionPerformed(evt);
             }
         });
+
+        LblNotaInformativa.setText("NOTA: La fecha puede ser modificada por el administrador de ser el caso.");
+
+        LblCategoriaTesla.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblCategoriaTesla.setText("VEHICULOS TESLA");
+
+        LblServicioTesla01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioTesla01.setText("Seleccione un servicio:");
+
+        CbxServicioTesla01.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "SISTEMA DE REFRIGERACION", "SISTEMA ELECTRICO", "REVISION DE FRENOS", "REVISION DE BATERIA", "ITV" }));
+        CbxServicioTesla01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbxServicioTesla01ActionPerformed(evt);
+            }
+        });
+
+        LblServicioTesla02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioTesla02.setText("Numero de Motor:");
+
+        LblServicioTesla03.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioTesla03.setText("Numero de serie del vehiculo:");
+
+        LblServicioTesla04.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioTesla04.setText("Kilometraje Actual:");
+
+        LblServicioTesla05.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioTesla05.setText("Observacion Adicional(Opcional):");
+
+        LblServicioTesla06.setText("Fecha sugerida de Cita(YYYY-MM-DD):");
+
+        LblCategoriaOtro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblCategoriaOtro.setText("OTROS VEHICULOS");
+
+        LblServicioOtro01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro01.setText("Seleccione un servicio:");
+
+        CbxServicioOtro01.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "MANTENIMIENTO GENERAL", "REVISION DE BATERIA", "CHEQUEO DE FRENOS", "INSPECCION ELECTRICA", "DIAGNOSTICO COMPLETO" }));
+        CbxServicioOtro01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CbxServicioOtro01ActionPerformed(evt);
+            }
+        });
+
+        LblServicioOtro02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro02.setText("Marca del Vehiculo:");
+
+        LblServicioOtro03.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro03.setText("Modelo del Vehiculo:");
+
+        LblServicioOtro04.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro04.setText("Año del Vehiculo:");
+
+        JTFServicioOtro04.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFServicioOtro04ActionPerformed(evt);
+            }
+        });
+
+        LblServicioOtro05.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro05.setText("Tipo de Motor:");
+
+        LblServicioOtro06.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro06.setText("Kilometraje del Vehiculo:");
+
+        LblServicioOtro07.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro07.setText("Fecha sugerida de Cita(YYYY-MM-DD):");
+
+        LblServicioOtro08.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblServicioOtro08.setText("Observacion Adicional (Opcional):");
+
+        LblPrecioServicio.setText("PRECIO POR SERVICIO SELECCIONADO:");
+
+        LblInformativo.setText("Una vez completados los campos, haga clic para registrar la operacion.");
 
         BtnRegistrarCita.setText("REGISTRAR CITA");
         BtnRegistrarCita.addActionListener(new java.awt.event.ActionListener() {
@@ -173,8 +245,6 @@ public class panelService3 extends javax.swing.JPanel {
             }
         });
 
-        TxtInformativo02.setText("Una vez completados los campos, haga clic para registrar la operacion.");
-
         BtnRetornar.setText("RETORNAR");
         BtnRetornar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,276 +252,213 @@ public class panelService3 extends javax.swing.JPanel {
             }
         });
 
-        TxtInformativo03.setText("PRECIO POR SERVICIO SELECCIONADO:");
-
-        lblTesla02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTesla02.setText("Numero de Motor:");
-
-        lblTesla03.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTesla03.setText("Numero de serie del vehiculo:");
-
-        lblTesla05.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTesla05.setText("Observacion Adicional(Opcional):");
-
-        jLabel4.setText("Seleccione el modelo del auto:");
-
-        CbxTipoAuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "TESLA", "OTRO VEHICULO" }));
-        CbxTipoAuto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CbxTipoAutoActionPerformed(evt);
-            }
-        });
-
-        lblTesla04.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTesla04.setText("Kilometraje Actual:");
-
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("VEHICULOS TESLA");
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("OTROS VEHICULOS");
-
-        campoOtro01.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "MANTENIMIENTO GENERAL", "REVISION DE BATERIA", "CHEQUEO DE FRENOS", "INSPECCION ELECTRICA", "DIAGNOSTICO COMPLETO" }));
-        campoOtro01.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoOtro01ActionPerformed(evt);
-            }
-        });
-
-        lblOtro01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOtro01.setText("Seleccione un servicio:");
-
-        lblCampo02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCampo02.setText("Marca del Vehiculo:");
-
-        lblCampo03.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCampo03.setText("Modelo del Vehiculo:");
-
-        lblOtro04.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOtro04.setText("Año del Vehiculo:");
-
-        lblOtro05.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOtro05.setText("Tipo de Motor:");
-
-        lblOtro07.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOtro07.setText("Fecha sugerida de Cita(YYYY-MM-DD):");
-
-        lblOtro08.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOtro08.setText("Observacion Adicional (Opcional):");
-
-        lblOtro06.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOtro06.setText("Kilometraje del Vehiculo:");
-
-        lblTesla06.setText("Fecha sugerida de Cita(YYYY-MM-DD):");
-
-        jLabel16.setText("NOTA: La fecha puede ser modificada por el administrador de ser el caso.");
-
-        javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
-        PanelContenedor.setLayout(PanelContenedorLayout);
-        PanelContenedorLayout.setHorizontalGroup(
-            PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Separador03)
-                            .addComponent(TxtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator1)
-                            .addComponent(Separador01)
-                            .addComponent(jSeparator2)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(TxtSubtitulo)
-                                    .addComponent(BtnRetornar)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
-                                    .addComponent(jSeparator3)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
-                                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(lblTesla04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(lblTesla03, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(6, 6, 6)
-                                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(campoTesla03)
-                                                    .addComponent(campoTesla04)))
-                                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(lblTesla02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(lblTesla05, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(lblTesla01, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(lblTesla06))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(campoTesla01, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(campoTesla02)
-                                                    .addComponent(campoTesla05)
-                                                    .addComponent(campoTesla06, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(10, 10, 10)))
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jSeparator4)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 268, Short.MAX_VALUE)
-                                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                                .addComponent(lblOtro01)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoOtro01, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                                .addComponent(lblCampo03)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoOtro03))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                                .addComponent(lblCampo02)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoOtro02))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                                .addComponent(lblOtro08)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoOtro08))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                                .addComponent(lblOtro04)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoOtro04, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lblOtro05)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(campoOtro05))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
-                                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(lblOtro06, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(lblOtro07))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(campoOtro06)
-                                                    .addComponent(campoOtro07, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(58, 58, 58))))
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CbxTipoAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel16))))
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGap(432, 432, 432)
-                                .addComponent(TxtInformativo03)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(contenedorPRecio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGap(327, 327, 327)
-                                .addComponent(TxtInformativo02)
-                                .addGap(18, 18, 18)
-                                .addComponent(BtnRegistrarCita)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        PanelContenedorLayout.setVerticalGroup(
-            PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelContenedorLayout.createSequentialGroup()
+        javax.swing.GroupLayout PnlContenedorGeneralLayout = new javax.swing.GroupLayout(PnlContenedorGeneral);
+        PnlContenedorGeneral.setLayout(PnlContenedorGeneralLayout);
+        PnlContenedorGeneralLayout.setHorizontalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TxtSubtitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JSeparador06)
+                    .addComponent(LblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JSeparador01)
+                    .addComponent(JSeparador05)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(BtnRetornar)
+                        .addGap(58, 1088, Short.MAX_VALUE))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(LblSeleccionarModelo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CbxSeleccionarTipoAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LblNotaInformativa)
+                        .addGap(63, 63, 63))
+                    .addComponent(LblSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JSeparador02)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(LblCategoriaTesla, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(JSeparador03, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblCategoriaOtro, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                            .addComponent(JSeparador04))
+                        .addGap(35, 35, 35))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(LblServicioTesla04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioTesla03, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTFServicioTesla03)
+                                    .addComponent(JTFServicioTesla04)))
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(LblServicioTesla02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioTesla05, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioTesla06, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioTesla01, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CbxServicioTesla01, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JTFServicioTesla02)
+                                    .addComponent(JTFServicioTesla05)
+                                    .addComponent(JTFServicioTesla06, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addComponent(LblServicioOtro01)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CbxServicioOtro01, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(LblServicioOtro03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioOtro02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioOtro04, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addComponent(JTFServicioOtro04)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LblServicioOtro05)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(JTFServicioOtro05, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JTFServicioOtro02)
+                                    .addComponent(JTFServicioOtro03)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(LblServicioOtro06, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioOtro07, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblServicioOtro08, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTFServicioOtro08)
+                                    .addComponent(JTFServicioOtro06)
+                                    .addComponent(JTFServicioOtro07, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(66, 66, 66)))
+                .addContainerGap())
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                .addGap(334, 334, 334)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(LblPrecioServicio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTFContenedorPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(LblInformativo)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnRegistrarCita)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PnlContenedorGeneralLayout.setVerticalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(CbxTipoAuto, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                        .addComponent(jLabel16)))
+                .addComponent(LblSubtitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel7))
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LblSeleccionarModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(CbxSeleccionarTipoAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblNotaInformativa)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
-                    .addComponent(jSeparator4))
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOtro01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblCategoriaTesla)
+                    .addComponent(LblCategoriaOtro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JSeparador03, javax.swing.GroupLayout.DEFAULT_SIZE, 10, Short.MAX_VALUE)
+                    .addComponent(JSeparador04))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioOtro01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CbxServicioOtro01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCampo02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioOtro02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioOtro02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCampo03, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LblServicioOtro03, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(campoOtro03, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(JTFServicioOtro03, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOtro04, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro04, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblOtro05, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro05))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioOtro04, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioOtro04, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblServicioOtro05, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioOtro05))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOtro06, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro06, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioOtro06, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioOtro06, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(2, 2, 2)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOtro07, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro07, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioOtro07, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioOtro07, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOtro08, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoOtro08, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTesla01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoTesla01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioOtro08, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioOtro08, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioTesla01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CbxServicioTesla01, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTesla02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoTesla02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioTesla02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioTesla02, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTesla03, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoTesla03, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblServicioTesla03, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioTesla03, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblTesla04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(campoTesla04, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblServicioTesla04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFServicioTesla04, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblTesla05, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblServicioTesla05, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                                 .addGap(2, 2, 2)
-                                .addComponent(campoTesla05, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(JTFServicioTesla05, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTesla06, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoTesla06, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtInformativo03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(contenedorPRecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtInformativo02, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnRegistrarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BtnRetornar)))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LblServicioTesla06, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFServicioTesla06, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)))
+                .addGap(18, 18, 18)
+                .addComponent(JSeparador05, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblPrecioServicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JTFContenedorPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblInformativo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnRegistrarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JSeparador06, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnRetornar)
                 .addContainerGap())
         );
 
@@ -459,11 +466,11 @@ public class panelService3 extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -471,43 +478,43 @@ public class panelService3 extends javax.swing.JPanel {
         mostrarPaneles(new panelInformativo());
     }//GEN-LAST:event_BtnRetornarActionPerformed
 
-    private void campoTesla01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTesla01ActionPerformed
-        campoTesla01.addActionListener(e -> actualizarPrecio());
-    }//GEN-LAST:event_campoTesla01ActionPerformed
+    private void CbxServicioTesla01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxServicioTesla01ActionPerformed
+        CbxServicioTesla01.addActionListener(e -> actualizarPrecio());
+    }//GEN-LAST:event_CbxServicioTesla01ActionPerformed
 
     private void actualizarEstadoCampos() {
 
-        String tipo = String.valueOf(CbxTipoAuto.getSelectedItem());
+        String tipo = String.valueOf(CbxSeleccionarTipoAuto.getSelectedItem());
 
         boolean esTesla = tipo.equals("TESLA");
         boolean esOtro = tipo.equals("OTRO VEHICULO");
 
-        campoTesla01.setEnabled(esTesla);
-        campoTesla02.setEnabled(esTesla);
-        campoTesla03.setEnabled(esTesla);
-        campoTesla04.setEnabled(esTesla);
-        campoTesla05.setEnabled(esTesla);
-        campoTesla06.setEnabled(esTesla);
+        CbxServicioTesla01.setEnabled(esTesla);
+        JTFServicioTesla02.setEnabled(esTesla);
+        JTFServicioTesla03.setEnabled(esTesla);
+        JTFServicioTesla04.setEnabled(esTesla);
+        JTFServicioTesla05.setEnabled(esTesla);
+        JTFServicioTesla06.setEnabled(esTesla);
 
-        campoOtro01.setEnabled(esOtro);
-        campoOtro02.setEnabled(esOtro);
-        campoOtro03.setEnabled(esOtro);
-        campoOtro04.setEnabled(esOtro);
-        campoOtro05.setEnabled(esOtro);
-        campoOtro06.setEnabled(esOtro);
-        campoOtro07.setEnabled(esOtro);
-        campoOtro08.setEnabled(esOtro);
+        CbxServicioOtro01.setEnabled(esOtro);
+        JTFServicioOtro02.setEnabled(esOtro);
+        JTFServicioOtro03.setEnabled(esOtro);
+        JTFServicioOtro04.setEnabled(esOtro);
+        JTFServicioOtro05.setEnabled(esOtro);
+        JTFServicioOtro06.setEnabled(esOtro);
+        JTFServicioOtro07.setEnabled(esOtro);
+        JTFServicioOtro08.setEnabled(esOtro);
 
         if (!esTesla && !esOtro) {
-            contenedorPRecio.setText("0.0");
+            JTFContenedorPrecio.setText("0.0");
         }
     }
 
     private void actualizarPrecio() {
-        String tipo = String.valueOf(CbxTipoAuto.getSelectedItem());
+        String tipo = String.valueOf(CbxSeleccionarTipoAuto.getSelectedItem());
         String srv = tipo.equals("TESLA")
-                ? String.valueOf(campoTesla01.getSelectedItem())
-                : String.valueOf(campoOtro01.getSelectedItem());
+                ? String.valueOf(CbxServicioTesla01.getSelectedItem())
+                : String.valueOf(CbxServicioOtro01.getSelectedItem());
 
         double precio = 0.0;
 
@@ -555,7 +562,7 @@ public class panelService3 extends javax.swing.JPanel {
             }
         }
 
-        contenedorPRecio.setText(String.format("%.2f", precio));
+        JTFContenedorPrecio.setText(String.format("%.2f", precio));
     }
 
 
@@ -564,11 +571,11 @@ public class panelService3 extends javax.swing.JPanel {
         try {
             ReservaServTres r = new ReservaServTres();
             r.setDniCliente(Sesion.clienteLogueado.getDNI_Cliente());
-            r.setTipoVehiculo(CbxTipoAuto.getSelectedItem().toString());
+            r.setTipoVehiculo(CbxSeleccionarTipoAuto.getSelectedItem().toString());
 
-            r.setServicioSolicitado(r.getTipoVehiculo().equals("TESLA") ? campoTesla01.getSelectedItem().toString() : campoOtro01.getSelectedItem().toString());
+            r.setServicioSolicitado(r.getTipoVehiculo().equals("TESLA") ? CbxServicioTesla01.getSelectedItem().toString() : CbxServicioOtro01.getSelectedItem().toString());
 
-            String precioTxt = contenedorPRecio.getText().trim();
+            String precioTxt = JTFContenedorPrecio.getText().trim();
             if (precioTxt.isEmpty()) {
                 System.out.println("Error el precio esta vacio");
                 return;
@@ -581,22 +588,22 @@ public class panelService3 extends javax.swing.JPanel {
                 System.out.println("Error, formato invalido." + ex.getMessage());
             }
 
-            r.setFechaCita(LocalDate.parse(r.getTipoVehiculo().equals("TESLA") ? campoTesla06.getText() : campoOtro07.getText()));
+            r.setFechaCita(LocalDate.parse(r.getTipoVehiculo().equals("TESLA") ? JTFServicioTesla06.getText() : JTFServicioOtro07.getText()));
 
             if (r.getTipoVehiculo().equals("TESLA")) {
-                r.setNumeroMotor(campoTesla02.getText());
-                r.setNumeroSerie(campoTesla03.getText());
-                r.setKilometraje(!campoTesla04.getText().isBlank() ? Integer.parseInt(campoTesla04.getText()) : null);
-                r.setObservacion(campoTesla05.getText());
+                r.setNumeroMotor(JTFServicioTesla02.getText());
+                r.setNumeroSerie(JTFServicioTesla03.getText());
+                r.setKilometraje(!JTFServicioTesla04.getText().isBlank() ? Integer.parseInt(JTFServicioTesla04.getText()) : null);
+                r.setObservacion(JTFServicioTesla05.getText());
 
             } else {
-                r.setMarcaVehiculo(campoOtro02.getText());
-                r.setModeloVehiculo(campoOtro03.getText());
-                r.setAnioVehiculo(!campoOtro04.getText().isBlank() ? Integer.parseInt(campoOtro04.getText()) : null);
+                r.setMarcaVehiculo(JTFServicioOtro02.getText());
+                r.setModeloVehiculo(JTFServicioOtro03.getText());
+                r.setAnioVehiculo(!JTFServicioOtro04.getText().isBlank() ? Integer.parseInt(JTFServicioOtro04.getText()) : null);
 
-                r.setTipoMotor(campoOtro05.getText());
-                r.setKilometraje(!campoOtro06.getText().isBlank() ? Integer.parseInt(campoOtro06.getText()) : null);
-                r.setObservacion(campoOtro08.getText());
+                r.setTipoMotor(JTFServicioOtro05.getText());
+                r.setKilometraje(!JTFServicioOtro06.getText().isBlank() ? Integer.parseInt(JTFServicioOtro06.getText()) : null);
+                r.setObservacion(JTFServicioOtro08.getText());
             }
 
             r.setDniEmpleado("2234589");
@@ -627,62 +634,66 @@ public class panelService3 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_BtnRegistrarCitaActionPerformed
 
-    private void CbxTipoAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxTipoAutoActionPerformed
+    private void CbxSeleccionarTipoAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxSeleccionarTipoAutoActionPerformed
         actualizarPrecio();
         actualizarEstadoCampos();
-    }//GEN-LAST:event_CbxTipoAutoActionPerformed
+    }//GEN-LAST:event_CbxSeleccionarTipoAutoActionPerformed
 
-    private void campoOtro01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoOtro01ActionPerformed
-        campoOtro01.addActionListener(e -> actualizarPrecio());
-    }//GEN-LAST:event_campoOtro01ActionPerformed
+    private void CbxServicioOtro01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxServicioOtro01ActionPerformed
+        CbxServicioOtro01.addActionListener(e -> actualizarPrecio());
+    }//GEN-LAST:event_CbxServicioOtro01ActionPerformed
+
+    private void JTFServicioOtro04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFServicioOtro04ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFServicioOtro04ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnRegistrarCita;
     private javax.swing.JButton BtnRetornar;
-    private javax.swing.JComboBox<String> CbxTipoAuto;
-    private javax.swing.JPanel PanelContenedor;
-    private javax.swing.JSeparator Separador01;
-    private javax.swing.JSeparator Separador03;
-    private javax.swing.JLabel TxtInformativo02;
-    private javax.swing.JLabel TxtInformativo03;
-    private javax.swing.JLabel TxtSubtitulo;
-    private javax.swing.JLabel TxtTitulo;
-    private javax.swing.JComboBox<String> campoOtro01;
-    private javax.swing.JTextField campoOtro02;
-    private javax.swing.JTextField campoOtro03;
-    private javax.swing.JTextField campoOtro04;
-    private javax.swing.JTextField campoOtro05;
-    private javax.swing.JTextField campoOtro06;
-    private javax.swing.JTextField campoOtro07;
-    private javax.swing.JTextField campoOtro08;
-    private javax.swing.JComboBox<String> campoTesla01;
-    private javax.swing.JTextField campoTesla02;
-    private javax.swing.JTextField campoTesla03;
-    private javax.swing.JTextField campoTesla04;
-    private javax.swing.JTextField campoTesla05;
-    private javax.swing.JTextField campoTesla06;
-    private javax.swing.JTextField contenedorPRecio;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel lblCampo02;
-    private javax.swing.JLabel lblCampo03;
-    private javax.swing.JLabel lblOtro01;
-    private javax.swing.JLabel lblOtro04;
-    private javax.swing.JLabel lblOtro05;
-    private javax.swing.JLabel lblOtro06;
-    private javax.swing.JLabel lblOtro07;
-    private javax.swing.JLabel lblOtro08;
-    private javax.swing.JLabel lblTesla01;
-    private javax.swing.JLabel lblTesla02;
-    private javax.swing.JLabel lblTesla03;
-    private javax.swing.JLabel lblTesla04;
-    private javax.swing.JLabel lblTesla05;
-    private javax.swing.JLabel lblTesla06;
+    private javax.swing.JComboBox<String> CbxSeleccionarTipoAuto;
+    private javax.swing.JComboBox<String> CbxServicioOtro01;
+    private javax.swing.JComboBox<String> CbxServicioTesla01;
+    private javax.swing.JSeparator JSeparador01;
+    private javax.swing.JSeparator JSeparador02;
+    private javax.swing.JSeparator JSeparador03;
+    private javax.swing.JSeparator JSeparador04;
+    private javax.swing.JSeparator JSeparador05;
+    private javax.swing.JSeparator JSeparador06;
+    private javax.swing.JTextField JTFContenedorPrecio;
+    private javax.swing.JTextField JTFServicioOtro02;
+    private javax.swing.JTextField JTFServicioOtro03;
+    private javax.swing.JTextField JTFServicioOtro04;
+    private javax.swing.JTextField JTFServicioOtro05;
+    private javax.swing.JTextField JTFServicioOtro06;
+    private javax.swing.JTextField JTFServicioOtro07;
+    private javax.swing.JTextField JTFServicioOtro08;
+    private javax.swing.JTextField JTFServicioTesla02;
+    private javax.swing.JTextField JTFServicioTesla03;
+    private javax.swing.JTextField JTFServicioTesla04;
+    private javax.swing.JTextField JTFServicioTesla05;
+    private javax.swing.JTextField JTFServicioTesla06;
+    private javax.swing.JLabel LblCategoriaOtro;
+    private javax.swing.JLabel LblCategoriaTesla;
+    private javax.swing.JLabel LblInformativo;
+    private javax.swing.JLabel LblNotaInformativa;
+    private javax.swing.JLabel LblPrecioServicio;
+    private javax.swing.JLabel LblSeleccionarModelo;
+    private javax.swing.JLabel LblServicioOtro01;
+    private javax.swing.JLabel LblServicioOtro02;
+    private javax.swing.JLabel LblServicioOtro03;
+    private javax.swing.JLabel LblServicioOtro04;
+    private javax.swing.JLabel LblServicioOtro05;
+    private javax.swing.JLabel LblServicioOtro06;
+    private javax.swing.JLabel LblServicioOtro07;
+    private javax.swing.JLabel LblServicioOtro08;
+    private javax.swing.JLabel LblServicioTesla01;
+    private javax.swing.JLabel LblServicioTesla02;
+    private javax.swing.JLabel LblServicioTesla03;
+    private javax.swing.JLabel LblServicioTesla04;
+    private javax.swing.JLabel LblServicioTesla05;
+    private javax.swing.JLabel LblServicioTesla06;
+    private javax.swing.JLabel LblSubtitulo;
+    private javax.swing.JLabel LblTitulo;
+    private javax.swing.JPanel PnlContenedorGeneral;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,249 +34,251 @@ public class panelRegistro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ContenedorGeneral = new javax.swing.JPanel();
-        MensajeInformativo01 = new javax.swing.JLabel();
-        Separador01 = new javax.swing.JSeparator();
-        Imagen = new javax.swing.JLabel();
-        IdentificacionDNI = new javax.swing.JLabel();
-        CampoIdentificacionDNI = new javax.swing.JTextField();
-        PrimerNombre = new javax.swing.JLabel();
-        CampoPrimerNombre = new javax.swing.JTextField();
-        SegundoNombre = new javax.swing.JLabel();
-        CampoSegundoNombre = new javax.swing.JTextField();
-        Apellido = new javax.swing.JLabel();
-        CampoApellido = new javax.swing.JTextField();
-        Email = new javax.swing.JLabel();
-        CampoEmail = new javax.swing.JTextField();
-        NumeroPrincipal = new javax.swing.JLabel();
-        CampoNumeroPrincipal = new javax.swing.JTextField();
-        NumeroSecundario = new javax.swing.JLabel();
-        CampoNumeroSecundario = new javax.swing.JTextField();
-        Separador02 = new javax.swing.JSeparator();
-        MensajeInformativo02 = new javax.swing.JLabel();
-        Separador03 = new javax.swing.JSeparator();
-        BotonRegistrar = new javax.swing.JButton();
-        BotonRetornar = new javax.swing.JButton();
+        PnlContenedorGeneral = new javax.swing.JPanel();
+        LblIndicaciones = new javax.swing.JLabel();
+        JSeparador01 = new javax.swing.JSeparator();
+        LblLogo = new javax.swing.JLabel();
+        LblIdentificacionDNI = new javax.swing.JLabel();
+        JTFIdentificacionDNI = new javax.swing.JTextField();
+        LblPrimerNombre = new javax.swing.JLabel();
+        JTFPrimerNombre = new javax.swing.JTextField();
+        LblSegundoNombre = new javax.swing.JLabel();
+        JTFSegundoNombre = new javax.swing.JTextField();
+        LblApellido = new javax.swing.JLabel();
+        JTFApellido = new javax.swing.JTextField();
+        LblEmail = new javax.swing.JLabel();
+        JTFEmail = new javax.swing.JTextField();
+        LblNumeroPrincipal = new javax.swing.JLabel();
+        JTFNumeroPrincipal = new javax.swing.JTextField();
+        LblNumeroSecundario = new javax.swing.JLabel();
+        JTFNumeroSecundario = new javax.swing.JTextField();
+        JSeparador02 = new javax.swing.JSeparator();
+        LblNotaInformativa = new javax.swing.JLabel();
+        JSeparador03 = new javax.swing.JSeparator();
+        BtnRegistrarse = new javax.swing.JButton();
+        BtnRetornar = new javax.swing.JButton();
 
-        MensajeInformativo01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MensajeInformativo01.setText("Complete all the gaps with your information to create your account:");
+        LblIndicaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblIndicaciones.setText("Complete all the gaps with your information to create your account:");
 
-        Imagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Imagen.setText("IMAGEN");
+        LblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblLogo.setText("IMAGEN");
 
-        IdentificacionDNI.setText("IDENTIFICATION:");
+        LblIdentificacionDNI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblIdentificacionDNI.setText("IDENTIFICATION:");
 
-        CampoIdentificacionDNI.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoIdentificacionDNI.setText("Complete the gap with your information");
+        JTFIdentificacionDNI.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFIdentificacionDNI.setText("Complete the gap with your information");
 
-        PrimerNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        PrimerNombre.setText("FIRST NAME:");
+        LblPrimerNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblPrimerNombre.setText("FIRST NAME:");
 
-        CampoPrimerNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoPrimerNombre.setText("Comple the gap with your information");
+        JTFPrimerNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFPrimerNombre.setText("Comple the gap with your information");
 
-        SegundoNombre.setText("SECOND NAME:");
+        LblSegundoNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblSegundoNombre.setText("SECOND NAME:");
 
-        CampoSegundoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoSegundoNombre.setText("Complete the gap with your information");
+        JTFSegundoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFSegundoNombre.setText("Complete the gap with your information");
 
-        Apellido.setText("SURNAME:");
+        LblApellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblApellido.setText("SURNAME:");
 
-        CampoApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoApellido.setText("Complete the gap with your information");
+        JTFApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFApellido.setText("Complete the gap with your information");
 
-        Email.setText("EMAIL ADDRESS:");
+        LblEmail.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblEmail.setText("EMAIL ADDRESS:");
 
-        CampoEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoEmail.setText("Complete the gap with your information");
-
-        NumeroPrincipal.setText("PHONE NUMBER (MAIN):");
-
-        CampoNumeroPrincipal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoNumeroPrincipal.setText("Complete the gap");
-        CampoNumeroPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        JTFEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFEmail.setText("Complete the gap with your information");
+        JTFEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoNumeroPrincipalActionPerformed(evt);
+                JTFEmailActionPerformed(evt);
             }
         });
 
-        NumeroSecundario.setText("PHONE NUMBER (SECONDARY):");
+        LblNumeroPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblNumeroPrincipal.setText("PHONE NUMBER (MAIN):");
 
-        CampoNumeroSecundario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        CampoNumeroSecundario.setText("Complete the gap");
-
-        MensajeInformativo02.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MensajeInformativo02.setText("NOTE: Secondary phone number could be omitted ");
-
-        BotonRegistrar.setText("Log In");
-        BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        JTFNumeroPrincipal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFNumeroPrincipal.setText("Complete the gap");
+        JTFNumeroPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonRegistrarActionPerformed(evt);
+                JTFNumeroPrincipalActionPerformed(evt);
             }
         });
 
-        BotonRetornar.setText("Return");
-        BotonRetornar.addActionListener(new java.awt.event.ActionListener() {
+        LblNumeroSecundario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblNumeroSecundario.setText("PHONE NUMBER (SECONDARY):");
+
+        JTFNumeroSecundario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        JTFNumeroSecundario.setText("Complete the gap");
+
+        LblNotaInformativa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblNotaInformativa.setText("NOTE: Secondary phone number could be omitted ");
+
+        BtnRegistrarse.setText("Log In");
+        BtnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonRetornarActionPerformed(evt);
+                BtnRegistrarseActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout ContenedorGeneralLayout = new javax.swing.GroupLayout(ContenedorGeneral);
-        ContenedorGeneral.setLayout(ContenedorGeneralLayout);
-        ContenedorGeneralLayout.setHorizontalGroup(
-            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
+        BtnRetornar.setText("VOLVER");
+        BtnRetornar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRetornarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PnlContenedorGeneralLayout = new javax.swing.GroupLayout(PnlContenedorGeneral);
+        PnlContenedorGeneral.setLayout(PnlContenedorGeneralLayout);
+        PnlContenedorGeneralLayout.setHorizontalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addComponent(Separador01)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BtnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(237, 237, 237)
+                        .addComponent(BtnRetornar)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LblIndicaciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JSeparador01))
                         .addGap(31, 31, 31))
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(196, 196, 196)
-                                .addComponent(BotonRetornar))
-                            .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Separador02, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                    .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(NumeroSecundario)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoNumeroSecundario))
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(NumeroPrincipal)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoNumeroPrincipal))
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(Email)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoEmail))
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(Apellido)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoApellido))
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(PrimerNombre)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(IdentificacionDNI)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoIdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                                            .addComponent(SegundoNombre)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(CampoSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(27, 27, 27)
-                                    .addComponent(Imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 31, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(MensajeInformativo02)
-                .addGap(227, 227, 227))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(MensajeInformativo01, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(177, 177, 177))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(LblNotaInformativa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JSeparador02, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(LblIdentificacionDNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LblSegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LblPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LblApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTFApellido)
+                                            .addComponent(JTFSegundoNombre)
+                                            .addComponent(JTFIdentificacionDNI, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                            .addComponent(JTFPrimerNombre)
+                                            .addComponent(JTFEmail)))
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(LblNumeroSecundario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LblNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(JTFNumeroPrincipal)
+                                            .addComponent(JTFNumeroSecundario))))
+                                .addGap(27, 27, 27)
+                                .addComponent(LblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JSeparador03))
+                        .addGap(0, 30, Short.MAX_VALUE))))
         );
-        ContenedorGeneralLayout.setVerticalGroup(
-            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(MensajeInformativo01)
+        PnlContenedorGeneralLayout.setVerticalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LblIndicaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CampoIdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblIdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFIdentificacionDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblSegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Apellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoNumeroPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFNumeroPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NumeroSecundario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CampoNumeroSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(Imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LblNumeroSecundario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JTFNumeroSecundario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(LblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Separador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MensajeInformativo02)
+                .addComponent(LblNotaInformativa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Separador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSeparador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotonRetornar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addComponent(BtnRegistrarse)
+                        .addGap(27, 27, 27))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtnRetornar)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CampoNumeroPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoNumeroPrincipalActionPerformed
+    private void JTFNumeroPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNumeroPrincipalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoNumeroPrincipalActionPerformed
+    }//GEN-LAST:event_JTFNumeroPrincipalActionPerformed
 
-    private void BotonRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRetornarActionPerformed
+    private void BtnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRetornarActionPerformed
 
         mostradorPaneles(new panelLogin());
 
-    }//GEN-LAST:event_BotonRetornarActionPerformed
+    }//GEN-LAST:event_BtnRetornarActionPerformed
 
-    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
+    private void BtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarseActionPerformed
 
         //Registro de usuario-cliente:
-        String identificacionDNI = CampoIdentificacionDNI.getText();
-        String primerNombre = CampoPrimerNombre.getText();
-        String segundoNombre = CampoSegundoNombre.getText();
-        String apellido = CampoApellido.getText();
-        String email = CampoEmail.getText();
-        String primerTelefono = CampoNumeroPrincipal.getText();
-        String segundoTelefono = CampoNumeroSecundario.getText();
+        String identificacionDNI = JTFIdentificacionDNI.getText();
+        String primerNombre = JTFPrimerNombre.getText();
+        String segundoNombre = JTFSegundoNombre.getText();
+        String apellido = JTFApellido.getText();
+        String email = JTFEmail.getText();
+        String primerTelefono = JTFNumeroPrincipal.getText();
+        String segundoTelefono = JTFNumeroSecundario.getText();
 
         //Parametrizacion de campos:
-        if (CampoIdentificacionDNI.equals("Ingrese su DNI.") || CampoPrimerNombre.equals("Ingrese su primer nombre.") || CampoSegundoNombre.equals("Ingrese su segundo nombre.")
-                || CampoApellido.equals("Ingrese su apellido.") || CampoEmail.equals("Ingrese la direccion de correo electronico") || CampoNumeroPrincipal.equals("Ingrese su primer numero.")
-                || CampoNumeroSecundario.equals("Ingrese su segunod numero telefonico")) {
+        if (JTFIdentificacionDNI.equals("Ingrese su DNI.") || JTFPrimerNombre.equals("Ingrese su primer nombre.") || JTFSegundoNombre.equals("Ingrese su segundo nombre.")
+                || JTFApellido.equals("Ingrese su apellido.") || JTFEmail.equals("Ingrese la direccion de correo electronico") || JTFNumeroPrincipal.equals("Ingrese su primer numero.")
+                || JTFNumeroSecundario.equals("Ingrese su segunod numero telefonico")) {
             JOptionPane.showMessageDialog(null, "Por favor, asegurese de que todos los campos estan completos, Gracias.", "Tesla", JOptionPane.WARNING_MESSAGE);
             //Redireccion el cursor al cuadro de texto "txtFldNombre_RegistroUsuarioPanel"
-            CampoIdentificacionDNI.requestFocus();
+            JTFIdentificacionDNI.requestFocus();
             return;
         }
 
@@ -302,44 +304,48 @@ public class panelRegistro extends javax.swing.JPanel {
         ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
         Ventana_Principal.setVisible(true);
 
-    }//GEN-LAST:event_BotonRegistrarActionPerformed
+    }//GEN-LAST:event_BtnRegistrarseActionPerformed
+
+    private void JTFEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFEmailActionPerformed
 
     public void mostradorPaneles(JPanel panel) {
 
         panel.setSize(759, 446);
         panel.setLocation(0, 0);
 
-        ContenedorGeneral.removeAll();
-        ContenedorGeneral.add(panel, BorderLayout.CENTER);
-        ContenedorGeneral.revalidate();
-        ContenedorGeneral.repaint();
+        PnlContenedorGeneral.removeAll();
+        PnlContenedorGeneral.add(panel, BorderLayout.CENTER);
+        PnlContenedorGeneral.revalidate();
+        PnlContenedorGeneral.repaint();
 
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Apellido;
-    private javax.swing.JButton BotonRegistrar;
-    private javax.swing.JButton BotonRetornar;
-    private javax.swing.JTextField CampoApellido;
-    private javax.swing.JTextField CampoEmail;
-    private javax.swing.JTextField CampoIdentificacionDNI;
-    private javax.swing.JTextField CampoNumeroPrincipal;
-    private javax.swing.JTextField CampoNumeroSecundario;
-    private javax.swing.JTextField CampoPrimerNombre;
-    private javax.swing.JTextField CampoSegundoNombre;
-    private javax.swing.JPanel ContenedorGeneral;
-    private javax.swing.JLabel Email;
-    private javax.swing.JLabel IdentificacionDNI;
-    private javax.swing.JLabel Imagen;
-    private javax.swing.JLabel MensajeInformativo01;
-    private javax.swing.JLabel MensajeInformativo02;
-    private javax.swing.JLabel NumeroPrincipal;
-    private javax.swing.JLabel NumeroSecundario;
-    private javax.swing.JLabel PrimerNombre;
-    private javax.swing.JLabel SegundoNombre;
-    private javax.swing.JSeparator Separador01;
-    private javax.swing.JSeparator Separador02;
-    private javax.swing.JSeparator Separador03;
+    private javax.swing.JButton BtnRegistrarse;
+    private javax.swing.JButton BtnRetornar;
+    private javax.swing.JSeparator JSeparador01;
+    private javax.swing.JSeparator JSeparador02;
+    private javax.swing.JSeparator JSeparador03;
+    private javax.swing.JTextField JTFApellido;
+    private javax.swing.JTextField JTFEmail;
+    private javax.swing.JTextField JTFIdentificacionDNI;
+    private javax.swing.JTextField JTFNumeroPrincipal;
+    private javax.swing.JTextField JTFNumeroSecundario;
+    private javax.swing.JTextField JTFPrimerNombre;
+    private javax.swing.JTextField JTFSegundoNombre;
+    private javax.swing.JLabel LblApellido;
+    private javax.swing.JLabel LblEmail;
+    private javax.swing.JLabel LblIdentificacionDNI;
+    private javax.swing.JLabel LblIndicaciones;
+    private javax.swing.JLabel LblLogo;
+    private javax.swing.JLabel LblNotaInformativa;
+    private javax.swing.JLabel LblNumeroPrincipal;
+    private javax.swing.JLabel LblNumeroSecundario;
+    private javax.swing.JLabel LblPrimerNombre;
+    private javax.swing.JLabel LblSegundoNombre;
+    private javax.swing.JPanel PnlContenedorGeneral;
     // End of variables declaration//GEN-END:variables
 }

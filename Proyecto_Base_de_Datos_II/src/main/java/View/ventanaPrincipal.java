@@ -26,19 +26,19 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     public ventanaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        informativo();
-        fechaHora();
+        cargaPanelInformativo();
+        cargaFechaHora();
     }
     
-    public void fechaHora() {
+    public void cargaFechaHora() {
         LocalDate now = LocalDate.now();
         Locale Regional = new Locale("es", "ES");
-        Fecha_Hora.setText(now.format(DateTimeFormatter.ofPattern("EEEE dd 'de' MMMM 'del' YYYY", Regional)));
+        LblFecha_Hora.setText(now.format(DateTimeFormatter.ofPattern("EEEE dd 'de' MMMM 'del' YYYY", Regional)));
     }
     
-    public void informativo() {
+    public void cargaPanelInformativo() {
 
-        PanelContenido.setLayout(new BorderLayout());
+        PnlContenidoPaneles.setLayout(new BorderLayout());
 
         mostrarPaneles(new panelInformativo());
     }
@@ -47,10 +47,10 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
         panel.setSize(1194, 694);
 
-        PanelContenido.removeAll();
-        PanelContenido.add(panel, BorderLayout.CENTER);
-        PanelContenido.revalidate();
-        PanelContenido.repaint();
+        PnlContenidoPaneles.removeAll();
+        PnlContenidoPaneles.add(panel, BorderLayout.CENTER);
+        PnlContenidoPaneles.revalidate();
+        PnlContenidoPaneles.repaint();
     }
 
     //NOTA: Contenido general de los servicios que ofrece el programa.
@@ -63,209 +63,209 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelContenedor = new javax.swing.JPanel();
-        Encabezado = new javax.swing.JPanel();
-        Titulo = new javax.swing.JLabel();
-        SubEncabezado01 = new javax.swing.JPanel();
-        NombreServicio = new javax.swing.JLabel();
-        SubEncabezado02 = new javax.swing.JPanel();
-        Fecha_Hora = new javax.swing.JLabel();
-        Menu = new javax.swing.JPanel();
-        ImagenPrincipal = new javax.swing.JLabel();
-        Separador01 = new javax.swing.JSeparator();
-        BotonAutos = new javax.swing.JButton();
-        BotonAutopartes = new javax.swing.JButton();
-        BotonMantenimiento = new javax.swing.JButton();
-        BotonSalir = new javax.swing.JButton();
-        PanelContenido = new javax.swing.JPanel();
+        PnlContenedorGeneral = new javax.swing.JPanel();
+        PnlMenu = new javax.swing.JPanel();
+        LblLogo = new javax.swing.JLabel();
+        JSeparador01 = new javax.swing.JSeparator();
+        BtnAutos = new javax.swing.JButton();
+        BtnAutopartes = new javax.swing.JButton();
+        BtnMantenimiento = new javax.swing.JButton();
+        BtnCerrarSesion = new javax.swing.JButton();
+        PnlEncabezado = new javax.swing.JPanel();
+        LblTitulo = new javax.swing.JLabel();
+        PnlEncabezado01 = new javax.swing.JPanel();
+        LblFecha_Hora = new javax.swing.JLabel();
+        PnlEncabezado02 = new javax.swing.JPanel();
+        LblJerarquia = new javax.swing.JLabel();
+        PnlContenidoPaneles = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Encabezado.setBackground(new java.awt.Color(204, 204, 204));
+        PnlMenu.setBackground(new java.awt.Color(153, 153, 153));
 
-        Titulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Titulo.setText("TESLA");
+        LblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblLogo.setText("Imagen");
 
-        NombreServicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NombreServicio.setText("[Nombre de Servicio]");
+        BtnAutos.setText("AUTOS");
+        BtnAutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAutosActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout SubEncabezado01Layout = new javax.swing.GroupLayout(SubEncabezado01);
-        SubEncabezado01.setLayout(SubEncabezado01Layout);
-        SubEncabezado01Layout.setHorizontalGroup(
-            SubEncabezado01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SubEncabezado01Layout.createSequentialGroup()
+        BtnAutopartes.setText("AUTOPARTES");
+        BtnAutopartes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAutopartesActionPerformed(evt);
+            }
+        });
+
+        BtnMantenimiento.setText("MANTENIMIENTO");
+        BtnMantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMantenimientoActionPerformed(evt);
+            }
+        });
+
+        BtnCerrarSesion.setText("CERRAR SESION");
+        BtnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCerrarSesionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PnlMenuLayout = new javax.swing.GroupLayout(PnlMenu);
+        PnlMenu.setLayout(PnlMenuLayout);
+        PnlMenuLayout.setHorizontalGroup(
+            PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BtnAutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnAutopartes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(BtnMantenimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(BtnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(LblLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(NombreServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JSeparador01)
+                .addContainerGap())
+        );
+        PnlMenuLayout.setVerticalGroup(
+            PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlMenuLayout.createSequentialGroup()
+                .addComponent(LblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnAutos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BtnAutopartes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BtnMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        PnlEncabezado.setBackground(new java.awt.Color(204, 204, 204));
+
+        LblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        LblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LblTitulo.setText("TESLA");
+
+        LblFecha_Hora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblFecha_Hora.setText("[Fecha y hora aqui]");
+
+        javax.swing.GroupLayout PnlEncabezado01Layout = new javax.swing.GroupLayout(PnlEncabezado01);
+        PnlEncabezado01.setLayout(PnlEncabezado01Layout);
+        PnlEncabezado01Layout.setHorizontalGroup(
+            PnlEncabezado01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezado01Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LblFecha_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        PnlEncabezado01Layout.setVerticalGroup(
+            PnlEncabezado01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezado01Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LblFecha_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        LblJerarquia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LblJerarquia.setText("[Nombre de Servicio]");
+
+        javax.swing.GroupLayout PnlEncabezado02Layout = new javax.swing.GroupLayout(PnlEncabezado02);
+        PnlEncabezado02.setLayout(PnlEncabezado02Layout);
+        PnlEncabezado02Layout.setHorizontalGroup(
+            PnlEncabezado02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezado02Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LblJerarquia, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        SubEncabezado01Layout.setVerticalGroup(
-            SubEncabezado01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SubEncabezado01Layout.createSequentialGroup()
+        PnlEncabezado02Layout.setVerticalGroup(
+            PnlEncabezado02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlEncabezado02Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(NombreServicio, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addComponent(LblJerarquia, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        Fecha_Hora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Fecha_Hora.setText("[Fecha y hora aqui]");
-
-        javax.swing.GroupLayout SubEncabezado02Layout = new javax.swing.GroupLayout(SubEncabezado02);
-        SubEncabezado02.setLayout(SubEncabezado02Layout);
-        SubEncabezado02Layout.setHorizontalGroup(
-            SubEncabezado02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SubEncabezado02Layout.createSequentialGroup()
+        javax.swing.GroupLayout PnlEncabezadoLayout = new javax.swing.GroupLayout(PnlEncabezado);
+        PnlEncabezado.setLayout(PnlEncabezadoLayout);
+        PnlEncabezadoLayout.setHorizontalGroup(
+            PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Fecha_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        SubEncabezado02Layout.setVerticalGroup(
-            SubEncabezado02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SubEncabezado02Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Fecha_Hora, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
-        Encabezado.setLayout(EncabezadoLayout);
-        EncabezadoLayout.setHorizontalGroup(
-            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EncabezadoLayout.createSequentialGroup()
-                        .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlEncabezadoLayout.createSequentialGroup()
+                        .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SubEncabezado02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(SubEncabezado01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(PnlEncabezado01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PnlEncabezado02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        EncabezadoLayout.setVerticalGroup(
-            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoLayout.createSequentialGroup()
+        PnlEncabezadoLayout.setVerticalGroup(
+            PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addGroup(EncabezadoLayout.createSequentialGroup()
-                        .addComponent(SubEncabezado02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                    .addGroup(PnlEncabezadoLayout.createSequentialGroup()
+                        .addComponent(PnlEncabezado01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SubEncabezado01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PnlEncabezado02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        Menu.setBackground(new java.awt.Color(153, 153, 153));
+        PnlContenidoPaneles.setBackground(new java.awt.Color(255, 255, 255));
 
-        ImagenPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ImagenPrincipal.setText("Imagen");
-
-        BotonAutos.setText("AUTOS");
-        BotonAutos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAutosActionPerformed(evt);
-            }
-        });
-
-        BotonAutopartes.setText("AUTOPARTES");
-        BotonAutopartes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAutopartesActionPerformed(evt);
-            }
-        });
-
-        BotonMantenimiento.setText("MANTENIMIENTO");
-        BotonMantenimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonMantenimientoActionPerformed(evt);
-            }
-        });
-
-        BotonSalir.setText("SALIR");
-        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonSalirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
-        Menu.setLayout(MenuLayout);
-        MenuLayout.setHorizontalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BotonAutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonAutopartes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonMantenimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ImagenPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Separador01)
-                .addContainerGap())
-        );
-        MenuLayout.setVerticalGroup(
-            MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addComponent(ImagenPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Separador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonAutos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonAutopartes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        PanelContenido.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout PanelContenidoLayout = new javax.swing.GroupLayout(PanelContenido);
-        PanelContenido.setLayout(PanelContenidoLayout);
-        PanelContenidoLayout.setHorizontalGroup(
-            PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PnlContenidoPanelesLayout = new javax.swing.GroupLayout(PnlContenidoPaneles);
+        PnlContenidoPaneles.setLayout(PnlContenidoPanelesLayout);
+        PnlContenidoPanelesLayout.setHorizontalGroup(
+            PnlContenidoPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1194, Short.MAX_VALUE)
         );
-        PanelContenidoLayout.setVerticalGroup(
-            PanelContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PnlContenidoPanelesLayout.setVerticalGroup(
+            PnlContenidoPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 694, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
-        PanelContenedor.setLayout(PanelContenedorLayout);
-        PanelContenedorLayout.setHorizontalGroup(
-            PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout PnlContenedorGeneralLayout = new javax.swing.GroupLayout(PnlContenedorGeneral);
+        PnlContenedorGeneral.setLayout(PnlContenedorGeneralLayout);
+        PnlContenedorGeneralLayout.setHorizontalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                .addComponent(PnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Encabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PnlEncabezado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PnlContenidoPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        PanelContenedorLayout.setVerticalGroup(
-            PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        PnlContenedorGeneralLayout.setVerticalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                .addComponent(PnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PnlContenidoPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(PnlMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+    private void BtnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCerrarSesionActionPerformed
 
         int response = JOptionPane.showConfirmDialog(null, "¿Esta seguro de salir de su sesion?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
 
@@ -278,25 +278,25 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         } else {
             //Not to programm here.
         }
-    }//GEN-LAST:event_BotonSalirActionPerformed
+    }//GEN-LAST:event_BtnCerrarSesionActionPerformed
 
-    private void BotonAutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAutosActionPerformed
+    private void BtnAutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAutosActionPerformed
         mostrarPaneles(new panelService1());
         
-        NombreServicio.setText("SERVICIO DE VENTA DE AUTOS");
-    }//GEN-LAST:event_BotonAutosActionPerformed
+        LblJerarquia.setText("SERVICIO DE VENTA DE AUTOS");
+    }//GEN-LAST:event_BtnAutosActionPerformed
 
-    private void BotonAutopartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAutopartesActionPerformed
+    private void BtnAutopartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAutopartesActionPerformed
         mostrarPaneles(new panelService2());
         
-        NombreServicio.setText("SERVICIO DE VENTA DE AUTOPARTES");
-    }//GEN-LAST:event_BotonAutopartesActionPerformed
+        LblJerarquia.setText("SERVICIO DE VENTA DE AUTOPARTES");
+    }//GEN-LAST:event_BtnAutopartesActionPerformed
 
-    private void BotonMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMantenimientoActionPerformed
+    private void BtnMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMantenimientoActionPerformed
         mostrarPaneles(new panelService3());
         
-        NombreServicio.setText("SERVICIO DE MANTENIMIENTO DE AUTO");
-    }//GEN-LAST:event_BotonMantenimientoActionPerformed
+        LblJerarquia.setText("SERVICIO DE MANTENIMIENTO DE AUTO");
+    }//GEN-LAST:event_BtnMantenimientoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -334,20 +334,20 @@ public class ventanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonAutopartes;
-    private javax.swing.JButton BotonAutos;
-    private javax.swing.JButton BotonMantenimiento;
-    private javax.swing.JButton BotonSalir;
-    private javax.swing.JPanel Encabezado;
-    private javax.swing.JLabel Fecha_Hora;
-    private javax.swing.JLabel ImagenPrincipal;
-    private javax.swing.JPanel Menu;
-    private javax.swing.JLabel NombreServicio;
-    private javax.swing.JPanel PanelContenedor;
-    private javax.swing.JPanel PanelContenido;
-    private javax.swing.JSeparator Separador01;
-    private javax.swing.JPanel SubEncabezado01;
-    private javax.swing.JPanel SubEncabezado02;
-    private javax.swing.JLabel Titulo;
+    private javax.swing.JButton BtnAutopartes;
+    private javax.swing.JButton BtnAutos;
+    private javax.swing.JButton BtnCerrarSesion;
+    private javax.swing.JButton BtnMantenimiento;
+    private javax.swing.JSeparator JSeparador01;
+    private javax.swing.JLabel LblFecha_Hora;
+    private javax.swing.JLabel LblJerarquia;
+    private javax.swing.JLabel LblLogo;
+    private javax.swing.JLabel LblTitulo;
+    private javax.swing.JPanel PnlContenedorGeneral;
+    private javax.swing.JPanel PnlContenidoPaneles;
+    private javax.swing.JPanel PnlEncabezado;
+    private javax.swing.JPanel PnlEncabezado01;
+    private javax.swing.JPanel PnlEncabezado02;
+    private javax.swing.JPanel PnlMenu;
     // End of variables declaration//GEN-END:variables
 }

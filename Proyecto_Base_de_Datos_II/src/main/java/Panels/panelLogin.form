@@ -16,17 +16,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="ContenedorGeneral" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="ContenedorGeneral" alignment="1" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="ContenedorGeneral">
+    <Container class="javax.swing.JPanel" name="PnlContenedorGeneral">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -35,33 +35,33 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="Imagen" min="-2" pref="350" max="-2" attributes="0"/>
+                          <Component id="LblLogo" min="-2" pref="350" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Separador02" alignment="0" max="32767" attributes="0"/>
+                              <Component id="JSeparador02" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="Usuario" min="-2" pref="65" max="-2" attributes="0"/>
+                                  <Component id="LblCredencial" min="-2" pref="65" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CampoUsuario" min="-2" pref="252" max="-2" attributes="0"/>
+                                  <Component id="JTFCredencial" min="-2" pref="252" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Separador01" alignment="1" min="-2" pref="322" max="-2" attributes="0"/>
+                              <Component id="JSeparador01" alignment="1" min="-2" pref="322" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="BotonInicioSesion" min="-2" pref="120" max="-2" attributes="0"/>
+                                  <Component id="BtnInicioSesion" min="-2" pref="120" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="Contraseña" max="32767" attributes="0"/>
+                              <Component id="LblInformativo01" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="MensajeInformativo02" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblInformativo02" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BotonRegistro" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtnRegistrarse" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="205" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="MensajeInformativo01" max="32767" attributes="0"/>
+                          <Component id="LblBienvenida" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -72,33 +72,33 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="MensajeInformativo01" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="LblBienvenida" min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                          <Component id="Separador01" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="JSeparador01" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Usuario" max="32767" attributes="0"/>
-                              <Component id="CampoUsuario" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="LblCredencial" max="32767" attributes="0"/>
+                              <Component id="JTFCredencial" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="Contraseña" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="LblInformativo01" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="Separador02" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="JSeparador02" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="BotonInicioSesion" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtnInicioSesion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="119" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Imagen" max="32767" attributes="0"/>
+                          <Component id="LblLogo" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="MensajeInformativo02" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="BotonRegistro" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="LblInformativo02" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="BtnRegistrarse" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -106,59 +106,59 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="MensajeInformativo01">
+        <Component class="javax.swing.JLabel" name="LblBienvenida">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Welcome! Write your crendentials to sign in."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Imagen">
+        <Component class="javax.swing.JLabel" name="LblLogo">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="IMAGEN"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="Separador01">
+        <Component class="javax.swing.JSeparator" name="JSeparador01">
         </Component>
-        <Component class="javax.swing.JLabel" name="Usuario">
+        <Component class="javax.swing.JLabel" name="LblCredencial">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="ACCOUNT:"/>
+            <Property name="text" type="java.lang.String" value="DNI:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CampoUsuario">
+        <Component class="javax.swing.JTextField" name="JTFCredencial">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Contrase&#xf1;a">
+        <Component class="javax.swing.JLabel" name="LblInformativo01">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Loguearse con su DNI"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="Separador02">
+        <Component class="javax.swing.JSeparator" name="JSeparador02">
         </Component>
-        <Component class="javax.swing.JButton" name="BotonInicioSesion">
+        <Component class="javax.swing.JButton" name="BtnInicioSesion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Log In"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonInicioSesionActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnInicioSesionActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="MensajeInformativo02">
+        <Component class="javax.swing.JLabel" name="LblInformativo02">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="If you do not have an account, click here to log in."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="BotonRegistro">
+        <Component class="javax.swing.JButton" name="BtnRegistrarse">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sign In"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistroActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegistrarseActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

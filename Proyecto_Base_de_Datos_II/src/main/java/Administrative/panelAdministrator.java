@@ -35,12 +35,13 @@ public class panelAdministrator extends javax.swing.JPanel {
         initComponents();
         cargarEmpleados();
         cargarClientes();
-        //Experimental
         cargarOperacionesAuto();
         cargarSolicitudesAutoparte();
         cargarReservaServicioTres();
     }
 
+    //Carga de campos insertados en la base de datos MySQL:
+    
     public void cargarReservaServicioTres() {
 
         try {
@@ -48,7 +49,7 @@ public class panelAdministrator extends javax.swing.JPanel {
             List<ReservaServTres> listarReservaServTres = daoRsT.listarReservaServTres();
 
             DefaultTableModel model = new DefaultTableModel();
-            model.setColumnIdentifiers(new Object[]{"ID", "Tipo Vehiculo", "Servicio", "DNI Cliente", "Fecha de Cita", "Precio", "DNI Empleado"});
+            model.setColumnIdentifiers(new Object[]{"ID SERVICIO:", "Tipo Vehiculo", "Servicio", "DNI Cliente", "Fecha de Cita", "Precio", "DNI Empleado"});
 
             for (ReservaServTres r : listarReservaServTres) {
                 model.addRow(new Object[]{
@@ -70,6 +71,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarSolicitudesAutoparte() {
+        
         try {
             DAOReservaServDos daoRsD = new DAOReservaServDosIMPLEMENT();
             List<ReservaServDos> listarReservServDos = daoRsD.listarReservasServDos();
@@ -92,13 +94,13 @@ public class panelAdministrator extends javax.swing.JPanel {
         }
     }
 
-    //Por evaluar
     public void cargarOperacionesAuto() {
+        
         try {
             DAOReservaServUno daoRsun = new DAOReservaServUnoIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblServicioUno.getModel();
             model.setRowCount(0);
-            daoRsun.listarReservaServUno().forEach((u) -> model.addRow(new Object[]{u.getID_ReservaServUno(), u.getID_Auto(), u.getDNI_Cliente(),u.getEstado_ReservaServUno(), u.getFecha_ReservaServUno()}));
+            daoRsun.listarReservaServUno().forEach((u) -> model.addRow(new Object[]{u.getID_ReservaServUno(), u.getID_Auto(), u.getDNI_Cliente(), u.getEstado_ReservaServUno(), u.getFecha_ReservaServUno()}));
 
         } catch (Exception e) {
             System.out.println("Error en la carga de operaciones del servicio 1");
@@ -106,6 +108,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarEmpleados() {
+        
         try {
             DAOEmpleado daoA = new DAOEmpleadosIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblEmpleados.getModel();
@@ -116,11 +119,10 @@ public class panelAdministrator extends javax.swing.JPanel {
         } catch (Exception e) {
             System.out.println("Error en la carga de empleados: " + e.getMessage());
         }
-        //Bloque de tabla por analizar:
-        //TblClientes.setEnabled(false);
     }
 
     public void cargarClientes() {
+        
         try {
             DAOCliente daoCl = new DAOClienteIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblClientes.getModel();
@@ -131,8 +133,6 @@ public class panelAdministrator extends javax.swing.JPanel {
         } catch (Exception e) {
             System.out.println("Error en la carga de clientes: " + e.getMessage());
         }
-        //Bloque de tabla por analizar:
-        //TblClientes.setEnabled(false);
     }
 
     /**
@@ -145,76 +145,105 @@ public class panelAdministrator extends javax.swing.JPanel {
     private void initComponents() {
 
         PanelContenedor = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        LblTitulo = new javax.swing.JLabel();
+        LblSubtitulo = new javax.swing.JLabel();
+        JSeparador01 = new javax.swing.JSeparator();
+        LblRegistroAutos = new javax.swing.JLabel();
+        JSeparador02 = new javax.swing.JSeparator();
+        JSPRegistroAutos = new javax.swing.JScrollPane();
         TblServicioUno = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        JSeparador03 = new javax.swing.JSeparator();
+        BtnEliminarAuto = new javax.swing.JButton();
+        BtnModificarAuto = new javax.swing.JButton();
+        LblRegistroAutopartes = new javax.swing.JLabel();
+        JSeparador04 = new javax.swing.JSeparator();
+        JSPRegistroAutopartes = new javax.swing.JScrollPane();
         TblServicioDos = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        JSeparador05 = new javax.swing.JSeparator();
+        BtnEliminarAutoparte = new javax.swing.JButton();
+        BtnModificarAutoparte = new javax.swing.JButton();
+        LblMantenimientos = new javax.swing.JLabel();
+        JSeparador06 = new javax.swing.JSeparator();
+        JSPRegistroMantenimiento = new javax.swing.JScrollPane();
         TblServicioTres = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        btnEliminar = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        JSeparador07 = new javax.swing.JSeparator();
+        BtnEliminarMantenimiento = new javax.swing.JButton();
+        BtnModificarMantenimiento = new javax.swing.JButton();
+        JSeparador08 = new javax.swing.JSeparator();
+        LblEmpleados = new javax.swing.JLabel();
+        JSeparador09 = new javax.swing.JSeparator();
+        JSPRegistroEmpleados = new javax.swing.JScrollPane();
         TblEmpleados = new javax.swing.JTable();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        TblClientes = new javax.swing.JTable();
+        BtnEliminarEmpleado = new javax.swing.JButton();
+        BtnModificarEmpleado = new javax.swing.JButton();
+        LblClientes = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jSeparator8 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
-        jSeparator9 = new javax.swing.JSeparator();
-        btModficar = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
-        btnEliminar2 = new javax.swing.JButton();
-        btnModificar2 = new javax.swing.JButton();
-        btnEliminar3 = new javax.swing.JButton();
-        btnModificar3 = new javax.swing.JButton();
-        jSeparator11 = new javax.swing.JSeparator();
-        jSeparator12 = new javax.swing.JSeparator();
-        btnEliminar4 = new javax.swing.JButton();
-        btnModificar4 = new javax.swing.JButton();
-        btnEliminar5 = new javax.swing.JButton();
-        btnModificar5 = new javax.swing.JButton();
+        JSPRegistroCliente = new javax.swing.JScrollPane();
+        TblClientes = new javax.swing.JTable();
+        BtnEliminarCliente = new javax.swing.JButton();
+        BtnModificarCliente = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("GESTION DE SERVICIOS");
+        LblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        LblTitulo.setText("GESTION DE SERVICIOS");
 
-        jLabel2.setText("Panel de informacion de los registros que se hicieron de las operaciones en el sistema.");
+        LblSubtitulo.setText("Panel de informacion de los registros que se hicieron de las operaciones en el sistema.");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("AUTOS:");
+        LblRegistroAutos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblRegistroAutos.setText("AUTOS:");
 
         TblServicioUno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID_ReservaServUno", "ID_Auto", "DNI_Cliente", "Estado_ReservaServUno", "Fecha_ReservaServUno"
+                "ID SERVICIO:", "ID Auto: ", "DNI Cliente:", "Condicion:", "Fecha Operacion:"
             }
         ));
-        jScrollPane1.setViewportView(TblServicioUno);
+        JSPRegistroAutos.setViewportView(TblServicioUno);
+
+        BtnEliminarAuto.setText("ELIMINAR");
+        BtnEliminarAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarAutoActionPerformed(evt);
+            }
+        });
+
+        BtnModificarAuto.setText("MODIFICAR");
+        BtnModificarAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarAutoActionPerformed(evt);
+            }
+        });
+
+        LblRegistroAutopartes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblRegistroAutopartes.setText("AUTOPARTES");
 
         TblServicioDos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID_ReservaDos", "ID_Autoparte", "DNI_Cliente", "Estado_ReservaDos", "Fecha_ReservaDos"
+                "ID SERVICIO:", "ID Autoparte:", "DNI Cliente:", "Condicion:", "Fecha Operacion:"
             }
         ));
-        jScrollPane2.setViewportView(TblServicioDos);
+        JSPRegistroAutopartes.setViewportView(TblServicioDos);
+
+        BtnEliminarAutoparte.setText("ELIMINAR");
+        BtnEliminarAutoparte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarAutoparteActionPerformed(evt);
+            }
+        });
+
+        BtnModificarAutoparte.setText("MODIFICAR");
+        BtnModificarAutoparte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarAutoparteActionPerformed(evt);
+            }
+        });
+
+        LblMantenimientos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblMantenimientos.setText("MANTENIMIENTO");
 
         TblServicioTres.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -224,116 +253,73 @@ public class panelAdministrator extends javax.swing.JPanel {
 
             }
         ));
-        jScrollPane3.setViewportView(TblServicioTres);
+        JSPRegistroMantenimiento.setViewportView(TblServicioTres);
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("AUTOPARTES");
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("MANTENIMIENTO");
-
-        btnEliminar.setText("ELIMINAR");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        BtnEliminarMantenimiento.setText("ELIMINAR");
+        BtnEliminarMantenimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                BtnEliminarMantenimientoActionPerformed(evt);
             }
         });
+
+        BtnModificarMantenimiento.setText("MODIFICAR");
+        BtnModificarMantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarMantenimientoActionPerformed(evt);
+            }
+        });
+
+        LblEmpleados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblEmpleados.setText("EMPLEADOS:");
 
         TblEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "DNI", "Telefono", "Contratacion"
+                "ID:", "Nombre:", "DNI:", "Telefono:", "Fecha de Contratacion:"
             }
         ));
-        jScrollPane4.setViewportView(TblEmpleados);
+        JSPRegistroEmpleados.setViewportView(TblEmpleados);
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("EMPLEADOS:");
+        BtnEliminarEmpleado.setText("ELIMINAR");
+        BtnEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarEmpleadoActionPerformed(evt);
+            }
+        });
+
+        BtnModificarEmpleado.setText("MODIFICAR");
+        BtnModificarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarEmpleadoActionPerformed(evt);
+            }
+        });
+
+        LblClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblClientes.setText("CLIENTES:");
 
         TblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Segundo Nombre", "Apellido", "DNI", "Correo", "Telef. Principal", "TELEF. SECUNDARIO"
+                "ID:", "Nombre:", "Segundo Nombre:", "Apellido:", "DNI:", "Correo:", "Telef. Principal:", "Telef. Secundario:"
             }
         ));
-        jScrollPane5.setViewportView(TblClientes);
+        JSPRegistroCliente.setViewportView(TblClientes);
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("CLIENTES:");
-
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("MANIPULACION DE DATOS:");
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Para la eliminacion de algun registro:");
-
-        btModficar.setText("MODIFICAR");
-        btModficar.addActionListener(new java.awt.event.ActionListener() {
+        BtnEliminarCliente.setText("ELIMINAR");
+        BtnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btModficarActionPerformed(evt);
+                BtnEliminarClienteActionPerformed(evt);
             }
         });
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Seleccione una fila para modificarla:");
-
-        btnEliminar2.setText("ELIMINAR");
-        btnEliminar2.addActionListener(new java.awt.event.ActionListener() {
+        BtnModificarCliente.setText("MODIFICAR");
+        BtnModificarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar2ActionPerformed(evt);
-            }
-        });
-
-        btnModificar2.setText("MODIFICAR");
-        btnModificar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificar2ActionPerformed(evt);
-            }
-        });
-
-        btnEliminar3.setText("ELIMINAR");
-        btnEliminar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar3ActionPerformed(evt);
-            }
-        });
-
-        btnModificar3.setText("MODIFICAR");
-        btnModificar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificar3ActionPerformed(evt);
-            }
-        });
-
-        btnEliminar4.setText("ELIMINAR");
-        btnEliminar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar4ActionPerformed(evt);
-            }
-        });
-
-        btnModificar4.setText("MODIFICAR");
-        btnModificar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificar4ActionPerformed(evt);
-            }
-        });
-
-        btnEliminar5.setText("ELIMINAR");
-        btnEliminar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminar5ActionPerformed(evt);
-            }
-        });
-
-        btnModificar5.setText("MODIFICAR");
-        btnModificar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModificar5ActionPerformed(evt);
+                BtnModificarClienteActionPerformed(evt);
             }
         });
 
@@ -341,164 +327,130 @@ public class panelAdministrator extends javax.swing.JPanel {
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelContenedorLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator3)
-                    .addComponent(jSeparator1)
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LblSubtitulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JSeparador08, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelContenedorLayout.createSequentialGroup()
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JSeparador02)
+                            .addGroup(PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(BtnEliminarAuto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
+                                .addComponent(BtnModificarAuto))
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jSeparator2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                                .addComponent(LblRegistroAutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(JSPRegistroAutos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(JSeparador03))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(btnEliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btModficar))
-                            .addComponent(jSeparator10))
+                                .addComponent(BtnEliminarAutoparte)
+                                .addGap(210, 210, 210)
+                                .addComponent(BtnModificarAutoparte))
+                            .addComponent(JSeparador05)
+                            .addComponent(LblRegistroAutopartes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JSPRegistroAutopartes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(JSeparador04))
+                        .addGap(12, 12, 12)
                         .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
-                                    .addComponent(jSeparator4)))
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JSeparador07, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
-                                        .addComponent(btnEliminar2)
-                                        .addGap(236, 236, 236)
-                                        .addComponent(btnModificar2))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(jSeparator11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator5)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(btnEliminar3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnModificar3))
-                            .addComponent(jSeparator12)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JSeparador06)
+                                    .addComponent(LblMantenimientos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JSPRegistroMantenimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
+                                .addComponent(BtnEliminarMantenimiento)
+                                .addGap(176, 176, 176)
+                                .addComponent(BtnModificarMantenimiento))))
+                    .addComponent(JSeparador01, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
                         .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator8)
-                            .addComponent(jSeparator9)
+                            .addComponent(JSeparador09)
+                            .addComponent(JSPRegistroEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(btnEliminar4)
+                                .addComponent(BtnEliminarEmpleado)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEliminar5))
+                                .addComponent(BtnModificarEmpleado))
+                            .addComponent(LblEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(411, 411, 411)
+                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(btnModificar4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnModificar5))
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                                .addComponent(BtnEliminarCliente)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(JSPRegistroCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LblClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtnModificarCliente, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addGap(18, 18, 18))
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelContenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                        .addGap(16, 16, 16)
-                                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelContenedorLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminar)
-                                    .addComponent(btModficar)
-                                    .addComponent(btnEliminar3)
-                                    .addComponent(btnModificar3)))
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26))
-                                    .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminar2)
-                                    .addComponent(btnModificar2))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelContenedorLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminar4)
-                                    .addComponent(btnEliminar5))
-                                .addGap(12, 12, 12)
-                                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnModificar4)
-                                    .addComponent(btnModificar5)))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(PanelContenedorLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addComponent(LblSubtitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblRegistroAutos)
+                    .addComponent(LblRegistroAutopartes, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblMantenimientos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JSeparador04, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JSeparador06, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JSPRegistroAutos, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(JSPRegistroMantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JSPRegistroAutopartes, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JSeparador07, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JSeparador05, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JSeparador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnEliminarAuto)
+                    .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BtnModificarAuto)
+                        .addComponent(BtnEliminarAutoparte))
+                    .addComponent(BtnModificarAutoparte)
+                    .addComponent(BtnEliminarMantenimiento)
+                    .addComponent(BtnModificarMantenimiento))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JSeparador08, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblEmpleados)
+                    .addComponent(LblClientes))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JSeparador09, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JSPRegistroCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(JSPRegistroEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnEliminarEmpleado)
+                    .addComponent(BtnModificarEmpleado)
+                    .addComponent(BtnModificarCliente)
+                    .addComponent(BtnEliminarCliente))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -513,7 +465,11 @@ public class panelAdministrator extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btModficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModficarActionPerformed
+    
+    //Accionamiento de botones y funciones:
+    
+    private void BtnModificarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarAutoActionPerformed
+        
         int fila = TblServicioUno.getSelectedRow();
 
         if (fila == -1) {
@@ -530,9 +486,10 @@ public class panelAdministrator extends javax.swing.JPanel {
         dialog.setVisible(true);
 
         cargarOperacionesAuto();
-    }//GEN-LAST:event_btModficarActionPerformed
+    }//GEN-LAST:event_BtnModificarAutoActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void BtnEliminarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarAutoActionPerformed
+        
         int fila = TblServicioUno.getSelectedRow();
 
         if (fila == -1) {
@@ -555,9 +512,10 @@ public class panelAdministrator extends javax.swing.JPanel {
                 System.out.println("Error al eliminar fila." + e.getMessage());
             }
         }
-    }//GEN-LAST:event_btnEliminarActionPerformed
+    }//GEN-LAST:event_BtnEliminarAutoActionPerformed
 
-    private void btnEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar2ActionPerformed
+    private void BtnEliminarAutoparteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarAutoparteActionPerformed
+        
         int fila = TblServicioDos.getSelectedRow();
 
         if (fila == -1) {
@@ -580,9 +538,10 @@ public class panelAdministrator extends javax.swing.JPanel {
                 System.out.println("Error al eliminar fila." + e.getMessage());
             }
         }
-    }//GEN-LAST:event_btnEliminar2ActionPerformed
+    }//GEN-LAST:event_BtnEliminarAutoparteActionPerformed
 
-    private void btnModificar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar2ActionPerformed
+    private void BtnModificarAutoparteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarAutoparteActionPerformed
+        
         int fila = TblServicioDos.getSelectedRow();
 
         if (fila == -1) {
@@ -599,9 +558,10 @@ public class panelAdministrator extends javax.swing.JPanel {
         dialog.setVisible(true);
 
         cargarSolicitudesAutoparte();
-    }//GEN-LAST:event_btnModificar2ActionPerformed
+    }//GEN-LAST:event_BtnModificarAutoparteActionPerformed
 
-    private void btnModificar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar3ActionPerformed
+    private void BtnModificarMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarMantenimientoActionPerformed
+        
         int fila = TblServicioTres.getSelectedRow();
 
         if (fila == -1) {
@@ -616,9 +576,9 @@ public class panelAdministrator extends javax.swing.JPanel {
         dialog.setVisible(true);
 
         cargarReservaServicioTres();
-    }//GEN-LAST:event_btnModificar3ActionPerformed
+    }//GEN-LAST:event_BtnModificarMantenimientoActionPerformed
 
-    private void btnEliminar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar3ActionPerformed
+    private void BtnEliminarMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarMantenimientoActionPerformed
 
         int fila = TblServicioTres.getSelectedRow();
 
@@ -642,9 +602,10 @@ public class panelAdministrator extends javax.swing.JPanel {
                 System.out.println("Error al eliminar" + e.getMessage());
             }
         }
-    }//GEN-LAST:event_btnEliminar3ActionPerformed
+    }//GEN-LAST:event_BtnEliminarMantenimientoActionPerformed
 
-    private void btnModificar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar4ActionPerformed
+    private void BtnModificarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarEmpleadoActionPerformed
+        
         int fila = TblEmpleados.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione una fila primero.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
@@ -659,9 +620,10 @@ public class panelAdministrator extends javax.swing.JPanel {
         DialogEditarEmpleado dialog = new DialogEditarEmpleado(null, idEmpleado, nombre, dni, telefono);
         dialog.setVisible(true);
         cargarEmpleados(); // Método que recarga la tabla después de modificar
-    }//GEN-LAST:event_btnModificar4ActionPerformed
+    }//GEN-LAST:event_BtnModificarEmpleadoActionPerformed
 
-    private void btnEliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar4ActionPerformed
+    private void BtnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarEmpleadoActionPerformed
+        
         int fila = TblEmpleados.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione una fila primero.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
@@ -685,9 +647,9 @@ public class panelAdministrator extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Error al eliminar: " + e.getMessage(), "Tesla Inc.", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_btnEliminar4ActionPerformed
+    }//GEN-LAST:event_BtnEliminarEmpleadoActionPerformed
 
-    private void btnModificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar5ActionPerformed
+    private void BtnModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarClienteActionPerformed
 
         int fila = TblClientes.getSelectedRow();
         if (fila == -1) {
@@ -708,9 +670,10 @@ public class panelAdministrator extends javax.swing.JPanel {
         DialogEditarCliente dialog = new DialogEditarCliente(null, c);
         dialog.setVisible(true);
         cargarClientes();
-    }//GEN-LAST:event_btnModificar5ActionPerformed
+    }//GEN-LAST:event_BtnModificarClienteActionPerformed
 
-    private void btnEliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar5ActionPerformed
+    private void BtnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarClienteActionPerformed
+        
         int fila = TblClientes.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un cliente primero.");
@@ -729,52 +692,47 @@ public class panelAdministrator extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Error al eliminar: " + e.getMessage());
             }
         }
-    }//GEN-LAST:event_btnEliminar5ActionPerformed
+    }//GEN-LAST:event_BtnEliminarClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnEliminarAuto;
+    private javax.swing.JButton BtnEliminarAutoparte;
+    private javax.swing.JButton BtnEliminarCliente;
+    private javax.swing.JButton BtnEliminarEmpleado;
+    private javax.swing.JButton BtnEliminarMantenimiento;
+    private javax.swing.JButton BtnModificarAuto;
+    private javax.swing.JButton BtnModificarAutoparte;
+    private javax.swing.JButton BtnModificarCliente;
+    private javax.swing.JButton BtnModificarEmpleado;
+    private javax.swing.JButton BtnModificarMantenimiento;
+    private javax.swing.JScrollPane JSPRegistroAutopartes;
+    private javax.swing.JScrollPane JSPRegistroAutos;
+    private javax.swing.JScrollPane JSPRegistroCliente;
+    private javax.swing.JScrollPane JSPRegistroEmpleados;
+    private javax.swing.JScrollPane JSPRegistroMantenimiento;
+    private javax.swing.JSeparator JSeparador01;
+    private javax.swing.JSeparator JSeparador02;
+    private javax.swing.JSeparator JSeparador03;
+    private javax.swing.JSeparator JSeparador04;
+    private javax.swing.JSeparator JSeparador05;
+    private javax.swing.JSeparator JSeparador06;
+    private javax.swing.JSeparator JSeparador07;
+    private javax.swing.JSeparator JSeparador08;
+    private javax.swing.JSeparator JSeparador09;
+    private javax.swing.JLabel LblClientes;
+    private javax.swing.JLabel LblEmpleados;
+    private javax.swing.JLabel LblMantenimientos;
+    private javax.swing.JLabel LblRegistroAutopartes;
+    private javax.swing.JLabel LblRegistroAutos;
+    private javax.swing.JLabel LblSubtitulo;
+    private javax.swing.JLabel LblTitulo;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JTable TblClientes;
     private javax.swing.JTable TblEmpleados;
     private javax.swing.JTable TblServicioDos;
     private javax.swing.JTable TblServicioTres;
     private javax.swing.JTable TblServicioUno;
-    private javax.swing.JButton btModficar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnEliminar2;
-    private javax.swing.JButton btnEliminar3;
-    private javax.swing.JButton btnEliminar4;
-    private javax.swing.JButton btnEliminar5;
-    private javax.swing.JButton btnModificar2;
-    private javax.swing.JButton btnModificar3;
-    private javax.swing.JButton btnModificar4;
-    private javax.swing.JButton btnModificar5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
     // End of variables declaration//GEN-END:variables
 }

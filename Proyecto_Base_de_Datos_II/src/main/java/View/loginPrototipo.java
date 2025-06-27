@@ -22,12 +22,12 @@ public class loginPrototipo extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         inicializacion();
-        this.setVisible(false);
+        //this.setVisible(false);
     }
     
     public void inicializacion(){
         
-        ContenedorPaneles.setLayout(new BorderLayout());
+        PnlContenedorPaneles.setLayout(new BorderLayout());
         
         mostrarPaneles(new panelLogin());
         
@@ -37,10 +37,10 @@ public class loginPrototipo extends javax.swing.JFrame {
         
         panel.setSize(759, 446);
         
-        ContenedorPaneles.removeAll();
-        ContenedorPaneles.add(panel, BorderLayout.CENTER);
-        ContenedorPaneles.revalidate();
-        ContenedorPaneles.repaint();
+        PnlContenedorPaneles.removeAll();
+        PnlContenedorPaneles.add(panel, BorderLayout.CENTER);
+        PnlContenedorPaneles.revalidate();
+        PnlContenedorPaneles.repaint();
     }
     
     
@@ -53,80 +53,80 @@ public class loginPrototipo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ContenedorGeneral = new javax.swing.JPanel();
-        Encabezado = new javax.swing.JPanel();
-        Titulo = new javax.swing.JLabel();
-        Subtitulo = new javax.swing.JLabel();
-        ContenedorPaneles = new javax.swing.JPanel();
+        PnlContenedorGeneral = new javax.swing.JPanel();
+        PnlEncabezado = new javax.swing.JPanel();
+        LblTitulo = new javax.swing.JLabel();
+        LblSubtitulo = new javax.swing.JLabel();
+        PnlContenedorPaneles = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Encabezado.setBackground(new java.awt.Color(204, 204, 204));
+        PnlEncabezado.setBackground(new java.awt.Color(204, 204, 204));
 
-        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Titulo.setText("TESLA");
+        LblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblTitulo.setText("TESLA");
 
-        Subtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Subtitulo.setText("Electric Cars, Solar & Clean Energy");
+        LblSubtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblSubtitulo.setText("Electric Cars, Solar & Clean Energy");
 
-        javax.swing.GroupLayout EncabezadoLayout = new javax.swing.GroupLayout(Encabezado);
-        Encabezado.setLayout(EncabezadoLayout);
-        EncabezadoLayout.setHorizontalGroup(
-            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoLayout.createSequentialGroup()
+        javax.swing.GroupLayout PnlEncabezadoLayout = new javax.swing.GroupLayout(PnlEncabezado);
+        PnlEncabezado.setLayout(PnlEncabezadoLayout);
+        PnlEncabezadoLayout.setHorizontalGroup(
+            PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE))
+                .addGroup(PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LblSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        EncabezadoLayout.setVerticalGroup(
-            EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncabezadoLayout.createSequentialGroup()
+        PnlEncabezadoLayout.setVerticalGroup(
+            PnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlEncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addComponent(LblSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        ContenedorPaneles.setBackground(new java.awt.Color(255, 255, 255));
+        PnlContenedorPaneles.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout ContenedorPanelesLayout = new javax.swing.GroupLayout(ContenedorPaneles);
-        ContenedorPaneles.setLayout(ContenedorPanelesLayout);
-        ContenedorPanelesLayout.setHorizontalGroup(
-            ContenedorPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PnlContenedorPanelesLayout = new javax.swing.GroupLayout(PnlContenedorPaneles);
+        PnlContenedorPaneles.setLayout(PnlContenedorPanelesLayout);
+        PnlContenedorPanelesLayout.setHorizontalGroup(
+            PnlContenedorPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        ContenedorPanelesLayout.setVerticalGroup(
-            ContenedorPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PnlContenedorPanelesLayout.setVerticalGroup(
+            PnlContenedorPanelesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 446, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout ContenedorGeneralLayout = new javax.swing.GroupLayout(ContenedorGeneral);
-        ContenedorGeneral.setLayout(ContenedorGeneralLayout);
-        ContenedorGeneralLayout.setHorizontalGroup(
-            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ContenedorPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout PnlContenedorGeneralLayout = new javax.swing.GroupLayout(PnlContenedorGeneral);
+        PnlContenedorGeneral.setLayout(PnlContenedorGeneralLayout);
+        PnlContenedorGeneralLayout.setHorizontalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        ContenedorGeneralLayout.setVerticalGroup(
-            ContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorGeneralLayout.createSequentialGroup()
-                .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        PnlContenedorGeneralLayout.setVerticalGroup(
+            PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                .addComponent(PnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ContenedorPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PnlContenedorPaneles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PnlContenedorGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -168,10 +168,10 @@ public class loginPrototipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ContenedorGeneral;
-    private javax.swing.JPanel ContenedorPaneles;
-    private javax.swing.JPanel Encabezado;
-    private javax.swing.JLabel Subtitulo;
-    private javax.swing.JLabel Titulo;
+    private javax.swing.JLabel LblSubtitulo;
+    private javax.swing.JLabel LblTitulo;
+    private javax.swing.JPanel PnlContenedorGeneral;
+    private javax.swing.JPanel PnlContenedorPaneles;
+    private javax.swing.JPanel PnlEncabezado;
     // End of variables declaration//GEN-END:variables
 }

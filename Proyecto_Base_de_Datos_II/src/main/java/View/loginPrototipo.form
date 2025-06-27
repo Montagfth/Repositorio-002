@@ -23,37 +23,37 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="ContenedorGeneral" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="ContenedorGeneral" alignment="0" max="32767" attributes="0"/>
+          <Component id="PnlContenedorGeneral" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="ContenedorGeneral">
+    <Container class="javax.swing.JPanel" name="PnlContenedorGeneral">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="Encabezado" max="32767" attributes="0"/>
-              <Component id="ContenedorPaneles" alignment="0" max="32767" attributes="0"/>
+              <Component id="PnlEncabezado" max="32767" attributes="0"/>
+              <Component id="PnlContenedorPaneles" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="Encabezado" min="-2" max="-2" attributes="0"/>
+                  <Component id="PnlEncabezado" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="ContenedorPaneles" max="32767" attributes="0"/>
+                  <Component id="PnlContenedorPaneles" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="Encabezado">
+        <Container class="javax.swing.JPanel" name="PnlEncabezado">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -66,8 +66,8 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Titulo" max="32767" attributes="0"/>
-                          <Component id="Subtitulo" pref="748" max="32767" attributes="0"/>
+                          <Component id="LblTitulo" max="32767" attributes="0"/>
+                          <Component id="LblSubtitulo" pref="748" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -77,22 +77,22 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Titulo" min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="LblTitulo" min="-2" pref="81" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Subtitulo" pref="31" max="32767" attributes="0"/>
+                      <Component id="LblSubtitulo" pref="31" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="Titulo">
+            <Component class="javax.swing.JLabel" name="LblTitulo">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="TESLA"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Subtitulo">
+            <Component class="javax.swing.JLabel" name="LblSubtitulo">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Electric Cars, Solar &amp; Clean Energy"/>
@@ -100,7 +100,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="ContenedorPaneles">
+        <Container class="javax.swing.JPanel" name="PnlContenedorPaneles">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
