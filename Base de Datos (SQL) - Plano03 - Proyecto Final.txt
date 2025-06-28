@@ -1,0 +1,313 @@
+-- Creación de la base de datos SQL que se implementara en el proyecto:
+-- CONDICION: EXITOSO
+create database BaseDeDatosIIProyecto;
+
+-- Uso de la base de datos creada:
+-- CONDICION: EXITOSO
+use BaseDeDatosIIProyecto;
+
+-- SECCION I: 
+-- Creación de tablas dedicadas a las funcionalidades del proyecto:
+
+-- Tabla 01: Cliente
+-- CONDICION: EXITOSO
+
+CREATE TABLE cliente (
+  ID_Cliente int auto_increment PRIMARY KEY,
+  Nombre_Cliente varchar(150) NOT NULL,
+  SegundoNombre_Cliente varchar(150),
+  Apellido_Cliente varchar(150) NOT NULL,
+  DNI_Cliente char(20) not null unique,
+  Correo_Cliente varchar(150) not null,
+  Telefono_Cliente char(20) NOT NULL,
+  SegundoTelefono_Cliente char(20)
+  );
+
+-- Uso del comando DESCRIBE para la obtención y muestra de la estructura de la tabla: 
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.cliente;
+
+-- Testing de campos/columnas (Próxima inserción de datos): 
+-- CONDICION: EXITOSO 
+
+SELECT * FROM basededatosiiproyecto.cliente;
+
+
+
+-- Tabla 02: Administrador
+-- CONDICION: EXITOSO
+
+CREATE TABLE Administrador (
+    ID_Admin INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Admin VARCHAR(150) NOT NULL,
+    Correo_Admin VARCHAR(150),
+    DNI_Admin CHAR(20) NOT NULL UNIQUE
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.administrador;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.administrador;
+
+
+-- Tabla 03: Auto
+-- CONDICION: EXITOSO
+
+CREATE TABLE Auto (
+  ID_Auto INT AUTO_INCREMENT PRIMARY KEY,
+  Marca_Auto VARCHAR(150)  NOT NULL,
+  Modelo_Auto VARCHAR(150) NOT NULL,
+  Anio_Auto CHAR(4) NOT NULL,
+  Precio_Auto DECIMAL(12,2) NOT NULL CHECK (Precio_Auto > 0)
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.auto;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.auto;
+
+-- Tabla 04: ReservaServUno (RESERVA SERVICIO UNO -> Servicio de venta de autos)
+-- CONDICION: EXITOSO
+
+CREATE TABLE ReservaServUno(
+	ID_ReservaServUno int auto_increment primary key,
+	ID_Auto int not null,
+	Estado_ReservaServUno varchar(50) not null default 'EN ESPERA',
+	Fecha_ReservaServUno datetime not null default current_timestamp,
+	foreign key (ID_Auto) references basededatosiiproyecto.auto(ID_Auto)
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.reservaservuno;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.reservaservuno;
+
+-- Tabla 05: ReservaServDos (RESERVA SERVICIO DOS -> Servicio de venta de autopartes)
+-- CONDICION: EXITOSO
+
+CREATE TABLE ReservaServDos(
+	ID_ReservaServDos int auto_increment primary key,
+	ID_Autoparte int not null,
+	-- ID_Cliente int not null,
+    -- Cambio ID_Cliente -> DNI_Cliente
+    DNI_Cliente char(20) not null,
+    Estado_ReservaServDos varchar(50) not null default 'SOLICITADO',
+	Fecha_ReservaServDos datetime not null default current_timestamp,
+	foreign key (ID_Autoparte) references basededatosiiproyecto.autopartes(ID_Autoparte)
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.reservaservdos;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.reservaservdos;
+
+-- Tabla 06: ReservaServTres (RESERVA SERVICIO TRES -> Servicio de registro de mantenimiento del vehiculo)
+-- CONDICION: EXITOSO
+
+CREATE TABLE ReservaServTres (
+    ID_ReservaServTres INT AUTO_INCREMENT PRIMARY KEY,
+    TipoVehiculo          VARCHAR(20)  NOT NULL,     	 -- TESLA | OTRO
+    ServicioSolicitado  VARCHAR(100) NOT NULL,
+    NumeroMotor       VARCHAR(100),               		 -- solo TESLA
+    NumeroSerie          VARCHAR(100),              		 -- solo TESLA
+    Kilometraje             INT,
+    MarcaVehiculo       VARCHAR(100),        		         -- solo OTRO
+    ModeloVehiculo    VARCHAR(100),              		 -- solo OTRO
+    AnioVehiculo          INT,                        			 -- solo OTRO
+    TipoMotor             VARCHAR(100),               		 -- solo OTRO
+    Observacion          TEXT,
+    FechaCita              DATE        NOT NULL,       		 -- fecha sugerida
+    Precio                   DECIMAL(10,2) NOT NULL,
+    DNI_Cliente          CHAR(20)    NOT NULL,
+    DNI_Empleado     CHAR(20)             NULL   		 -- se asigna luego
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.reservaservtres;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.reservaservtres;
+
+-- Tabla 07: Autopartes
+-- CONDICION: EXITOSO
+
+CREATE TABLE Autopartes (
+  ID_Autoparte int auto_increment PRIMARY KEY,
+  Nombre_Autoparte varchar(150) NOT NULL,
+  Categoria_Autoparte varchar(150) NOT NULL,
+  Stock_Autoparte INT NOT NULL CHECK (Stock_Autoparte >= 0),
+  Precio_Autoparte decimal(10, 2) NOT NULL CHECK (Precio_Autoparte > 0)
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.autopartes;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.autopartes;
+
+-- Tabla 08: Empleado
+-- CONDICION: EXITOSO
+
+CREATE TABLE Empleado (
+  ID_Empleado int auto_increment PRIMARY KEY,
+  Nombre_Empleado varchar(150) NOT NULL,
+  DNI_Empleado varchar(150) UNIQUE NOT NULL,
+  Telefono_Empleado int NOT NULL,
+  FechaContratacion_Empleado DATE NOT NULL
+);
+
+-- Testing de estructura con DESCRIBE:
+-- CONDICION: EXITOSO
+
+DESCRIBE basededatosiiproyecto.empleado;
+
+-- Testing de campos/columnas de la tabla:
+-- CONDICION: EXITOSO
+
+SELECT * FROM basededatosiiproyecto.empleado;
+
+
+-- SECCION II:
+-- Inserción de valores genéricos para población de tablas:
+
+-- INSERCION A CLIENTE:
+
+-- Inserción de primer valor de prueba: 
+-- CONDICION: EXITOSO
+
+INSERT INTO basededatosiiproyecto.cliente
+(Nombre_Cliente,SegundoNombre_Cliente,Apellido_Cliente,DNI_Cliente,Correo_Cliente,Telefono_Cliente,SegundoTelefono_Cliente) 
+VALUES (1, 'prueba1','prueba1.1','prueba1.2',123456789,'prueba1@hotmail.com',12345678,87654321);
+
+-- Inserción de valores genéricos (+30 registros) para la manipulación de datos (DML): 
+-- CODICION: EXITOSO
+
+INSERT INTO basededatosiiproyecto.cliente 
+(Nombre_Cliente, SegundoNombre_Cliente, Apellido_Cliente, DNI_Cliente, Correo_Cliente, Telefono_Cliente, SegundoTelefono_Cliente)
+VALUES 
+('Ana','María','López',100000001,'ana.lopez@gmail.com','999100001','999200001'),
+('Bruno','Esteban','Gómez',100000002,'bruno.gomez@gmail.com','999100002','999200002'),
+('Carla','Fernanda','Martínez',100000003,'carla.martinez@gmail.com','999100003','999200003'),
+('Diego','Andrés','Pérez',100000004,'diego.perez@gmail.com','999100004','999200004'),
+('Elena','Isabel','Ramírez',100000005,'elena.ramirez@gmail.com','999100005','999200005'),
+('Felipe','Tomás','Torres',100000006,'felipe.torres@gmail.com','999100006','999200006'),
+('Gabriela','Lucía','Morales',100000007,'gabriela.morales@gmail.com','999100007','999200007'),
+('Hugo','Emilio','Sánchez',100000008,'hugo.sanchez@gmail.com','999100008','999200008'),
+('Irene','Alejandra','Vargas',100000009,'irene.vargas@gmail.com','999100009','999200009'),
+('Javier','Luis','Castro',100000010,'javier.castro@gmail.com','999100010','999200010'),
+('Karen','Beatriz','Silva',100000011,'karen.silva@gmail.com','999100011','999200011'),
+('Leonardo','Iván','Rojas',100000012,'leonardo.rojas@gmail.com','999100012','999200012'),
+('Mónica','Paola','Cruz',100000013,'monica.cruz@gmail.com','999100013','999200013'),
+('Nicolás','Oscar','Reyes',100000014,'nicolas.reyes@gmail.com','999100014','999200014'),
+('Olga','Viviana','Mendoza',100000015,'olga.mendoza@gmail.com','999100015','999200015'),
+('Pablo','Martín','Salazar',100000016,'pablo.salazar@gmail.com','999100016','999200016'),
+('Quintina','Renata','Delgado',100000017,'quintina.delgado@gmail.com','999100017','999200017'),
+('Raúl','Alonso','Peña',100000018,'raul.pena@gmail.com','999100018','999200018'),
+('Sofía','Daniela','Carrillo',100000019,'sofia.carrillo@gmail.com','999100019','999200019'),
+('Tomás','Ricardo','Montoya',100000020,'tomas.montoya@gmail.com','999100020','999200020'),
+('Úrsula','Jimena','Acosta',100000021,'ursula.acosta@gmail.com','999100021','999200021'),
+('Valentín','Matías','Aguilar',100000022,'valentin.aguilar@gmail.com','999100022','999200022'),
+('Wendy','Rocío','Ortega',100000023,'wendy.ortega@gmail.com','999100023','999200023'),
+('Ximena','Flor','Herrera',100000024,'ximena.herrera@gmail.com','999100024','999200024'),
+('Yuri','Julieta','Guzmán',100000025,'yuri.guzman@gmail.com','999100025','999200025'),
+('Zacarías','Camilo','Flores',100000026,'zacarias.flores@gmail.com','999100026','999200026'),
+('Alan','Mauricio','Ramos',100000027,'alan.ramos@gmail.com','999100027','999200027'),
+('Betina','Soledad','Mora',100000028,'betina.mora@gmail.com','999100028','999200028'),
+('César','Fabián','Pacheco',100000029,'cesar.pacheco@gmail.com','999100029','999200029'),
+('Diana','Tatiana','Navarro',100000030,'diana.navarro@gmail.com','999100030','999200030');
+
+-- INSERCION A ADMINISTRADOR:
+
+-- Inserción de valores de los programadores del proyecto: 
+-- CODICION: EXITOSO
+
+INSERT INTO Administrador (Nombre_Admin, Correo_Admin, DNI_Admin)
+VALUES 
+('Fabrizio', 'fabrizio@tesla.com', '111'),
+('Angelo', 'angelo@tesla.com', '222'),
+('Walter', 'walter@tesla.com', '333');
+
+-- INSERCION A AUTO:
+
+-- Inserción de primer valor de prueba: 
+-- CONDICION: EXITOSO
+
+INSERT INTO basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) VALUE (1,'Tesla','SEDAN','2010',10.000);
+INSERT INTO basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) VALUE (2,'Tesla','SUV','2015',15.000);
+INSERT INTO basededatosiiproyecto.auto(ID_Auto,Marca_Auto,Modelo_Auto,Anio_Auto,Precio_Auto) VALUE (3,'Tesla','CAMIONETA','2018',20.000);
+
+-- Inserción de valores genéricos (+50) a la tabla para la DML: 
+-- CODICION: 
+
+
+
+
+
+
+
+
+
+-- INSERCION A EMPLEADOS:
+
+-- Inserción de primer valor de prueba: 
+-- CONDICION: EXITOSO
+
+INSERT INTO basededatosiiproyecto.empleado(ID_Empleado, Nombre_Empleado, DNI_Empleado, Telefono_Empleado, FechaContratacion_Empleado)
+VALUE (1,'nombre1','12345',12345678,'1990-12-12');
+
+-- Inserción de valores genéricos (+20 registros) para la manipulación de datos (DML): 
+-- CODICION: EXITOSO
+
+INSERT INTO basededatosiiproyecto.empleado (Nombre_Empleado, DNI_Empleado, Telefono_Empleado, FechaContratacion_Empleado) VALUES
+('Luis Torres','200000001',987654321,'2015-03-12'),
+('Ana García','200000002',986543210,'2016-05-23'),
+('Carlos Pérez','200000003',985432109,'2014-11-17'),
+('María Ramírez','200000004',984321098,'2018-02-05'),
+('Jorge Ríos','200000005',983210987,'2020-07-19'),
+('Laura Ponce','200000006',982109876,'2019-09-28'),
+('Elena Chávez','200000007',981098765,'2017-01-10'),
+('Pedro Medina','200000008',980987654,'2013-12-03'),
+('Gabriela Díaz','200000009',979876543,'2015-06-30'),
+('Martín Acosta','200000010',978765432,'2021-08-16'),
+('Lucía Fernández','200000011',977654321,'2022-01-04'),
+('Ricardo Vargas','200000012',976543210,'2020-10-21'),
+('Isabel Herrera','200000013',975432109,'2011-04-12'),
+('Andrés Cárdenas','200000014',974321098,'2016-03-08'),
+('Valeria Espinoza','200000015',973210987,'2023-05-25'),
+('Tomás Guillén','200000016',972109876,'2019-07-14'),
+('Diana Bravo','200000017',971098765,'2018-10-09'),
+('Sebastián Castro','200000018',970987654,'2014-09-01'),
+('Natalia Rivas','200000019',969876543,'2022-11-20'),
+('Héctor Solís','200000020',968765432,'2017-12-18');
+
+
+
