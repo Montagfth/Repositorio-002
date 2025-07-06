@@ -49,7 +49,7 @@ public class DAOReservaServUnoIMPLEMENT extends Database implements DAOReservaSe
 
         try {
             this.Conectar();
-            PreparedStatement st = this.Conexion.prepareStatement("select * from ReservaServUno");
+            PreparedStatement st = this.Conexion.prepareStatement("select * from ReservaServUno order by ID_ReservaServUno desc");
             ResultSet rs = st.executeQuery();
 
             while (rs.next()) {
