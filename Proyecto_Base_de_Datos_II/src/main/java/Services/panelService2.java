@@ -13,6 +13,8 @@ import DatabaseModels.*;
 import Interfaces.*;
 import Model.*;
 import View.loginPrototipo;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -30,6 +32,23 @@ public class panelService2 extends javax.swing.JPanel {
         //cargaDatosPrueba();
         configuracionEventosTabla();
         cargaAutopartes();
+
+        this.addMouseListener(new MouseAdapter() {
+
+            public void mousePressed(MouseEvent e) {
+                TblAutopartes.clearSelection();
+                Descripcion01.setText("SELECCIONE UN ELEMENTO PARA VER SUS DETALLES");
+                Descripcion02.setText(" ");
+                Descripcion03.setText(" ");
+                Descripcion04.setText(" ");
+                Descripcion05.setText(" ");
+                Descripcion06.setText(" ");
+                Descripcion07.setText(" ");
+                Descripcion08.setText(" ");
+                Descripcion09.setText(" ");
+                Descripcion10.setText(" ");
+            }
+        });
     }
 
     public void cargaAutopartes() {
@@ -73,14 +92,15 @@ public class panelService2 extends javax.swing.JPanel {
                     Descripcion02.setText("Categoría: " + categoria);
                     Descripcion03.setText("Stock: " + stock);
                     Descripcion04.setText("Precio: S/. " + precio);
-                    
+
                     //Adecuar a las dimensiones del panel, caso contrario se distorcionara junto con el jframe.
-                    Descripcion05.setText("Batería de alto rendimiento de iones de litio, diseño compacto y refrigeración líquida.");
-                    Descripcion06.setText("Compatible con todos los modelos Tesla S, 3, X y Y. Admite carga rápida y regenerativa.");
+                    //Acortar informacion
+                    Descripcion05.setText("Batería de alto rendimiento de iones de litio.");
+                    Descripcion06.setText("Compatible con modelos Tesla S, 3, X y Y.");
                     Descripcion07.setText("Código de pieza: TESLA-BAT-85KW-LONGRANGE");
-                    Descripcion08.setText("Estado: Nuevo | Garantía de fábrica: 8 años o 240,000 km");
-                    Descripcion09.setText("Disponibilidad: En almacén principal - Tiempo de entrega: 24 a 48 horas");
-                    Descripcion10.setText("Autonomía estimada: hasta 600 km por carga completa en condiciones óptimas.");
+                    Descripcion08.setText("Estado: Nuevo | Garantía de fábrica: 8 años");
+                    Descripcion09.setText("Disponibilidad: En almacén principal");
+                    Descripcion10.setText("Autonomía estimada: hasta 600 km por carga");
                     /*
                     // Cambiar imagen
                     //NOTA: Por evaluar.
@@ -222,7 +242,7 @@ public class panelService2 extends javax.swing.JPanel {
             .addGroup(PnlProductoDescripcionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PnlProductoDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Descripcion01, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(Descripcion01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -231,12 +251,12 @@ public class panelService2 extends javax.swing.JPanel {
                     .addComponent(Descripcion07, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion08, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Descripcion09, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Descripcion10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlProductoDescripcionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BtnSolictarAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)))
+                    .addComponent(Descripcion10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlProductoDescripcionLayout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addComponent(BtnSolictarAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
         PnlProductoDescripcionLayout.setVerticalGroup(
             PnlProductoDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,18 +293,18 @@ public class panelService2 extends javax.swing.JPanel {
             .addGroup(PnlDescripcionAutoparteLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(PnlDescripcionAutoparteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LblProductoImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PnlProductoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(PnlProductoDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LblProductoImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         PnlDescripcionAutoparteLayout.setVerticalGroup(
             PnlDescripcionAutoparteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlDescripcionAutoparteLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(LblProductoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(LblProductoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PnlProductoDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PnlContenedorGeneralLayout = new javax.swing.GroupLayout(PnlContenedorGeneral);
@@ -307,34 +327,35 @@ public class panelService2 extends javax.swing.JPanel {
                     .addComponent(LblSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(PnlDescripcionAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         PnlContenedorGeneralLayout.setVerticalGroup(
             PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LblSubtitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CbxCategoriaAutoparte, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(LblCategoriasAutoparte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JSPRegistroAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JSeparador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LblSubtitulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CbxCategoriaAutoparte, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(LblCategoriasAutoparte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(JSPRegistroAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(JSeparador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(PnlDescripcionAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(BtnRetornar)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addComponent(PnlDescripcionAutoparte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

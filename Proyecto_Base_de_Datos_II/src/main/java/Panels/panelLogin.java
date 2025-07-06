@@ -17,6 +17,8 @@ import Interfaces.DAOAdministrador;
 import Interfaces.DAOCliente;
 import Model.DAOAdministradorIMPLEMENT;
 import Model.DAOClienteIMPLEMENT;
+import java.awt.Window;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -254,6 +256,10 @@ public class panelLogin extends javax.swing.JPanel {
 
                 ventanaAdministrador ventanaAdmin = new ventanaAdministrador();
                 ventanaAdmin.setVisible(true);
+
+                //Herencia para el cierre de paneles con jframes
+                Window ventanaPadre = SwingUtilities.getWindowAncestor(this);
+                ventanaPadre.dispose();
                 return;
             }
 
@@ -266,6 +272,10 @@ public class panelLogin extends javax.swing.JPanel {
                 ventanaPrincipal ventanaPrincipal = new ventanaPrincipal();
                 ventanaPrincipal.setVisible(true);
                 //this.setEnabled(false);
+
+                //Herencia para el cierre de paneles con jframes
+                Window ventanaPadre = SwingUtilities.getWindowAncestor(this);
+                ventanaPadre.dispose();
 
             } else {
                 JOptionPane.showMessageDialog(null, "DNI no encontrado. Verifique sus datos.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);

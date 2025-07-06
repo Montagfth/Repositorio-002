@@ -18,6 +18,8 @@ import Modificaciones.DialogEditarEmpleado;
 import Modificaciones.DialogEditarReservaAuto;
 import Modificaciones.DialogEditarReservaAutoparte;
 import Modificaciones.DialogEditarReservaServMantenimiento;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.crypto.AEADBadTagException;
 import javax.swing.JOptionPane;
@@ -38,10 +40,20 @@ public class panelAdministrator extends javax.swing.JPanel {
         cargarOperacionesAuto();
         cargarSolicitudesAutoparte();
         cargarReservaServicioTres();
+
+        this.addMouseListener(new MouseAdapter() {
+
+            public void mousePressed(MouseEvent e) {
+                TblServicioUno.clearSelection();
+                TblEmpleados.clearSelection();
+                TblServicioUno.clearSelection();
+                TblServicioDos.clearSelection();
+                TblServicioTres.clearSelection();
+            }
+        });
     }
 
     //Carga de campos insertados en la base de datos MySQL:
-    
     public void cargarReservaServicioTres() {
 
         try {
@@ -71,7 +83,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarSolicitudesAutoparte() {
-        
+
         try {
             DAOReservaServDos daoRsD = new DAOReservaServDosIMPLEMENT();
             List<ReservaServDos> listarReservServDos = daoRsD.listarReservasServDos();
@@ -95,7 +107,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarOperacionesAuto() {
-        
+
         try {
             DAOReservaServUno daoRsun = new DAOReservaServUnoIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblServicioUno.getModel();
@@ -108,7 +120,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarEmpleados() {
-        
+
         try {
             DAOEmpleado daoA = new DAOEmpleadosIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblEmpleados.getModel();
@@ -122,7 +134,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }
 
     public void cargarClientes() {
-        
+
         try {
             DAOCliente daoCl = new DAOClienteIMPLEMENT();
             DefaultTableModel model = (DefaultTableModel) TblClientes.getModel();
@@ -465,11 +477,10 @@ public class panelAdministrator extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
     //Accionamiento de botones y funciones:
-    
+
     private void BtnModificarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarAutoActionPerformed
-        
+
         int fila = TblServicioUno.getSelectedRow();
 
         if (fila == -1) {
@@ -489,7 +500,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnModificarAutoActionPerformed
 
     private void BtnEliminarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarAutoActionPerformed
-        
+
         int fila = TblServicioUno.getSelectedRow();
 
         if (fila == -1) {
@@ -515,7 +526,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnEliminarAutoActionPerformed
 
     private void BtnEliminarAutoparteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarAutoparteActionPerformed
-        
+
         int fila = TblServicioDos.getSelectedRow();
 
         if (fila == -1) {
@@ -541,7 +552,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnEliminarAutoparteActionPerformed
 
     private void BtnModificarAutoparteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarAutoparteActionPerformed
-        
+
         int fila = TblServicioDos.getSelectedRow();
 
         if (fila == -1) {
@@ -561,7 +572,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnModificarAutoparteActionPerformed
 
     private void BtnModificarMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarMantenimientoActionPerformed
-        
+
         int fila = TblServicioTres.getSelectedRow();
 
         if (fila == -1) {
@@ -605,7 +616,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnEliminarMantenimientoActionPerformed
 
     private void BtnModificarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarEmpleadoActionPerformed
-        
+
         int fila = TblEmpleados.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione una fila primero.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
@@ -623,7 +634,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnModificarEmpleadoActionPerformed
 
     private void BtnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarEmpleadoActionPerformed
-        
+
         int fila = TblEmpleados.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione una fila primero.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
@@ -673,7 +684,7 @@ public class panelAdministrator extends javax.swing.JPanel {
     }//GEN-LAST:event_BtnModificarClienteActionPerformed
 
     private void BtnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarClienteActionPerformed
-        
+
         int fila = TblClientes.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un cliente primero.");

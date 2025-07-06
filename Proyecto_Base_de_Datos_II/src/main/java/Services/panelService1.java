@@ -17,6 +17,8 @@ import java.util.List;
 import Database.*;
 import DatabaseModels.*;
 import Interfaces.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -36,6 +38,25 @@ public class panelService1 extends javax.swing.JPanel {
         configuracionEventosTabla();
         //cargaDatosPrueba();
         cargaAutos();
+        
+        //Desseleccionador de filas:
+        this.addMouseListener(new MouseAdapter() {
+
+            public void mousePressed(MouseEvent e) {
+                TblAuto.clearSelection();
+                Descripcion01.setText("SELECCIONE UN AUTO PARA VER LOS DETALLES");
+                Descripcion02.setText(" ");
+                Descripcion03.setText(" ");
+                Descripcion04.setText(" ");
+                Descripcion05.setText(" ");
+                Descripcion06.setText(" ");
+                Descripcion07.setText(" ");
+                Descripcion08.setText(" ");
+                Descripcion09.setText(" ");
+                Descripcion10.setText(" ");
+            }
+        });
+
     }
 
     public void actualizarTabla(List<Auto> lista) {
@@ -108,7 +129,6 @@ public class panelService1 extends javax.swing.JPanel {
         modelo = modelo.equals("TODOS") ? "" : modelo;
         precio = precio.equals("TODOS") ? "" : precio;
 
-        
         try {
             List<Auto> lista = daoA.listarFiltrado(anio, modelo, precio);
             actualizarTabla(lista);
@@ -318,8 +338,10 @@ public class panelService1 extends javax.swing.JPanel {
 
         LblSubtitulo.setText("Busque el vehiculo de su preferencia:");
 
+        LblFiltroAuto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblFiltroAuto.setText("FILTRAR:");
 
+        LblAnioAuto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblAnioAuto.setText("AÑO:");
 
         CbxAnioAuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "2025", "2024", "2023" }));
@@ -329,6 +351,7 @@ public class panelService1 extends javax.swing.JPanel {
             }
         });
 
+        LblModeloAuto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblModeloAuto.setText("MODELO");
 
         CbxModeloAuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "SEDAN", "SUV", "CAMIONETA" }));
@@ -338,6 +361,7 @@ public class panelService1 extends javax.swing.JPanel {
             }
         });
 
+        LblPrecioAuto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblPrecioAuto.setText("PRECIO:");
 
         CbxPrecioAuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "MENOS DE 15,000", "15,000 - 25,000", "MAS DE 25,000" }));
@@ -417,30 +441,25 @@ public class panelService1 extends javax.swing.JPanel {
         PnlConedorDescripcionLayout.setHorizontalGroup(
             PnlConedorDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlConedorDescripcionLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(PnlConedorDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ChkBxConfirmacionReservaAuto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion05, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion06, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion07, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion08, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PnlConedorDescripcionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(PnlConedorDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ChkBxConfirmacionReservaAuto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion05, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion04, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion06, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion07, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion08, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(PnlConedorDescripcionLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(BtnReservarAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(BtnComentarAuto))
-                    .addGroup(PnlConedorDescripcionLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(PnlConedorDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Descripcion10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Descripcion09, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnComentarAuto)
+                        .addGap(36, 36, 36))
+                    .addComponent(Descripcion10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Descripcion09, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         PnlConedorDescripcionLayout.setVerticalGroup(
             PnlConedorDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -478,18 +497,18 @@ public class panelService1 extends javax.swing.JPanel {
         PnlDescripcionAuto.setLayout(PnlDescripcionAutoLayout);
         PnlDescripcionAutoLayout.setHorizontalGroup(
             PnlDescripcionAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlDescripcionAutoLayout.createSequentialGroup()
+            .addGroup(PnlDescripcionAutoLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(PnlDescripcionAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblImagenDinamica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PnlConedorDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(14, 14, 14))
+                    .addComponent(PnlConedorDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblImagenDinamica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         PnlDescripcionAutoLayout.setVerticalGroup(
             PnlDescripcionAutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlDescripcionAutoLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(lblImagenDinamica, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(lblImagenDinamica, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PnlConedorDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -519,23 +538,23 @@ public class panelService1 extends javax.swing.JPanel {
                         .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(LblFiltroAuto)
-                                .addGap(18, 18, 18)
-                                .addComponent(LblAnioAuto)
+                                .addGap(39, 39, 39)
+                                .addComponent(LblFiltroAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CbxAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LblModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LblAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CbxModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LblPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CbxAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CbxPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(38, 38, 38)
+                                .addComponent(LblModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CbxModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LblPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CbxPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(PnlDescripcionAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         PnlContenedorGeneralLayout.setVerticalGroup(
             PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -547,28 +566,27 @@ public class panelService1 extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JSeparador01, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CbxPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(LblFiltroAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LblAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CbxAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LblModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CbxModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(LblPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblFiltroAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CbxAnioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CbxModeloAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CbxPrecioAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JSeparador02, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(JSPRegistroAuto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(JSPRegistroAuto, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JSeparador03, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnRetornar)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlContenedorGeneralLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
                 .addComponent(PnlDescripcionAuto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -600,28 +618,28 @@ public class panelService1 extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Debe aceptar los terminos y condiciones para continuar", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         int fila = TblAuto.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un vehiculo en la tabla para continuar.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         int idAuto = (int) TblAuto.getValueAt(fila, 0);
-        
+
         try {
             ReservaServUno rsuno = new ReservaServUno();
             rsuno.setID_Auto(idAuto);
             DAOReservaServUno daoRsuno = new DAOReservaServUnoIMPLEMENT();
             daoRsuno.registrar(rsuno);
-            
+
             JOptionPane.showMessageDialog(null, "Reserva regisrada correctamente", "Tesla Inc.", JOptionPane.INFORMATION_MESSAGE);
             System.out.println("Se ha registrado correctamente.");
-            
+
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-        } 
-        
+        }
+
         /*
            if (ChkBxConfirmacion.isSelected()) {
             JOptionPane.showMessageDialog(null, "Gracias, se ha registrado su cita, acerquese al local.", "Tesla Inc.", JOptionPane.DEFAULT_OPTION);
@@ -629,8 +647,8 @@ public class panelService1 extends javax.swing.JPanel {
         } else {
             JOptionPane.showMessageDialog(null, "Debe marcar la casilla antes de finalizar la operacion", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
         }
-        */
-     
+         */
+
     }//GEN-LAST:event_BtnReservarAutoActionPerformed
 
     private void CbxAnioAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbxAnioAutoActionPerformed
@@ -642,22 +660,22 @@ public class panelService1 extends javax.swing.JPanel {
     }//GEN-LAST:event_CbxModeloAutoActionPerformed
 
     private void BtnComentarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnComentarAutoActionPerformed
-        
+
         int filaSeleccionada = TblAuto.getSelectedRow();
-        
+
         if (filaSeleccionada == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un vehiculo para comentar", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
         int idVehiculo = Integer.parseInt(TblAuto.getValueAt(filaSeleccionada, 0).toString());
-        
+
         DialogComentarios dialog = new DialogComentarios(
-                (JFrame) SwingUtilities.getWindowAncestor(this)
-                ,idVehiculo
+                (JFrame) SwingUtilities.getWindowAncestor(this),
+                 idVehiculo
         );
         dialog.setVisible(true);
-        
+
     }//GEN-LAST:event_BtnComentarAutoActionPerformed
 
 
