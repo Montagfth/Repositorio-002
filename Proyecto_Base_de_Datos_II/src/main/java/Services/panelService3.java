@@ -9,6 +9,8 @@ import DatabaseModels.Sesion;
 import Interfaces.DAOReservaServTres;
 import Model.DAOReservaServTresIMPLEMENT;
 import Panels.panelInformativo;
+import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.FlatLaf;
 import java.awt.BorderLayout;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -18,6 +20,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.FlatClientProperties;
+import javax.swing.*;
 
 /**
  *
@@ -36,6 +41,7 @@ public class panelService3 extends javax.swing.JPanel {
         //contenedorPRecio.setEnabled(false);
         JTFContenedorPrecio.setText("0.00");
         JTFContenedorPrecio.setEditable(false);
+        estilosPanelService03();
     }
 
     public void mostrarPaneles(JPanel panel) {
@@ -46,6 +52,12 @@ public class panelService3 extends javax.swing.JPanel {
         PnlContenedorGeneral.add(panel, BorderLayout.CENTER);
         PnlContenedorGeneral.revalidate();
         PnlContenedorGeneral.repaint();
+    }
+
+    public void estilosPanelService03() {
+        JTFServicioTesla02.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Ingrese su nombre");
+        JTFServicioTesla03.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Ingrese campo tesla 2");
+        JTFServicioTesla03.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Ingrese campo tesla 3");
     }
 
     /*

@@ -4,7 +4,9 @@
  */
 package Product;
 
+
 import View.*;
+import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
@@ -13,6 +15,8 @@ import View.*;
 public class Tester {
     //NOTA: Testeador secuencial de las ventanas que fueron implementadas en el proyecto
     public static void main(String[] args) {
+        
+        FlatLightLaf.setup();
         
         loginPrototipo ventana_login = new loginPrototipo();
         

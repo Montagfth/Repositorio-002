@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 
 import Panels.*;
 import java.awt.BorderLayout;
+import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
@@ -22,6 +24,7 @@ public class loginPrototipo extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         inicializacion();
+        //FlatLightLaf.setup();
         //this.setVisible(false);
     }
     

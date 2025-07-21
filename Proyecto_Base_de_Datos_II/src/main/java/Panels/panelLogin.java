@@ -17,8 +17,11 @@ import Interfaces.DAOAdministrador;
 import Interfaces.DAOCliente;
 import Model.DAOAdministradorIMPLEMENT;
 import Model.DAOClienteIMPLEMENT;
+import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Window;
 import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 /**
  *
@@ -32,6 +35,7 @@ public class panelLogin extends javax.swing.JPanel {
     public panelLogin() {
         initComponents();
         //CampoContraseña.setEnabled(false);
+        estilosPanelLogin();
     }
 
     /**
@@ -167,6 +171,11 @@ public class panelLogin extends javax.swing.JPanel {
 
     }//GEN-LAST:event_BtnRegistrarseActionPerformed
 
+    
+    public void estilosPanelLogin() {
+        JTFCredencial.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Ingrese su credencial");
+    }
+    
     private void BtnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInicioSesionActionPerformed
 
         //String mensajeDinamico = ... [Programacion dinamica de respuesta a evaluar]
